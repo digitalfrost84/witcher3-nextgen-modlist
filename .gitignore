@@ -1,0 +1,18 @@
+# Keep downloaded mods, game assets, saves, credentials, and local review output out.
+*.7z
+*.zip
+*.rar
+*.bundle
+*.cache
+*.dll
+*.exe
+*.rsblob
+*.w3strings
+*.w3speech
+*.sav
+*.original
+*.log
+.env
+.env.*
+.review/
+__pycache__/

@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "inventoriedOn": "2026-10-04",
+  "scope": "Manually installed mod payloads in the game directory, corroborated by downloaded archive contents.",
+  "pathBase": "Game installation directory; all installed paths below are relative to this directory.",
+  "game": {
+    "executable": "bin/x64_dx12/witcher3.exe",
+    "fileVersion": "5.0.0.1044392",
+    "productVersion": "5.0.0.1044392",
+    "versionResourceSuffix": "(Build Machine)"
+  },
+  "notes": [
+    "Seven mod folders and their seven DLC folders are installed, plus one native DX12 mod: eight manual mods in total.",
+    "Archive release labels and embedded descriptor versions are recorded separately because several disagree.",
+    "Selected-file SHA-256 comparisons cover .json, .ws, .xml, .ini and .dll archive entries present at the corresponding installed paths. They do not establish that every bundled asset was compared.",
+    "A Proper Send-off was compared across all 14 archive files. A Witcher Can Hide Another was checked against its two preserved original scripts and installed descriptor.",
+    "Stale mods.settings entries are not treated as proof of installation.",
+    "This inventory verifies installed files and archive provenance evidence, not enablement or functional compatibility."
+  ],
+  "mods": [
+    {
+      "name": "A Witcher Can Hide Another",
+      "channel": "manual",
+      "nexusModId": 9453,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/9453",
+      "payloadFolders": [
+        "mods/modAWitcherCanHideAnother",
+        "dlc/dlcAWitcherCanHideAnother"
+      ],
+      "menuFiles": [],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [
+        {
+          "path": "mods/modAWitcherCanHideAnother/content/info.json",
+          "name": "ngcl",
+          "version": "1.0",
+          "redkitGameVersion": ""
+        }
+      ],
+      "archiveEvidence": {
+        "archiveName": "A Witcher Can Hide Another-9453-1-1-1-1761481305.7z",
+        "releaseLabel": "1.1.1",
+        "method": "SHA-256 comparison of archive bytes streamed with 7-Zip e -so; no files extracted.",
+        "comparisons": [
+          {
+            "archivePath": "mods/modAWitcherCanHideAnother/content/scripts/local/ngcl/annotations.ws",
+            "comparedWith": "Preserved original before the local compatibility fix",
+            "sha256": "A8C904E1A8E2B118D00884FBB9F4FE5892494410812A9162E5E9792B7D6856A4",
+            "matches": true
+          },
+          {
+            "archivePath": "mods/modAWitcherCanHideAnother/content/scripts/game/explorations/exploration_movement_system/explorationStateManager.ws",
+            "comparedWith": "Preserved original before the local compatibility fix",
+            "sha256": "7C2D2A99C968EC24B3385075EE280522AF8B6E710DA4BBB7B0552391938BEFA4",
+            "matches": true
+          },
+          {
+            "archivePath": "mods/modAWitcherCanHideAnother/content/info.json",
+            "comparedWith": "Installed file",
+            "sha256": "7917C15E06606E5328A1CA22957153F77CB4F4A4B2E53E91C45E58FC14197738",
+            "matches": true
+          }
+        ],
+        "limitation": "These matches establish that the repaired scripts correspond to the 1.1.1 archive originals; the entire archive payload was not compared."
+      },
+      "localChanges": [
+        {
+          "path": "mods/modAWitcherCanHideAnother/content/scripts/local/ngcl/annotations.ws",
+          "description": "Changed InitializeAreaMusic parameter from EAreaName to CName and quoted the AN_HubSlot_17 name literal.",
+          "sha256": "4A439EFC7143D12DE5997E34F2D03D270F179D6D757FC3FE1B7281C18D35044D"
+        },
+        {
+          "path": "mods/modAWitcherCanHideAnother/content/scripts/game/explorations/exploration_movement_system/explorationStateManager.ws",
+          "description": "Added GetStateByName from the installed game's corresponding class.",
+          "sha256": "F0BDCC80DFBE3391287B633F7FA3ADD37FFCD0F36D62966BC3AF016B5DF1F4B1"
+        }
+      ],
+      "setupGuide": "docs/a-witcher-can-hide-another.md",
+      "gameplayVerified": false
+    },
+    {
+      "name": "Brothers In Arms - Ultimate Edition",
+      "variant": "Remastered",
+      "channel": "manual",
+      "nexusModId": 11260,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/11260",
+      "payloadFolders": [
+        "mods/modbrothersinarms",
+        "dlc/dlcbrothersinarms"
+      ],
+      "menuFiles": [
+        "bin/config/r4game/user_config_matrix/pc/BrothersInArms.xml"
+      ],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [
+        {
+          "path": "mods/modbrothersinarms/content/info.json",
+          "name": "brothersinarms",
+          "version": "4.0.0",
+          "redkitGameVersion": "29",
+          "useLooseScripts": false
+        }
+      ],
+      "archiveEvidence": {
+        "archiveName": "Brothers In Arms - Ultimate Edition (Remastered) 11260 4.0.1 2026-09-30T15-28Z rIB9DAtwG.zip",
+        "releaseLabel": "4.0.1",
+        "comparisonScope": "selected file extensions described in inventory notes",
+        "matchedFiles": 37,
+        "allComparedFilesMatch": true,
+        "method": "SHA-256"
+      },
+      "gameplayVerified": false
+    },
+    {
+      "name": "Complete Animations Redux",
+      "variant": "Remastered",
+      "channel": "manual",
+      "nexusModId": 5012,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/5012",
+      "payloadFolders": [
+        "mods/modCompleteAnimationsRedux",
+        "dlc/dlcCompleteAnimationsRedux"
+      ],
+      "menuFiles": [
+        "bin/config/r4game/user_config_matrix/pc/completeAnimationsRedux.xml"
+      ],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [],
+      "archiveEvidence": {
+        "archiveName": "Complete Animations Redux (Remastered) 5012 3.2.0 2026-09-30T07-29Z VZrvTcgy8.zip",
+        "releaseLabel": "3.2.0",
+        "comparisonScope": "selected file extensions described in inventory notes",
+        "matchedFiles": 15,
+        "allComparedFilesMatch": true,
+        "method": "SHA-256"
+      },
+      "gameplayVerified": false
+    },
+    {
+      "name": "Dynamic Appearances Project",
+      "variant": "BiA Compatible",
+      "channel": "manual",
+      "nexusModId": 9219,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/9219",
+      "payloadFolders": [
+        "mods/moddynamicappearancesproject",
+        "dlc/dlcdynamicapp"
+      ],
+      "menuFiles": [],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [
+        {
+          "path": "mods/moddynamicappearancesproject/content/info.json",
+          "name": "dynamic appearances project 4",
+          "version": "2.1.1",
+          "redkitGameVersion": "2.0"
+        }
+      ],
+      "archiveEvidence": {
+        "archiveName": "Dynamic Appearance Project - BiA Compatible 9219 2.1.1 2026-07-11T18-34Z 864tMlQYf.zip",
+        "releaseLabel": "2.1.1",
+        "comparisonScope": "selected file extensions described in inventory notes",
+        "matchedFiles": 2,
+        "allComparedFilesMatch": true,
+        "method": "SHA-256"
+      },
+      "gameplayVerified": false
+    },
+    {
+      "name": "Light Rewrite",
+      "channel": "manual",
+      "nexusModId": 12144,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/12144",
+      "payloadFolders": [
+        "mods/modLightRewrite",
+        "dlc/dlclightrewrite"
+      ],
+      "menuFiles": [
+        "bin/config/r4game/user_config_matrix/pc/LightRewrite.xml"
+      ],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [],
+      "archiveEvidence": {
+        "archiveName": "Light Rewrite 12144 0.14.0 2026-10-03T14-24Z PcKsjZi0V.zip",
+        "releaseLabel": "0.14.0",
+        "comparisonScope": "selected file extensions described in inventory notes",
+        "matchedFiles": 36,
+        "allComparedFilesMatch": true,
+        "method": "SHA-256"
+      },
+      "gameplayVerified": false
+    },
+    {
+      "name": "Sharedutils",
+      "variant": "All In One",
+      "channel": "manual",
+      "nexusModId": 12997,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/12997",
+      "payloadFolders": [
+        "mods/modzzz_sharedutils",
+        "dlc/dlcsharedutils"
+      ],
+      "menuFiles": [],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [
+        {
+          "path": "mods/modzzz_sharedutils/content/info.json",
+          "name": "sharedutils",
+          "version": "3.1.1",
+          "redkitGameVersion": "29",
+          "useLooseScripts": false
+        }
+      ],
+      "archiveEvidence": {
+        "archiveName": "Sharedutils - All In One 12997 4.0 2026-09-29T08-06Z vo9LceSYr.zip",
+        "releaseLabel": "4.0",
+        "comparisonScope": "selected file extensions described in inventory notes",
+        "matchedFiles": 53,
+        "allComparedFilesMatch": true,
+        "method": "SHA-256"
+      },
+      "gameplayVerified": false
+    },
+    {
+      "name": "A Proper Send-off",
+      "variant": "Polish Remaster version",
+      "channel": "manual",
+      "nexusModId": 10881,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/10881",
+      "payloadFolders": [
+        "mods/moddandelionsballad",
+        "dlc/dlcdandelionjh1"
+      ],
+      "menuFiles": [],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [
+        {
+          "path": "mods/moddandelionsballad/content/info.json",
+          "name": "dandelionsballad",
+          "version": "p3",
+          "redkitGameVersion": "29",
+          "description": "Polish Remaster version 1",
+          "useLooseScripts": false
+        }
+      ],
+      "archiveEvidence": {
+        "archiveName": "Proper Send-off PL Remaster version 10881 1.21 2026-10-02T15-25Z HbyI0z6zt.zip",
+        "releaseLabel": "1.21",
+        "comparisonScope": "all archive files",
+        "matchedFiles": 14,
+        "allComparedFilesMatch": true,
+        "method": "SHA-256"
+      },
+      "gameplayVerified": false
+    },
+    {
+      "name": "PT Optimization",
+      "channel": "manual",
+      "nexusModId": 13025,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/13025",
+      "payloadFolders": [],
+      "menuFiles": [
+        "bin/config/r4game/user_config_matrix/pc/pt_optimization.xml"
+      ],
+      "nativeFiles": [
+        "bin/x64_dx12/xinput9_1_0.dll"
+      ],
+      "configFiles": [
+        "bin/config/platform/pc/RTOptimization.ini"
+      ],
+      "embeddedInfo": [],
+      "internalVersion": {
+        "value": "2.0",
+        "source": "bin/config/platform/pc/RTOptimization.ini",
+        "evidence": "Header identifies Path Tracing Optimization for The Witcher 3 Remastered, v2.0."
+      },
+      "archiveEvidence": {
+        "archiveName": "PT Optimization 2.0 13025 4 2026-10-01T14-37Z KA0dHIpaE.zip",
+        "releaseLabel": "4",
+        "comparisonScope": "selected file extensions described in inventory notes",
+        "matchedFiles": 3,
+        "allComparedFilesMatch": true,
+        "method": "SHA-256"
+      },
+      "gameplayVerified": false
+    }
+  ]
+}

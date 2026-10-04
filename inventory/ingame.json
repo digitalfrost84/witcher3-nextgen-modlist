@@ -1,0 +1,357 @@
+{
+  "schemaVersion": 1,
+  "inventoriedOn": "2026-10-04",
+  "scope": "Installed in-game mod.io packages, independently confirmed by local payloads and enablement configuration.",
+  "evidence": [
+    "%PUBLIC%/mod.io/8254/metadata/state.json",
+    "Documents/The Witcher 3/modioModsConfig.json",
+    "%PUBLIC%/mod.io/8254/mods/<mod ID>/**/*"
+  ],
+  "parserNote": "modioModsConfig.json contains repeated top-level mod keys. Each object was extracted independently so all entries were retained.",
+  "notes": [
+    "All six payload directories match the six enabled IDs in the configuration. Each actual byte total matches the mod.io metadata size.",
+    "Cached images and stale mods.settings entries were not used as proof of installation.",
+    "Nexus URLs identify author pages for the same mod project. They do not prove the current Nexus download equals the installed mod.io package.",
+    "Local files were inspected without launching the game; functional compatibility is not verified by this inventory."
+  ],
+  "mods": [
+    {
+      "name": "Ciri Witcher Ending Restoration",
+      "channel": "in-game mod.io",
+      "modioGameId": 8254,
+      "modioModId": 5063892,
+      "modioUrl": "https://mod.io/g/the-witcher-3/m/ciri-witcher-ending-restoration",
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/9651",
+      "enabled": true,
+      "configuredPriority": 3,
+      "installedModioVersion": "0.2",
+      "modioModfileId": 8235307,
+      "archiveName": "modciriwitcherendingres-lrzy.zip",
+      "storageRelativePath": "8254/mods/5063892",
+      "payloadFolders": [
+        "mods/modciriwitcherendingres"
+      ],
+      "fileCount": 3,
+      "actualBytes": 68049.0,
+      "metadataBytes": 68049,
+      "embeddedInfo": [
+        {
+          "path": "mods/modciriwitcherendingres/content/info.json",
+          "name": "ciriwitcherendingres",
+          "version": "0.1",
+          "redkitGameVersion": "29",
+          "useLooseScripts": false
+        }
+      ],
+      "files": [
+        "mods/modciriwitcherendingres/content/blob0.bundle",
+        "mods/modciriwitcherendingres/content/info.json",
+        "mods/modciriwitcherendingres/content/metadata.store"
+      ],
+      "purpose": "Restores cut scenes and dialogue in the ending where Ciri becomes a witcher.",
+      "notes": [
+        "The installed mod.io release is 0.2; embedded REDkit info.json reports 0.1. Keep these labels separate.",
+        "The linked Nexus page has several variants and reports version 1.3; it is not tagged Remastered Compatible. That does not establish incompatibility of the installed mod.io package.",
+        "Local cached author description says the ending dialogue depends on romantic choices. No additional local setup was identified."
+      ],
+      "gameplayVerified": false
+    },
+    {
+      "name": "Fast Travel Pack",
+      "channel": "in-game mod.io",
+      "modioGameId": 8254,
+      "modioModId": 5106384,
+      "modioUrl": "https://mod.io/g/the-witcher-3/m/fast-travel-pack",
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/7202",
+      "enabled": true,
+      "configuredPriority": 4,
+      "installedModioVersion": "2.1.0",
+      "modioModfileId": 8164830,
+      "archiveName": "modfasttravelpack-bkqt.zip",
+      "storageRelativePath": "8254/mods/5106384",
+      "payloadFolders": [
+        "dlc/dlcfasttravelpack",
+        "mods/modfasttravelpack"
+      ],
+      "fileCount": 22,
+      "actualBytes": 564615.0,
+      "metadataBytes": 564615,
+      "embeddedInfo": [
+        {
+          "path": "mods/modfasttravelpack/content/info.json",
+          "name": "FastTravelPack",
+          "version": "2.1.0",
+          "redkitGameVersion": "29",
+          "useLooseScripts": false
+        }
+      ],
+      "files": [
+        "dlc/dlcfasttravelpack/content/blob0.bundle",
+        "dlc/dlcfasttravelpack/content/metadata.store",
+        "dlc/dlcfasttravelpack/content/texture.cache",
+        "mods/modfasttravelpack/content/ar.w3strings",
+        "mods/modfasttravelpack/content/br.w3strings",
+        "mods/modfasttravelpack/content/cn.w3strings",
+        "mods/modfasttravelpack/content/cz.w3strings",
+        "mods/modfasttravelpack/content/de.w3strings",
+        "mods/modfasttravelpack/content/en.w3strings",
+        "mods/modfasttravelpack/content/es.w3strings",
+        "mods/modfasttravelpack/content/esmx.w3strings",
+        "mods/modfasttravelpack/content/fr.w3strings",
+        "mods/modfasttravelpack/content/hu.w3strings",
+        "mods/modfasttravelpack/content/info.json",
+        "mods/modfasttravelpack/content/it.w3strings",
+        "mods/modfasttravelpack/content/jp.w3strings",
+        "mods/modfasttravelpack/content/kr.w3strings",
+        "mods/modfasttravelpack/content/metadata.store",
+        "mods/modfasttravelpack/content/pl.w3strings",
+        "mods/modfasttravelpack/content/ru.w3strings",
+        "mods/modfasttravelpack/content/tr.w3strings",
+        "mods/modfasttravelpack/content/zh.w3strings"
+      ],
+      "purpose": "Adds 49 signposts for convenient fast travel at specific locations.",
+      "notes": [
+        "Discover the additional signposts on foot. Some are gated by associated quests.",
+        "The local mod.io payload contains mod and DLC folders but no bin configuration or scripts; do not assume the Nexus settings menu exists in this package.",
+        "Nexus currently offers a separate Remastered release labeled 3.0.0, alongside Next-Gen 4.04 and Classic editions. Installed mod.io version is 2.1.0; these packages have not been compared."
+      ],
+      "gameplayVerified": false
+    },
+    {
+      "name": "Hoods",
+      "channel": "in-game mod.io",
+      "modioGameId": 8254,
+      "modioModId": 5155320,
+      "modioUrl": "https://mod.io/g/the-witcher-3/m/hoods",
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/4242",
+      "enabled": true,
+      "configuredPriority": 0,
+      "installedModioVersion": "3.6",
+      "modioModfileId": 8228794,
+      "archiveName": "modzip_it-9sxx.zip",
+      "storageRelativePath": "8254/mods/5155320",
+      "payloadFolders": [
+        "dlc/dlchoods",
+        "mods/modhoods"
+      ],
+      "fileCount": 27,
+      "actualBytes": 108459894.0,
+      "metadataBytes": 108459894,
+      "embeddedInfo": [
+        {
+          "path": "dlc/dlchoods/content/info.json",
+          "name": "Hoods",
+          "version": "3.6",
+          "redkitGameVersion": "29",
+          "useLooseScripts": true
+        },
+        {
+          "path": "mods/modhoods/content/info.json",
+          "name": "Hoods",
+          "version": "3.6",
+          "redkitGameVersion": "29",
+          "useLooseScripts": true
+        }
+      ],
+      "files": [
+        "dlc/dlchoods/content/ar.w3strings",
+        "dlc/dlchoods/content/blob0.bundle",
+        "dlc/dlchoods/content/br.w3strings",
+        "dlc/dlchoods/content/buffers0.bundle",
+        "dlc/dlchoods/content/cn.w3strings",
+        "dlc/dlchoods/content/collision.cache",
+        "dlc/dlchoods/content/cz.w3strings",
+        "dlc/dlchoods/content/de.w3strings",
+        "dlc/dlchoods/content/en.w3strings",
+        "dlc/dlchoods/content/es.w3strings",
+        "dlc/dlchoods/content/esmx.w3strings",
+        "dlc/dlchoods/content/fr.w3strings",
+        "dlc/dlchoods/content/hu.w3strings",
+        "dlc/dlchoods/content/info.json",
+        "dlc/dlchoods/content/it.w3strings",
+        "dlc/dlchoods/content/jp.w3strings",
+        "dlc/dlchoods/content/kr.w3strings",
+        "dlc/dlchoods/content/metadata.store",
+        "dlc/dlchoods/content/pl.w3strings",
+        "dlc/dlchoods/content/ru.w3strings",
+        "dlc/dlchoods/content/texture.cache",
+        "dlc/dlchoods/content/tr.w3strings",
+        "dlc/dlchoods/content/zh.w3strings",
+        "mods/modhoods/content/blob0.bundle",
+        "mods/modhoods/content/info.json",
+        "mods/modhoods/content/metadata.store",
+        "mods/modhoods/content/precompiled.rsblob"
+      ],
+      "purpose": "Adds dyeable hoods, capes, scarves, hats and masks, including hood-up and hood-down variants.",
+      "notes": [
+        "The installed mod.io package contains both modhoods and dlchoods.",
+        "Toggle compatible equipped hoods from the inventory; the installed package does not contain Hoods.input.settings.",
+        "The Nexus changelog identifies 3.6 as the Remaster update and notes older folder names mod__hoods and dlc__hoods were replaced in 3.4. Avoid retaining an old copy when switching channels."
+      ],
+      "gameplayVerified": false
+    },
+    {
+      "name": "The Last Wish Final Scene Restoration",
+      "channel": "in-game mod.io",
+      "modioGameId": 8254,
+      "modioModId": 5162270,
+      "modioUrl": "https://mod.io/g/the-witcher-3/m/the-last-wish-final-scene-restoration",
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/10653",
+      "enabled": true,
+      "configuredPriority": 2,
+      "installedModioVersion": "0.1",
+      "modioModfileId": 6666140,
+      "archiveName": "modlastwishrestoration-81qx.zip",
+      "storageRelativePath": "8254/mods/5162270",
+      "payloadFolders": [
+        "mods/modlastwishrestoration"
+      ],
+      "fileCount": 6,
+      "actualBytes": 9866481.0,
+      "metadataBytes": 9866481,
+      "embeddedInfo": [
+        {
+          "path": "mods/modlastwishrestoration/content/info.json",
+          "name": "last_wish_restoration",
+          "version": "1.0",
+          "redkitGameVersion": "27",
+          "useLooseScripts": false
+        }
+      ],
+      "files": [
+        "mods/modlastwishrestoration/content/blob0.bundle",
+        "mods/modlastwishrestoration/content/buffers0.bundle",
+        "mods/modlastwishrestoration/content/en.w3strings",
+        "mods/modlastwishrestoration/content/info.json",
+        "mods/modlastwishrestoration/content/metadata.store",
+        "mods/modlastwishrestoration/content/texture.cache"
+      ],
+      "purpose": "Restores cut dialogue in the final scene of The Last Wish.",
+      "notes": [
+        "The author identifies sq202_10_ending_djinn as the modified scene; other edits to this scene can conflict.",
+        "Installed mod.io release is 0.1, whereas embedded info.json reports 1.0 and the Nexus page reports 1.1.",
+        "The linked Nexus page is not tagged Remastered Compatible. This does not establish incompatibility of the installed mod.io package; the scene was not tested during this inventory."
+      ],
+      "gameplayVerified": false
+    },
+    {
+      "name": "Corvo Bianco Enhanced Collection",
+      "channel": "in-game mod.io",
+      "modioGameId": 8254,
+      "modioModId": 5163472,
+      "modioUrl": "https://mod.io/g/the-witcher-3/m/corvo-bianco-enhanced-collection",
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/12982",
+      "enabled": true,
+      "configuredPriority": 1,
+      "installedModioVersion": "5.00",
+      "modioModfileId": 8230511,
+      "archiveName": "modcorvobiancocollection-buoy.zip",
+      "storageRelativePath": "8254/mods/5163472",
+      "payloadFolders": [
+        "dlc/dlccorvobiancocollection",
+        "mods/modcorvobiancocollection"
+      ],
+      "fileCount": 23,
+      "actualBytes": 407318.0,
+      "metadataBytes": 407318,
+      "embeddedInfo": [
+        {
+          "path": "mods/modcorvobiancocollection/content/info.json",
+          "name": "Corvo Bianco Enhanced Collection",
+          "version": "5.00",
+          "redkitGameVersion": "29",
+          "useLooseScripts": false
+        }
+      ],
+      "files": [
+        "dlc/dlccorvobiancocollection/content/blob0.bundle",
+        "dlc/dlccorvobiancocollection/content/metadata.store",
+        "mods/modcorvobiancocollection/content/ar.w3strings",
+        "mods/modcorvobiancocollection/content/blob0.bundle",
+        "mods/modcorvobiancocollection/content/br.w3strings",
+        "mods/modcorvobiancocollection/content/cn.w3strings",
+        "mods/modcorvobiancocollection/content/cz.w3strings",
+        "mods/modcorvobiancocollection/content/de.w3strings",
+        "mods/modcorvobiancocollection/content/en.w3strings",
+        "mods/modcorvobiancocollection/content/es.w3strings",
+        "mods/modcorvobiancocollection/content/esmx.w3strings",
+        "mods/modcorvobiancocollection/content/fr.w3strings",
+        "mods/modcorvobiancocollection/content/hu.w3strings",
+        "mods/modcorvobiancocollection/content/info.json",
+        "mods/modcorvobiancocollection/content/it.w3strings",
+        "mods/modcorvobiancocollection/content/jp.w3strings",
+        "mods/modcorvobiancocollection/content/kr.w3strings",
+        "mods/modcorvobiancocollection/content/metadata.store",
+        "mods/modcorvobiancocollection/content/pl.w3strings",
+        "mods/modcorvobiancocollection/content/precompiled.rsblob",
+        "mods/modcorvobiancocollection/content/ru.w3strings",
+        "mods/modcorvobiancocollection/content/tr.w3strings",
+        "mods/modcorvobiancocollection/content/zh.w3strings"
+      ],
+      "purpose": "Combines Corvo Bianco gardening, harvests, honey production, wine-cellar interactions and expanded meals from Marlene.",
+      "notes": [
+        "The all-in-one collection replaces its five component mods; do not install separate copies alongside it.",
+        "The author says to give the collection mod priority over Brothers In Arms if both are used.",
+        "The linked Nexus page is the dedicated Remastered edition, labeled 5.00.00. Installed mod.io metadata labels its package 5.00."
+      ],
+      "gameplayVerified": false
+    },
+    {
+      "name": "New Questline - The Spider and The Wolf",
+      "channel": "in-game mod.io",
+      "modioGameId": 8254,
+      "modioModId": 5164747,
+      "modioUrl": "https://mod.io/g/the-witcher-3/m/new-questline-the-spider-and-the-wolf",
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/9803",
+      "enabled": true,
+      "configuredPriority": 5,
+      "installedModioVersion": "1.2.2",
+      "modioModfileId": 8234463,
+      "archiveName": "mod_the_spider_and_the_wolf_122.zip",
+      "storageRelativePath": "8254/mods/5164747",
+      "payloadFolders": [
+        "dlc/dlc_cows_and_cults",
+        "mods/modthesilenceofthecows"
+      ],
+      "fileCount": 17,
+      "actualBytes": 680158736.0,
+      "metadataBytes": 680158736,
+      "embeddedInfo": [
+        {
+          "path": "mods/modthesilenceofthecows/content/info.json",
+          "name": "The Spider and The Wolf",
+          "version": "1.2",
+          "redkitGameVersion": "29",
+          "useLooseScripts": false
+        }
+      ],
+      "files": [
+        "dlc/dlc_cows_and_cults/content/blob0.bundle",
+        "dlc/dlc_cows_and_cults/content/buffers0.bundle",
+        "dlc/dlc_cows_and_cults/content/collision.cache",
+        "dlc/dlc_cows_and_cults/content/metadata.store",
+        "dlc/dlc_cows_and_cults/content/texture.cache",
+        "mods/modthesilenceofthecows/content/blob0.bundle",
+        "mods/modthesilenceofthecows/content/buffers0.bundle",
+        "mods/modthesilenceofthecows/content/collision.cache",
+        "mods/modthesilenceofthecows/content/en.w3strings",
+        "mods/modthesilenceofthecows/content/enpc.w3speech",
+        "mods/modthesilenceofthecows/content/enpc.w3speech.meta",
+        "mods/modthesilenceofthecows/content/info.json",
+        "mods/modthesilenceofthecows/content/metadata.store",
+        "mods/modthesilenceofthecows/content/pl.w3strings",
+        "mods/modthesilenceofthecows/content/plpc.w3speech",
+        "mods/modthesilenceofthecows/content/plpc.w3speech.meta",
+        "mods/modthesilenceofthecows/content/texture.cache"
+      ],
+      "purpose": "Adds a story questline with new encounters, decisions and endings.",
+      "notes": [
+        "Requires Hearts of Stone and Blood and Wine. Both mod and DLC components are needed.",
+        "The quest becomes available after leaving Vizima for Velen, with a suggested level around 17; the author advises playing before finishing the main story.",
+        "Author guidance for updating from version 1.0 requires a save from before the mod was installed.",
+        "Installed mod.io release is 1.2.2; embedded info.json reports 1.2. Nexus now offers separate Remastered and Next-Gen downloads and reports 2.01. These package versions are not interchangeable evidence."
+      ],
+      "gameplayVerified": false
+    }
+  ]
+}
