@@ -55,7 +55,7 @@ Do not add it to a new game or a first-time installation.
 ### Animations, appearances, and lighting
 
 - **Complete Animations Redux:** removed on October 7, 2026 and no longer part of this list. Its leftover inventory props break saves; see [why it was removed](complete-animations-redux.md).
-- **Dynamic Appearances Project:** use the [BiA-compatible Remastered main file](https://www.nexusmods.com/witcher3/mods/9219?tab=files) (3.0b). The author says this variant needs no extra BiA patch. Install one main variant only. Its presence here does not prove complete 5.0 compatibility.
+- **Dynamic Appearances Project:** use the [BiA-compatible Remastered main file](https://www.nexusmods.com/witcher3/mods/9219?tab=files) (3.0b). The author says this variant needs no extra BiA patch. Install one main variant only. It must have priority over Brothers In Arms; see [Brothers In Arms priority](#brothers-in-arms-priority). Its presence here does not prove complete 5.0 compatibility.
 - **Light Rewrite:** copy the complete archive. Its [0.14.0 release notes](https://github.com/webspam/LightRewrite/releases/tag/v0.14.0) describe the Remastered lighting changes. The Shared Imports requirement in older 4.04 instructions does not apply to the Remastered instructions.
 
 #### Upgrading Dynamic Appearances Project to 3.0b
@@ -64,9 +64,7 @@ Release 3.0b renamed its mod folder: 2.1.1 used `mods/moddynamicappearancesproje
 Both releases use the same DLC folder, `dlc/dlcdynamicapp`.
 Extracting 3.0b over 2.1.1 therefore replaces the DLC files but leaves the old mod folder installed beside the new one.
 
-That mixed state was tested on October 7, 2026. Keira Metz appeared without clothes.
-The old folder sorts first and most likely took priority with character files written for the 2.1.1 DLC.
-After the old folder was removed, Keira appeared dressed again.
+Do not leave both folders installed: the 2.1.1 folder sorts first and can take priority with character files written for the 2.1.1 DLC.
 
 To upgrade:
 
@@ -74,9 +72,33 @@ To upgrade:
 2. Delete `mods/moddynamicappearancesproject`.
 3. Install the 3.0b archive, replacing `dlc/dlcdynamicapp`.
 4. Confirm that `mods` contains only `moddynamicappearancesprojectremastered-bia` for this mod.
+5. Give it priority over Brothers In Arms, as described below.
 
-The first launch after the cleanup crashed once while loading a save made in the mixed state; the same save loaded on the next attempt.
+The first launch after the cleanup crashed once while loading a save made with both folders installed; the same save loaded on the next attempt.
 If a save keeps crashing, load an earlier one.
+
+#### Brothers In Arms priority
+
+Brothers In Arms and Dynamic Appearances Project both replace Keira Metz's character files, including `quests\secondary_npcs\keira_metz.w2ent` and `characters\npc_entities\main_npc\keira_metz.w2ent`.
+Only one copy of each file is used.
+
+Dynamic Appearances Project adds new appearances to those files, such as `__q104__keira_metz`, and its replacement `keira_metz.w2comm` community file uses that appearance after Keira's bath in Wandering in the Dark.
+The Brothers In Arms copy of the character file has only the vanilla appearances.
+When Brothers In Arms won, the game requested an appearance that did not exist, and Keira stayed in her bath appearance (`naked_wet`) in the ruins.
+Her nudity in the bath scene at her hut is vanilla content.
+
+`mods.settings` gives Brothers In Arms `Priority=99`, and Dynamic Appearances Project had no entry.
+Adding this entry to `Documents/The Witcher 3/mods.settings` fixed it after a game restart on October 7, 2026:
+
+```ini
+[moddynamicappearancesprojectremastered-bia]
+Enabled=1
+Priority=98
+```
+
+Lower numbers have higher priority.
+The setting is read only at game launch.
+The Dynamic Appearances copy omits Brothers In Arms' custom Keira lingerie reference (`dlc\dlcbia\characters\models\t_02_wa__lingerie_keira.w2ent`), so that Brothers In Arms change does not apply.
 
 ### A Proper Send-off
 
@@ -137,7 +159,8 @@ They record the current configuration, rather than a proven optimal order or a r
 | 5 | The Spider and The Wolf | Yes |
 
 The manual `mods.settings` entry for Brothers In Arms is enabled with `Priority=99`.
-The other six manual `mods` folders have no matching entries in that file; the PT DLL is outside this mechanism.
+Dynamic Appearances Project is enabled with `Priority=98`, so it overrides Brothers In Arms; see [Brothers In Arms priority](#brothers-in-arms-priority).
+The other five manual `mods` folders have no matching entries in that file; the PT DLL is outside this mechanism.
 Absence of an explicit entry does not establish that a mod is disabled.
 
 The [Corvo Bianco author](https://www.nexusmods.com/witcher3/mods/12982) requests priority over Brothers In Arms.

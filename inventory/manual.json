@@ -15,6 +15,7 @@
     "The October 6 update adds VAXIS's ULTRA Plus Blood Physics standard 1.2 with a full 29-file SHA-256 comparison; the earlier inventory was not rechecked in full.",
     "The October 7 update removes Complete Animations Redux; its record moves to removedMods.",
     "The October 7 update replaces Dynamic Appearances Project 2.1.1 with 3.0b Remastered, verified against all 12 archive files.",
+    "Dynamic Appearances Project has a mods.settings priority of 98 so it overrides Brothers In Arms.",
     "Archive release labels and embedded descriptor versions are recorded separately because several disagree.",
     "Selected-file SHA-256 comparisons cover .json, .ws, .xml, .ini and .dll archive entries present at the corresponding installed paths. They do not establish that every bundled asset was compared.",
     "A Proper Send-off was compared across all 14 archive files. A Witcher Can Hide Another was checked against its two preserved original scripts and installed descriptor.",
@@ -173,6 +174,15 @@
         "totalBytes": 128776535,
         "allComparedFilesMatch": true,
         "method": "SHA-256"
+      },
+      "loadOrder": {
+        "file": "Documents/The Witcher 3/mods.settings",
+        "section": "moddynamicappearancesprojectremastered-bia",
+        "enabled": true,
+        "priority": 98,
+        "reason": "Must override Brothers In Arms (Priority=99); both replace Keira Metz's character files, and only this mod's copy defines its new appearances.",
+        "documentation": "docs/setup.md#brothers-in-arms-priority",
+        "verifiedInGame": "2026-10-07"
       },
       "gameplayVerified": false,
       "previousRelease": {
