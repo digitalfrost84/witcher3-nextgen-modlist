@@ -29,7 +29,6 @@ For an archive with loose `mod...` and `dlc...` folders, place them inside `mods
 | --- | --- |
 | Sharedutils | `mods/modzzz_sharedutils`, `dlc/dlcsharedutils` |
 | Brothers In Arms | `mods/modbrothersinarms`, `dlc/dlcbrothersinarms`, menu `BrothersInArms.xml` |
-| Complete Animations Redux | `mods/modCompleteAnimationsRedux`, `dlc/dlcCompleteAnimationsRedux`, menu `completeAnimationsRedux.xml` |
 | Dynamic Appearances Project | `mods/moddynamicappearancesproject`, `dlc/dlcdynamicapp` |
 | Light Rewrite | `mods/modLightRewrite`, `dlc/dlclightrewrite`, menu `LightRewrite.xml` |
 | A Proper Send-off | `mods/moddandelionsballad`, `dlc/dlcdandelionjh1` |
@@ -55,7 +54,7 @@ Do not add it to a new game or a first-time installation.
 
 ### Animations, appearances, and lighting
 
-- **Complete Animations Redux:** choose the [3.2.0 Remastered file](https://www.nexusmods.com/witcher3/mods/5012?tab=files), listed for game 5.00c. Install its menu XML and inspect its animation settings. Apply the [leftover prop fix](complete-animations-redux.md); without it, removing the mod from a running playthrough can leave Geralt without a body.
+- **Complete Animations Redux:** removed on October 7, 2026 and no longer part of this list. Its leftover inventory props break saves; see [why it was removed](complete-animations-redux.md).
 - **Dynamic Appearances Project:** use the [BiA-compatible main file](https://www.nexusmods.com/witcher3/mods/9219?tab=files). The author says this variant needs no extra BiA patch. Install one main variant. Its presence here does not prove complete 5.0 compatibility.
 - **Light Rewrite:** copy the complete archive. Its [0.14.0 release notes](https://github.com/webspam/LightRewrite/releases/tag/v0.14.0) describe the Remastered lighting changes. The Shared Imports requirement in older 4.04 instructions does not apply to the Remastered instructions.
 
@@ -137,12 +136,12 @@ Verify the collection's interactions in game before treating the order as valida
 
 ## Versions and inventory evidence
 
-The [manual inventory](../inventory/manual.json) records nine manual installations.
+The [manual inventory](../inventory/manual.json) records eight manual installations; Complete Animations Redux is kept under `removedMods` for reference.
 The [in-game inventory](../inventory/ingame.json) records six installed payloads and their enabled configuration entries.
 All six in-game packages have files on disk; their file sizes match the local package metadata.
 
-For six manual downloads, installed scripts, metadata, menu XML, configuration, or DLL files were compared with local ZIP contents using SHA-256.
-All compared files matched: Brothers In Arms (37), Complete Animations Redux (15), Dynamic Appearances Project (2), Light Rewrite (36), Sharedutils (53), and PT Optimization (3).
+For six manual downloads (as of October 4, 2026), installed scripts, metadata, menu XML, configuration, or DLL files were compared with local ZIP contents using SHA-256.
+All compared files matched: Brothers In Arms (37), Complete Animations Redux (15, since removed), Dynamic Appearances Project (2), Light Rewrite (36), Sharedutils (53), and PT Optimization (3).
 These comparisons did not cover every asset in those six packages.
 A Proper Send-off received a full comparison of all 14 files.
 VAXIS's ULTRA Plus Blood Physics standard 1.2 received a full SHA-256 comparison of all 29 archive files on October 6, 2026; all matched the installed files (5,325,009 bytes total).

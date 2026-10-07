@@ -1,12 +1,20 @@
-# Complete Animations Redux: leftover prop item fix
+# Complete Animations Redux: why it was removed
 
 [Complete Animations Redux on Nexus Mods](https://www.nexusmods.com/witcher3/mods/5012) plays animations for eating, drinking, oils, repairs, and looting.
-This installation uses the Remastered 3.2.0 release.
-A small local script fix stops the mod from leaving hidden prop items in Geralt's inventory.
+The Remastered 3.2.0 release was part of this list until **October 7, 2026**, when it was removed.
 
-**Status, October 7, 2026:** the game compiled the patched scripts and started.
-The inventory crash and mod removal have not yet been retested in gameplay.
-Treat this as a fix for the cause described below, not a confirmed fix for every symptom.
+## Decision
+
+The mod adds a hidden prop item to Geralt's inventory for every animation and never removes it.
+Those props stay in the save permanently and depend on the mod's DLC.
+A local fix stopped the inventory crashes, but the mod remains unreliable for a long playthrough:
+
+- Every save played with it collects props that only the mod's DLC can define.
+- Uninstalling it without cleanup left a save with missing items and no body.
+- It needs an unofficial fix for basic inventory handling, and any update could bring the problem back.
+
+Do not reinstall it on this setup.
+The analysis and fix below are kept for anyone who wants to keep using the mod, or needs to remove it from an existing playthrough.
 
 ## Symptoms
 
@@ -34,13 +42,23 @@ The most likely explanation for the missing body is that the game discards part 
 This explanation fits the evidence but was not confirmed in the engine.
 The leftover props are also the leading suspect for the inventory crash, because the inventory preview builds Geralt from the items he carries.
 
-## Before editing
+## Fix result
+
+The fix was installed on October 7, 2026.
+The game compiled the patched scripts, and the inventory no longer crashed in play.
+The mod was removed anyway, for the reasons in [Decision](#decision).
+
+## Applying the fix
+
+The steps below are for anyone who keeps the mod. They are not part of this list.
+
+### Before editing
 
 Close the game.
 Back up `mods/modCompleteAnimationsRedux/content/scripts` to a folder outside `mods`.
 Paths in this guide start at the game installation directory.
 
-## 1. Add the cleanup functions
+### 1. Add the cleanup functions
 
 Copy [`completeAnimationsReduxCleanup.ws`](../patches/complete-animations-redux/completeAnimationsReduxCleanup.ws) to:
 
@@ -56,7 +74,7 @@ It defines three global functions:
 
 The list contains only the mod's prop names, so ordinary food, drinks, potions, and tools are not affected.
 
-## 2. Call them from the mod
+### 2. Call them from the mod
 
 Apply [`completeAnimationsReduxOverrides.diff`](../patches/complete-animations-redux/completeAnimationsReduxOverrides.diff) to `mods/modCompleteAnimationsRedux/content/scripts/local/completeAnimationsReduxOverrides.ws`.
 The diff adds three lines and one blank line:
@@ -81,7 +99,7 @@ The first call runs in the `OnSpawned` wrapper, after the mod initializes, and r
 The other two delete a prop when the mod puts it away.
 Every animation adds its prop again before mounting it, so removing it afterwards does not affect later animations.
 
-## Check the result
+### Check the result
 
 1. Launch the game and let it compile scripts.
 2. Load a save made **with** the mod installed. Do not use a save made after removing it.

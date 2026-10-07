@@ -5,11 +5,11 @@ This guide records the versions I have installed and the extra steps needed to r
 
 **Snapshot: October 4, 2026.** GOG installation; DirectX 12 executable version `5.0.0.1044392`.
 **Addition: October 6, 2026.** VAXIS's ULTRA Plus Blood Physics standard 1.2 was verified against the installed files.
-**Fix: October 7, 2026.** Complete Animations Redux received a local script fix for prop items left in the inventory.
-There are **15 installed mods: nine manual installations and six enabled in-game installations**, including Sharedutils as a dependency.
+**Removal: October 7, 2026.** Complete Animations Redux was removed after its item handling was found to corrupt the inventory; see [Removed mods](#removed-mods).
+There are **14 installed mods: eight manual installations and six enabled in-game installations**, including Sharedutils as a dependency.
 
 **Review status:** the installed files and settings have been checked.
-The A Witcher Can Hide Another and Complete Animations Redux repairs are documented below, but the complete combination has not passed an end-to-end gameplay test.
+The A Witcher Can Hide Another repair is documented below, but the complete combination has not passed an end-to-end gameplay test.
 The list remains a recommendation draft while those checks are pending.
 
 ## Start here
@@ -18,8 +18,7 @@ The list remains a recommendation draft while those checks are pending.
 2. Install the correct **Remastered** releases and their dependencies.
 3. Use the recorded installation channel for each mod.
 4. Apply the [A Witcher Can Hide Another repair](docs/a-witcher-can-hide-another.md) if its scripts still contain the old code.
-5. Apply the [Complete Animations Redux prop fix](docs/complete-animations-redux.md).
-6. Check the result on a separate save before continuing a playthrough.
+5. Check the result on a separate save before continuing a playthrough.
 
 The repository contains links, instructions, and small local patches. Download each mod from its author.
 
@@ -32,7 +31,6 @@ Some internal `info.json` labels differ from the release number; see [version ev
 | --- | --- | --- | --- |
 | [Brothers In Arms — Ultimate Edition](https://www.nexusmods.com/witcher3/mods/11260) | Remastered 4.0.1 | Bug fixes and restored dialogue, quests, and other content. | Install Sharedutils; retain the mod, DLC, and menu files. |
 | [Sharedutils — All In One](https://www.nexusmods.com/witcher3/mods/12997) | 4.0 | Shared functions required by other mods, including Brothers In Arms. | Keep `modzzz_sharedutils` and `dlcsharedutils`. |
-| [Complete Animations Redux](https://www.nexusmods.com/witcher3/mods/5012) | Remastered 3.2.0 | Animations for item use, oils, repairs, and looting. | Choose the Remastered build; install its menu XML too. Apply the [leftover prop fix](docs/complete-animations-redux.md). |
 | [Dynamic Appearances Project](https://www.nexusmods.com/witcher3/mods/9219) | BiA-compatible 2.1.1 | Character appearances that change with story progress. | Use the BiA-compatible main file; broader 5.0 compatibility remains unverified. |
 | [Light Rewrite](https://www.nexusmods.com/witcher3/mods/12144) | 0.14.0 | Changes to local lights, including candles and torches. | Install all supplied folders; inspect the in-game mod settings. |
 | [A Proper Send-off](https://www.nexusmods.com/witcher3/mods/10881) | PL Remaster 1.21 | A voiced quest with Dandelion and Zoltan during Final Preparations. | Polish Remaster variant; installed as `moddandelionsballad`. Mind its quest window. |
@@ -55,11 +53,20 @@ Nexus links identify the corresponding projects; their downloads can have differ
 | [Fast Travel Pack](https://www.nexusmods.com/witcher3/mods/7202) | 2.1.0 | Additional signposts at useful locations. | [mod.io](https://mod.io/g/the-witcher-3/m/fast-travel-pack) |
 | [The Spider and The Wolf](https://www.nexusmods.com/witcher3/mods/9803) | 1.2.2 | A new questline in Velen. | [mod.io](https://mod.io/g/the-witcher-3/m/new-questline-the-spider-and-the-wolf) |
 
+## Removed mods
+
+| Mod / Nexus link | Last installed release | Removed | Reason |
+| --- | --- | --- | --- |
+| [Complete Animations Redux](https://www.nexusmods.com/witcher3/mods/5012) | Remastered 3.2.0 | October 7, 2026 | Adds a hidden prop item to Geralt's inventory for every animation and never removes it. The props pile up in the save, likely caused inventory crashes, and removing the mod left saves with missing items and no body. See [the full analysis](docs/complete-animations-redux.md). |
+
+Do not reinstall Complete Animations Redux on this setup.
+If a save was already played with it, follow the [safe removal steps](docs/complete-animations-redux.md#removing-the-mod-safely) before deleting it.
+
 ## Fixes and checks
 
 - [Installation, dependencies, quest requirements, and recorded priorities](docs/setup.md)
 - [A Witcher Can Hide Another: exact script repair and rollback](docs/a-witcher-can-hide-another.md)
-- [Complete Animations Redux: leftover prop item fix and safe removal](docs/complete-animations-redux.md)
+- [Complete Animations Redux: why it was removed, with a fix and safe removal steps](docs/complete-animations-redux.md)
 - [Manual installation inventory](inventory/manual.json)
 - [In-game installation inventory](inventory/ingame.json)
 

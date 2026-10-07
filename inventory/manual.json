@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "inventoriedOn": "2026-10-04",
-  "updatedOn": "2026-10-06",
+  "updatedOn": "2026-10-07",
   "scope": "Manually installed mod payloads in the game directory, corroborated by downloaded archive contents.",
   "pathBase": "Game installation directory; all installed paths below are relative to this directory.",
   "game": {
@@ -11,8 +11,9 @@
     "versionResourceSuffix": "(Build Machine)"
   },
   "notes": [
-    "Eight mod folders and seven DLC folders are installed, plus one native DX12 mod: nine manual mods in total.",
+    "Seven mod folders and six DLC folders are installed, plus one native DX12 mod: eight manual mods in total.",
     "The October 6 update adds VAXIS's ULTRA Plus Blood Physics standard 1.2 with a full 29-file SHA-256 comparison; the earlier inventory was not rechecked in full.",
+    "The October 7 update removes Complete Animations Redux; its record moves to removedMods.",
     "Archive release labels and embedded descriptor versions are recorded separately because several disagree.",
     "Selected-file SHA-256 comparisons cover .json, .ws, .xml, .ini and .dll archive entries present at the corresponding installed paths. They do not establish that every bundled asset was compared.",
     "A Proper Send-off was compared across all 14 archive files. A Witcher Can Hide Another was checked against its two preserved original scripts and installed descriptor.",
@@ -140,47 +141,6 @@
         "allComparedFilesMatch": true,
         "method": "SHA-256"
       },
-      "gameplayVerified": false
-    },
-    {
-      "name": "Complete Animations Redux",
-      "variant": "Remastered",
-      "channel": "manual",
-      "nexusModId": 5012,
-      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/5012",
-      "payloadFolders": [
-        "mods/modCompleteAnimationsRedux",
-        "dlc/dlcCompleteAnimationsRedux"
-      ],
-      "menuFiles": [
-        "bin/config/r4game/user_config_matrix/pc/completeAnimationsRedux.xml"
-      ],
-      "nativeFiles": [],
-      "configFiles": [],
-      "embeddedInfo": [],
-      "archiveEvidence": {
-        "archiveName": "Complete Animations Redux (Remastered) 5012 3.2.0 2026-09-30T07-29Z VZrvTcgy8.zip",
-        "releaseLabel": "3.2.0",
-        "comparisonScope": "selected file extensions described in inventory notes",
-        "matchedFiles": 15,
-        "allComparedFilesMatch": true,
-        "method": "SHA-256"
-      },
-      "localPatches": [
-        {
-          "description": "Remove animation prop items after use and on load",
-          "documentation": "docs/complete-animations-redux.md",
-          "addedFiles": [
-            "mods/modCompleteAnimationsRedux/content/scripts/local/completeAnimationsReduxCleanup.ws"
-          ],
-          "modifiedFiles": [
-            "mods/modCompleteAnimationsRedux/content/scripts/local/completeAnimationsReduxOverrides.ws"
-          ],
-          "date": "2026-10-07",
-          "scriptCompilation": "passed",
-          "gameplayVerified": false
-        }
-      ],
       "gameplayVerified": false
     },
     {
@@ -334,6 +294,53 @@
         "method": "SHA-256"
       },
       "gameplayVerified": false
+    }
+  ],
+  "removedMods": [
+    {
+      "name": "Complete Animations Redux",
+      "variant": "Remastered",
+      "channel": "manual",
+      "nexusModId": 5012,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/5012",
+      "payloadFolders": [
+        "mods/modCompleteAnimationsRedux",
+        "dlc/dlcCompleteAnimationsRedux"
+      ],
+      "menuFiles": [
+        "bin/config/r4game/user_config_matrix/pc/completeAnimationsRedux.xml"
+      ],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [],
+      "archiveEvidence": {
+        "archiveName": "Complete Animations Redux (Remastered) 5012 3.2.0 2026-09-30T07-29Z VZrvTcgy8.zip",
+        "releaseLabel": "3.2.0",
+        "comparisonScope": "selected file extensions described in inventory notes",
+        "matchedFiles": 15,
+        "allComparedFilesMatch": true,
+        "method": "SHA-256"
+      },
+      "localPatches": [
+        {
+          "description": "Remove animation prop items after use and on load",
+          "documentation": "docs/complete-animations-redux.md",
+          "addedFiles": [
+            "mods/modCompleteAnimationsRedux/content/scripts/local/completeAnimationsReduxCleanup.ws"
+          ],
+          "modifiedFiles": [
+            "mods/modCompleteAnimationsRedux/content/scripts/local/completeAnimationsReduxOverrides.ws"
+          ],
+          "date": "2026-10-07",
+          "scriptCompilation": "passed",
+          "gameplayVerified": true,
+          "result": "Inventory crashes stopped; the mod was removed anyway."
+        }
+      ],
+      "gameplayVerified": false,
+      "removedOn": "2026-10-07",
+      "removalReason": "Adds a hidden prop item to the inventory for every animation and never removes it. The props accumulate in saves, are the likely cause of inventory crashes, and removing the mod left saves with missing items and no body.",
+      "removalDocumentation": "docs/complete-animations-redux.md"
     }
   ]
 }
