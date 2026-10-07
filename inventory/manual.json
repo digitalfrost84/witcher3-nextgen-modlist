@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
   "inventoriedOn": "2026-10-04",
+  "updatedOn": "2026-10-06",
   "scope": "Manually installed mod payloads in the game directory, corroborated by downloaded archive contents.",
   "pathBase": "Game installation directory; all installed paths below are relative to this directory.",
   "game": {
@@ -10,7 +11,8 @@
     "versionResourceSuffix": "(Build Machine)"
   },
   "notes": [
-    "Seven mod folders and their seven DLC folders are installed, plus one native DX12 mod: eight manual mods in total.",
+    "Eight mod folders and seven DLC folders are installed, plus one native DX12 mod: nine manual mods in total.",
+    "The October 6 update adds VAXIS's ULTRA Plus Blood Physics standard 1.2 with a full 29-file SHA-256 comparison; the earlier inventory was not rechecked in full.",
     "Archive release labels and embedded descriptor versions are recorded separately because several disagree.",
     "Selected-file SHA-256 comparisons cover .json, .ws, .xml, .ini and .dll archive entries present at the corresponding installed paths. They do not establish that every bundled asset was compared.",
     "A Proper Send-off was compared across all 14 archive files. A Witcher Can Hide Another was checked against its two preserved original scripts and installed descriptor.",
@@ -18,6 +20,33 @@
     "This inventory verifies installed files and archive provenance evidence, not enablement or functional compatibility."
   ],
   "mods": [
+    {
+      "name": "VAXIS's ULTRA Plus Blood Physics",
+      "variant": "standard",
+      "channel": "manual",
+      "verifiedOn": "2026-10-06",
+      "nexusModId": 13506,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/13506",
+      "payloadFolders": ["mods/modULTRAplussVaxisBlood"],
+      "menuFiles": [],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [],
+      "archiveEvidence": {
+        "archiveName": "VAXIS ULTRA Blood Physics v.1.2 standard 13506 1.2 2026-10-06T18-25Z eHJrqDRVU.zip",
+        "releaseLabel": "1.2",
+        "comparisonScope": "all archive files",
+        "matchedFiles": 29,
+        "matchedBytes": 5325009,
+        "allComparedFilesMatch": true,
+        "method": "SHA-256"
+      },
+      "notes": [
+        "Nexus tags the mod Remastered Compatible as observed on October 6, 2026; this is an author-page claim, not a local gameplay test.",
+        "The archive contains only the mod folder, with no info.json descriptor, DLC folder, menu XML, or native DLL."
+      ],
+      "gameplayVerified": false
+    },
     {
       "name": "A Witcher Can Hide Another",
       "channel": "manual",

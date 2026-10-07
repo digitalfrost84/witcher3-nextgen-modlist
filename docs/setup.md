@@ -2,6 +2,7 @@
 
 This guide describes the recorded **Windows / GOG / Remastered 5.0** setup.
 The executable version is `5.0.0.1044392`; the snapshot date is October 4, 2026.
+VAXIS's ULTRA Plus Blood Physics standard 1.2 was added to the record on October 6, 2026; the earlier inventory was not rechecked in full.
 Paths below are relative to the game installation unless specified otherwise.
 
 ## Before installation
@@ -126,6 +127,7 @@ Verify the collection's interactions in game before treating the order as valida
 
 ### Notes for individual mods
 
+- **[VAXIS's ULTRA Plus Blood Physics](https://www.nexusmods.com/witcher3/mods/13506):** the installed standard 1.2 archive contains only `mods/modULTRAplussVaxisBlood`. Copy that folder into `mods`; this package contains no DLC, menu XML, or native DLL files. Nexus tags it Remastered Compatible. Enablement, performance, and compatibility with the full mod set have not been tested in game.
 - **Hoods:** the installed package includes both mod and DLC components. It does not include the optional `Hoods.input.settings` file. Use the [documented inventory controls](https://www.nexusmods.com/witcher3/mods/4242) for compatible equipped hoods; a keyboard shortcut is not established here.
 - **Corvo Bianco Enhanced Collection:** use the collection instead of its five individual component mods. See the [Remastered edition](https://www.nexusmods.com/witcher3/mods/12982) for unlock conditions and features.
 - **The Last Wish Final Scene Restoration:** other mods that replace `sq202_10_ending_djinn` can conflict. See the [author's compatibility notes](https://www.nexusmods.com/witcher3/mods/10653).
@@ -135,7 +137,7 @@ Verify the collection's interactions in game before treating the order as valida
 
 ## Versions and inventory evidence
 
-The [manual inventory](../inventory/manual.json) records eight manual installations.
+The [manual inventory](../inventory/manual.json) records nine manual installations.
 The [in-game inventory](../inventory/ingame.json) records six installed payloads and their enabled configuration entries.
 All six in-game packages have files on disk; their file sizes match the local package metadata.
 
@@ -143,6 +145,7 @@ For six manual downloads, installed scripts, metadata, menu XML, configuration, 
 All compared files matched: Brothers In Arms (37), Complete Animations Redux (15), Dynamic Appearances Project (2), Light Rewrite (36), Sharedutils (53), and PT Optimization (3).
 These comparisons did not cover every asset in those six packages.
 A Proper Send-off received a full comparison of all 14 files.
+VAXIS's ULTRA Plus Blood Physics standard 1.2 received a full SHA-256 comparison of all 29 archive files on October 6, 2026; all matched the installed files (5,325,009 bytes total).
 The repair document records separate evidence for A Witcher Can Hide Another.
 
 Internal metadata can retain older labels.

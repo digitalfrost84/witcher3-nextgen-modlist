@@ -4,7 +4,8 @@ My mod list for **The Witcher 3: Wild Hunt — Remastered (5.0)** on PC: bug fix
 This guide records the versions I have installed and the extra steps needed to reproduce the setup.
 
 **Snapshot: October 4, 2026.** GOG installation; DirectX 12 executable version `5.0.0.1044392`.
-There are **14 installed mods: eight manual installations and six enabled in-game installations**, including Sharedutils as a dependency.
+**Addition: October 6, 2026.** VAXIS's ULTRA Plus Blood Physics standard 1.2 was verified against the installed files.
+There are **15 installed mods: nine manual installations and six enabled in-game installations**, including Sharedutils as a dependency.
 
 **Review status:** the installed files and settings have been checked.
 The A Witcher Can Hide Another repair is documented below, but the complete combination has not passed an end-to-end gameplay test.
@@ -35,6 +36,7 @@ Some internal `info.json` labels differ from the release number; see [version ev
 | [A Proper Send-off](https://www.nexusmods.com/witcher3/mods/10881) | PL Remaster 1.21 | A voiced quest with Dandelion and Zoltan during Final Preparations. | Polish Remaster variant; installed as `moddandelionsballad`. Mind its quest window. |
 | [A Witcher Can Hide Another](https://www.nexusmods.com/witcher3/mods/9453) | 1.1.1 script baseline + local fixes | A voiced questline with a new location and playable character. | Add its input bindings and apply the [two documented script repairs](docs/a-witcher-can-hide-another.md). |
 | [Path Tracing and Ray Tracing Optimization](https://www.nexusmods.com/witcher3/mods/13025) | Nexus release 4 / PT Optimization 2.0 | Rendering controls for light bounces, shadows, and caustics. | Installs under `bin`; another `xinput9_1_0.dll` mod can conflict. |
+| [VAXIS's ULTRA Plus Blood Physics](https://www.nexusmods.com/witcher3/mods/13506) | Standard 1.2 | Physics-based blood spray and wall drips, according to the author. | Keep `mods/modULTRAplussVaxisBlood`; tagged Remastered Compatible on Nexus. Gameplay compatibility remains unverified. |
 
 ## In-game installations
 
