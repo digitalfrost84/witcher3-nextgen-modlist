@@ -1,0 +1,25 @@
+--- a/content/scripts/local/completeAnimationsReduxOverrides.ws
++++ b/content/scripts/local/completeAnimationsReduxOverrides.ws
+@@ -70,6 +70,8 @@
+ 			completeAnimationsRedux = new CCompleteAnimationsRedux in this;
+ 
+ 		completeAnimationsRedux.Initialize();
++
++		CARRemoveAllPropItems(inv); // local fix: purge props left in the save by earlier animations
+ 	}
+ 
+ 	return retval;
+@@ -132,11 +134,13 @@
+ @addMethod(CR4Player) timer function UnmountItem(dt : float, it : int) 
+ {
+ 	inv.UnmountItem(inv.GetItemId(completeAnimationsRedux.itemForMount), true);
++	CARRemovePropItem(inv, completeAnimationsRedux.itemForMount); // local fix: don't leave props in inventory
+ }
+ 
+ @addMethod(CR4Player) timer function UnmountSecondItem(dt : float, it : int)
+ {
+ 	inv.UnmountItem(inv.GetItemId(completeAnimationsRedux.secondItemForMount), true);
++	CARRemovePropItem(inv, completeAnimationsRedux.secondItemForMount); // local fix
+ }
+ 
+ @addMethod(CR4Player) timer function PlayOpenBottleSound(time : float, id : int)

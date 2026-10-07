@@ -55,7 +55,7 @@ Do not add it to a new game or a first-time installation.
 
 ### Animations, appearances, and lighting
 
-- **Complete Animations Redux:** choose the [3.2.0 Remastered file](https://www.nexusmods.com/witcher3/mods/5012?tab=files), listed for game 5.00c. Install its menu XML and inspect its animation settings.
+- **Complete Animations Redux:** choose the [3.2.0 Remastered file](https://www.nexusmods.com/witcher3/mods/5012?tab=files), listed for game 5.00c. Install its menu XML and inspect its animation settings. Apply the [leftover prop fix](complete-animations-redux.md); without it, removing the mod from a running playthrough can leave Geralt without a body.
 - **Dynamic Appearances Project:** use the [BiA-compatible main file](https://www.nexusmods.com/witcher3/mods/9219?tab=files). The author says this variant needs no extra BiA patch. Install one main variant. Its presence here does not prove complete 5.0 compatibility.
 - **Light Rewrite:** copy the complete archive. Its [0.14.0 release notes](https://github.com/webspam/LightRewrite/releases/tag/v0.14.0) describe the Remastered lighting changes. The Shared Imports requirement in older 4.04 instructions does not apply to the Remastered instructions.
 

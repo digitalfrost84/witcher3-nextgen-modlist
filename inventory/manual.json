@@ -166,6 +166,21 @@
         "allComparedFilesMatch": true,
         "method": "SHA-256"
       },
+      "localPatches": [
+        {
+          "description": "Remove animation prop items after use and on load",
+          "documentation": "docs/complete-animations-redux.md",
+          "addedFiles": [
+            "mods/modCompleteAnimationsRedux/content/scripts/local/completeAnimationsReduxCleanup.ws"
+          ],
+          "modifiedFiles": [
+            "mods/modCompleteAnimationsRedux/content/scripts/local/completeAnimationsReduxOverrides.ws"
+          ],
+          "date": "2026-10-07",
+          "scriptCompilation": "passed",
+          "gameplayVerified": false
+        }
+      ],
       "gameplayVerified": false
     },
     {
