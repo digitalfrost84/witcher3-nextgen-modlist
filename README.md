@@ -6,6 +6,7 @@ This guide records the versions I have installed and the extra steps needed to r
 **Snapshot: October 4, 2026.** GOG installation; DirectX 12 executable version `5.0.0.1044392`.
 **Addition: October 6, 2026.** VAXIS's ULTRA Plus Blood Physics standard 1.2 was verified against the installed files.
 **Removal: October 7, 2026.** Complete Animations Redux was removed after its item handling was found to corrupt the inventory; see [Removed mods](#removed-mods).
+**Update: October 7, 2026.** Dynamic Appearances Project was upgraded from BiA-compatible 2.1.1 to 3.0b Remastered; see the [upgrade note](docs/setup.md#upgrading-dynamic-appearances-project-to-30b).
 There are **14 installed mods: eight manual installations and six enabled in-game installations**, including Sharedutils as a dependency.
 
 **Review status:** the installed files and settings have been checked.
@@ -31,7 +32,7 @@ Some internal `info.json` labels differ from the release number; see [version ev
 | --- | --- | --- | --- |
 | [Brothers In Arms — Ultimate Edition](https://www.nexusmods.com/witcher3/mods/11260) | Remastered 4.0.1 | Bug fixes and restored dialogue, quests, and other content. | Install Sharedutils; retain the mod, DLC, and menu files. |
 | [Sharedutils — All In One](https://www.nexusmods.com/witcher3/mods/12997) | 4.0 | Shared functions required by other mods, including Brothers In Arms. | Keep `modzzz_sharedutils` and `dlcsharedutils`. |
-| [Dynamic Appearances Project](https://www.nexusmods.com/witcher3/mods/9219) | BiA-compatible 2.1.1 | Character appearances that change with story progress. | Use the BiA-compatible main file; broader 5.0 compatibility remains unverified. |
+| [Dynamic Appearances Project](https://www.nexusmods.com/witcher3/mods/9219) | BiA-compatible 3.0b Remastered | Character appearances that change with story progress. | Use the BiA-compatible Remastered main file. When upgrading from 2.x, delete the old mod folder first; see the [upgrade note](docs/setup.md#upgrading-dynamic-appearances-project-to-30b). |
 | [Light Rewrite](https://www.nexusmods.com/witcher3/mods/12144) | 0.14.0 | Changes to local lights, including candles and torches. | Install all supplied folders; inspect the in-game mod settings. |
 | [A Proper Send-off](https://www.nexusmods.com/witcher3/mods/10881) | PL Remaster 1.21 | A voiced quest with Dandelion and Zoltan during Final Preparations. | Polish Remaster variant; installed as `moddandelionsballad`. Mind its quest window. |
 | [A Witcher Can Hide Another](https://www.nexusmods.com/witcher3/mods/9453) | 1.1.1 script baseline + local fixes | A voiced questline with a new location and playable character. | Add its input bindings and apply the [two documented script repairs](docs/a-witcher-can-hide-another.md). |

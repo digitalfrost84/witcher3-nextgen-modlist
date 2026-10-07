@@ -14,6 +14,7 @@
     "Seven mod folders and six DLC folders are installed, plus one native DX12 mod: eight manual mods in total.",
     "The October 6 update adds VAXIS's ULTRA Plus Blood Physics standard 1.2 with a full 29-file SHA-256 comparison; the earlier inventory was not rechecked in full.",
     "The October 7 update removes Complete Animations Redux; its record moves to removedMods.",
+    "The October 7 update replaces Dynamic Appearances Project 2.1.1 with 3.0b Remastered, verified against all 12 archive files.",
     "Archive release labels and embedded descriptor versions are recorded separately because several disagree.",
     "Selected-file SHA-256 comparisons cover .json, .ws, .xml, .ini and .dll archive entries present at the corresponding installed paths. They do not establish that every bundled asset was compared.",
     "A Proper Send-off was compared across all 14 archive files. A Witcher Can Hide Another was checked against its two preserved original scripts and installed descriptor.",
@@ -145,12 +146,12 @@
     },
     {
       "name": "Dynamic Appearances Project",
-      "variant": "BiA Compatible",
+      "variant": "BiA Compatible Remastered",
       "channel": "manual",
       "nexusModId": 9219,
       "nexusUrl": "https://www.nexusmods.com/witcher3/mods/9219",
       "payloadFolders": [
-        "mods/moddynamicappearancesproject",
+        "mods/moddynamicappearancesprojectremastered-bia",
         "dlc/dlcdynamicapp"
       ],
       "menuFiles": [],
@@ -158,21 +159,31 @@
       "configFiles": [],
       "embeddedInfo": [
         {
-          "path": "mods/moddynamicappearancesproject/content/info.json",
-          "name": "dynamic appearances project 4",
-          "version": "2.1.1",
-          "redkitGameVersion": "2.0"
+          "path": "mods/moddynamicappearancesprojectremastered-bia/content/info.json",
+          "name": "dynamic appearances project remastered - bia",
+          "version": "3.0.1",
+          "redkitGameVersion": "29"
         }
       ],
       "archiveEvidence": {
-        "archiveName": "Dynamic Appearance Project - BiA Compatible 9219 2.1.1 2026-07-11T18-34Z 864tMlQYf.zip",
-        "releaseLabel": "2.1.1",
-        "comparisonScope": "selected file extensions described in inventory notes",
-        "matchedFiles": 2,
+        "archiveName": "Dynamic Appearance Project - BiA Compatible 9219 3.0b-Remastered 2026-10-05T11-21Z HbyI0z6Ah.zip",
+        "releaseLabel": "3.0b-Remastered",
+        "comparisonScope": "all archive files",
+        "matchedFiles": 12,
+        "totalBytes": 128776535,
         "allComparedFilesMatch": true,
         "method": "SHA-256"
       },
-      "gameplayVerified": false
+      "gameplayVerified": false,
+      "previousRelease": {
+        "releaseLabel": "2.1.1",
+        "payloadFolders": [
+          "mods/moddynamicappearancesproject",
+          "dlc/dlcdynamicapp"
+        ],
+        "replacedOn": "2026-10-07",
+        "note": "The 3.0b folder name differs; the 2.1.1 mod folder must be deleted when upgrading."
+      }
     },
     {
       "name": "Light Rewrite",

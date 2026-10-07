@@ -29,7 +29,7 @@ For an archive with loose `mod...` and `dlc...` folders, place them inside `mods
 | --- | --- |
 | Sharedutils | `mods/modzzz_sharedutils`, `dlc/dlcsharedutils` |
 | Brothers In Arms | `mods/modbrothersinarms`, `dlc/dlcbrothersinarms`, menu `BrothersInArms.xml` |
-| Dynamic Appearances Project | `mods/moddynamicappearancesproject`, `dlc/dlcdynamicapp` |
+| Dynamic Appearances Project | `mods/moddynamicappearancesprojectremastered-bia`, `dlc/dlcdynamicapp` |
 | Light Rewrite | `mods/modLightRewrite`, `dlc/dlclightrewrite`, menu `LightRewrite.xml` |
 | A Proper Send-off | `mods/moddandelionsballad`, `dlc/dlcdandelionjh1` |
 | A Witcher Can Hide Another | `mods/modAWitcherCanHideAnother`, `dlc/dlcAWitcherCanHideAnother`; input bindings in the Documents settings |
@@ -55,8 +55,28 @@ Do not add it to a new game or a first-time installation.
 ### Animations, appearances, and lighting
 
 - **Complete Animations Redux:** removed on October 7, 2026 and no longer part of this list. Its leftover inventory props break saves; see [why it was removed](complete-animations-redux.md).
-- **Dynamic Appearances Project:** use the [BiA-compatible main file](https://www.nexusmods.com/witcher3/mods/9219?tab=files). The author says this variant needs no extra BiA patch. Install one main variant. Its presence here does not prove complete 5.0 compatibility.
+- **Dynamic Appearances Project:** use the [BiA-compatible Remastered main file](https://www.nexusmods.com/witcher3/mods/9219?tab=files) (3.0b). The author says this variant needs no extra BiA patch. Install one main variant only. Its presence here does not prove complete 5.0 compatibility.
 - **Light Rewrite:** copy the complete archive. Its [0.14.0 release notes](https://github.com/webspam/LightRewrite/releases/tag/v0.14.0) describe the Remastered lighting changes. The Shared Imports requirement in older 4.04 instructions does not apply to the Remastered instructions.
+
+#### Upgrading Dynamic Appearances Project to 3.0b
+
+Release 3.0b renamed its mod folder: 2.1.1 used `mods/moddynamicappearancesproject`, and 3.0b uses `mods/moddynamicappearancesprojectremastered-bia`.
+Both releases use the same DLC folder, `dlc/dlcdynamicapp`.
+Extracting 3.0b over 2.1.1 therefore replaces the DLC files but leaves the old mod folder installed beside the new one.
+
+That mixed state was tested on October 7, 2026. Keira Metz appeared without clothes.
+The old folder sorts first and most likely took priority with character files written for the 2.1.1 DLC.
+After the old folder was removed, Keira appeared dressed again.
+
+To upgrade:
+
+1. Close the game. Never add, remove, or move mod files while it is running.
+2. Delete `mods/moddynamicappearancesproject`.
+3. Install the 3.0b archive, replacing `dlc/dlcdynamicapp`.
+4. Confirm that `mods` contains only `moddynamicappearancesprojectremastered-bia` for this mod.
+
+The first launch after the cleanup crashed once while loading a save made in the mixed state; the same save loaded on the next attempt.
+If a save keeps crashing, load an earlier one.
 
 ### A Proper Send-off
 
@@ -141,9 +161,10 @@ The [in-game inventory](../inventory/ingame.json) records six installed payloads
 All six in-game packages have files on disk; their file sizes match the local package metadata.
 
 For six manual downloads (as of October 4, 2026), installed scripts, metadata, menu XML, configuration, or DLL files were compared with local ZIP contents using SHA-256.
-All compared files matched: Brothers In Arms (37), Complete Animations Redux (15, since removed), Dynamic Appearances Project (2), Light Rewrite (36), Sharedutils (53), and PT Optimization (3).
+All compared files matched: Brothers In Arms (37), Complete Animations Redux (15, since removed), Dynamic Appearances Project (2, for 2.1.1), Light Rewrite (36), Sharedutils (53), and PT Optimization (3).
 These comparisons did not cover every asset in those six packages.
 A Proper Send-off received a full comparison of all 14 files.
+Dynamic Appearances Project 3.0b received a full SHA-256 comparison of all 12 archive files on October 7, 2026; all matched the installed files (128,776,535 bytes total).
 VAXIS's ULTRA Plus Blood Physics standard 1.2 received a full SHA-256 comparison of all 29 archive files on October 6, 2026; all matched the installed files (5,325,009 bytes total).
 The repair document records separate evidence for A Witcher Can Hide Another.
 
