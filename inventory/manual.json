@@ -18,7 +18,7 @@
     "The October 7 update removes Complete Animations Redux; its record moves to removedMods.",
     "The October 7 update replaces Dynamic Appearances Project 2.1.1 with 3.0b Remastered, verified against all 12 archive files.",
     "Dynamic Appearances Project has a mods.settings priority of 98 so it overrides Brothers In Arms.",
-    "The October 10 update records the October 8 game patch (executable 5.0.0.1048522) and Brothers In Arms 4.0.3, installed after the snapshot. 4.0.4 is available and recommended but not installed; the 4.0.3 files were not hash-compared.",
+    "The October 10 update records the October 8 game patch (executable 5.0.0.1048522) and four updated mods: Brothers In Arms 4.0.4, Sharedutils 4.1, Light Rewrite 0.19.1, and VAXIS's Blood Physics 1.4. Each was verified by a full SHA-256 comparison of every archive file. PT Optimization stays on 2.0; its 2.1 BETA is not installed.",
     "Archive release labels and embedded descriptor versions are recorded separately because several disagree.",
     "Selected-file SHA-256 comparisons cover .json, .ws, .xml, .ini and .dll archive entries present at the corresponding installed paths. They do not establish that every bundled asset was compared.",
     "A Proper Send-off was compared across all 14 archive files. A Witcher Can Hide Another was checked against its two preserved original scripts and installed descriptor.",
@@ -30,26 +30,29 @@
       "name": "VAXIS's ULTRA Plus Blood Physics",
       "variant": "standard",
       "channel": "manual",
-      "verifiedOn": "2026-10-06",
+      "verifiedOn": "2026-10-10",
       "nexusModId": 13506,
       "nexusUrl": "https://www.nexusmods.com/witcher3/mods/13506",
       "payloadFolders": ["mods/modULTRAplussVaxisBlood"],
-      "menuFiles": [],
+      "menuFiles": [
+        "bin/config/r4game/user_config_matrix/pc/modULTRAplussVaxisBlood.xml"
+      ],
       "nativeFiles": [],
       "configFiles": [],
       "embeddedInfo": [],
       "archiveEvidence": {
-        "archiveName": "VAXIS ULTRA Blood Physics v.1.2 standard 13506 1.2 2026-10-06T18-25Z eHJrqDRVU.zip",
-        "releaseLabel": "1.2",
+        "archiveName": "VAXIS_Blood_Physics_v1.4.zip 13506 1.4 2026-10-07T20-54Z hw6Xp1E51.zip",
+        "releaseLabel": "1.4",
         "comparisonScope": "all archive files",
-        "matchedFiles": 29,
-        "matchedBytes": 5325009,
+        "matchedFiles": 48,
+        "matchedBytes": 5367666,
         "allComparedFilesMatch": true,
-        "method": "SHA-256"
+        "method": "SHA-256",
+        "comparedOn": "2026-10-10"
       },
       "notes": [
         "Nexus tags the mod Remastered Compatible as observed on October 6, 2026; this is an author-page claim, not a local gameplay test.",
-        "The archive contains only the mod folder, with no info.json descriptor, DLC folder, menu XML, or native DLL."
+        "Release 1.4 adds a menu XML file; the archive has no info.json descriptor, DLC folder, or native DLL."
       ],
       "gameplayVerified": false
     },
@@ -138,29 +141,20 @@
           "useLooseScripts": false
         }
       ],
-      "installedRelease": {
-        "version": "4.0.3",
-        "nexusUploaded": "2026-10-04",
-        "source": "player report; info.json reports 4.0.2",
-        "hashVerified": false
-      },
-      "availableRelease": {
-        "version": "4.0.4",
-        "nexusUploaded": "2026-10-08",
-        "status": "recommended update, not installed",
-        "reason": "Reading the Lands of North Velen book crashes the game on executable 5.0.0.1048522 with 4.0.3.",
-        "documentation": "docs/setup.md#updating-brothers-in-arms-to-404"
-      },
       "archiveEvidence": {
-        "archiveName": "Brothers In Arms - Ultimate Edition (Remastered) 11260 4.0.1 2026-09-30T15-28Z rIB9DAtwG.zip",
-        "releaseLabel": "4.0.1",
-        "comparisonScope": "selected file extensions described in inventory notes",
-        "matchedFiles": 37,
+        "archiveName": "Brothers In Arms - Ultimate Edition (Remastered) 11260 4.0.4 2026-10-08T16-16Z yShfiQtEM.zip",
+        "releaseLabel": "4.0.4",
+        "comparisonScope": "all archive files",
+        "matchedFiles": 75,
+        "matchedBytes": 576698743,
         "allComparedFilesMatch": true,
         "method": "SHA-256",
-        "note": "Evidence for the 4.0.1 installation in the October 4 snapshot; superseded by 4.0.3."
+        "comparedOn": "2026-10-10"
       },
-      "gameplayVerified": false
+      "gameplayVerified": false,
+      "notes": [
+        "4.0.4 fixed a crash when reading the Lands of North Velen book on executable 5.0.0.1048522 (player-confirmed on 2026-10-10)."
+      ]
     },
     {
       "name": "Dynamic Appearances Project",
@@ -228,14 +222,19 @@
       "configFiles": [],
       "embeddedInfo": [],
       "archiveEvidence": {
-        "archiveName": "Light Rewrite 12144 0.14.0 2026-10-03T14-24Z PcKsjZi0V.zip",
-        "releaseLabel": "0.14.0",
-        "comparisonScope": "selected file extensions described in inventory notes",
-        "matchedFiles": 36,
+        "archiveName": "Light Rewrite 12144 0.19.1 2026-10-10T00-43Z Q81OXm5Ii.zip",
+        "releaseLabel": "0.19.1",
+        "comparisonScope": "all archive files",
+        "matchedFiles": 62,
+        "matchedBytes": 562325,
         "allComparedFilesMatch": true,
-        "method": "SHA-256"
+        "method": "SHA-256",
+        "comparedOn": "2026-10-10"
       },
-      "gameplayVerified": false
+      "gameplayVerified": false,
+      "notes": [
+        "Before the October 10 update, the installed files matched 0.16.0 (all 56 files), not the 0.14.0 recorded in the October 4 snapshot."
+      ]
     },
     {
       "name": "Sharedutils",
@@ -260,12 +259,14 @@
         }
       ],
       "archiveEvidence": {
-        "archiveName": "Sharedutils - All In One 12997 4.0 2026-09-29T08-06Z vo9LceSYr.zip",
-        "releaseLabel": "4.0",
-        "comparisonScope": "selected file extensions described in inventory notes",
-        "matchedFiles": 53,
+        "archiveName": "Sharedutils - All In One 12997 4.1 2026-10-10T15-21Z lPL5EVoZD.zip",
+        "releaseLabel": "4.1",
+        "comparisonScope": "all archive files",
+        "matchedFiles": 56,
+        "matchedBytes": 182836,
         "allComparedFilesMatch": true,
-        "method": "SHA-256"
+        "method": "SHA-256",
+        "comparedOn": "2026-10-10"
       },
       "gameplayVerified": false
     },
@@ -331,7 +332,13 @@
         "allComparedFilesMatch": true,
         "method": "SHA-256"
       },
-      "gameplayVerified": false
+      "gameplayVerified": false,
+      "availableRelease": {
+        "version": "2.1 BETA (Nexus release 6)",
+        "nexusUploaded": "2026-10-08",
+        "status": "not installed: BETA",
+        "note": "The author says it works with game patch 5.01."
+      }
     }
   ],
   "removedMods": [

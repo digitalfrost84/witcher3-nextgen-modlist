@@ -9,7 +9,7 @@ This guide records the versions I have installed and the extra steps needed to r
 **Update: October 7, 2026.** Dynamic Appearances Project was upgraded from BiA-compatible 2.1.1 to 3.0b Remastered; see the [upgrade note](docs/setup.md#upgrading-dynamic-appearances-project-to-30b).
 **Fix: October 7, 2026.** Dynamic Appearances Project needs priority over Brothers In Arms in `mods.settings`; otherwise Keira Metz stays nude after her bath in Wandering in the Dark. See the [priority note](docs/setup.md#brothers-in-arms-priority).
 **Game patch: October 8, 2026.** GOG updated the DirectX 12 executable to `5.0.0.1048522` and changed 19 base scripts, including `inventoryComponent.ws`.
-**Update pending: October 10, 2026.** Brothers In Arms 4.0.4 was released on October 8, the same day as the game patch. Reading the *Lands of North Velen* book crashes the game with 4.0.3 installed on the patched executable; updating to 4.0.4 is recommended. See the [Brothers In Arms update note](docs/setup.md#updating-brothers-in-arms-to-404).
+**Update: October 10, 2026.** Four mods were updated: Brothers In Arms 4.0.4, Sharedutils 4.1, Light Rewrite 0.19.1, and VAXIS's Blood Physics 1.4. Every installation matches its archive file for file. Brothers In Arms 4.0.4 fixed a crash when reading the *Lands of North Velen* book on the patched executable; see the [Brothers In Arms update note](docs/setup.md#updating-brothers-in-arms-to-404). PT Optimization stays on 2.0; its 2.1 release is a BETA. See [available updates](docs/setup.md#available-updates).
 There are **14 installed mods: eight manual installations and six enabled in-game installations**, including Sharedutils as a dependency.
 
 **Review status:** the installed files and settings have been checked.
@@ -33,14 +33,14 @@ Some internal `info.json` labels differ from the release number; see [version ev
 
 | Mod / Nexus link | Installed release | What it adds | Setup note |
 | --- | --- | --- | --- |
-| [Brothers In Arms — Ultimate Edition](https://www.nexusmods.com/witcher3/mods/11260) | Remastered 4.0.3 (4.0.4 available) | Bug fixes and restored dialogue, quests, and other content. | Install Sharedutils; retain the mod, DLC, and menu files. Update to 4.0.4 after the October 8 game patch; see the [update note](docs/setup.md#updating-brothers-in-arms-to-404). |
-| [Sharedutils — All In One](https://www.nexusmods.com/witcher3/mods/12997) | 4.0 | Shared functions required by other mods, including Brothers In Arms. | Keep `modzzz_sharedutils` and `dlcsharedutils`. |
+| [Brothers In Arms — Ultimate Edition](https://www.nexusmods.com/witcher3/mods/11260) | Remastered 4.0.4 | Bug fixes and restored dialogue, quests, and other content. | Install Sharedutils; retain the mod, DLC, and menu files. Use 4.0.4 or later with the October 8 game patch; see the [update note](docs/setup.md#updating-brothers-in-arms-to-404). |
+| [Sharedutils — All In One](https://www.nexusmods.com/witcher3/mods/12997) | 4.1 | Shared functions required by other mods, including Brothers In Arms. | Keep `modzzz_sharedutils` and `dlcsharedutils`. |
 | [Dynamic Appearances Project](https://www.nexusmods.com/witcher3/mods/9219) | BiA-compatible 3.0b Remastered | Character appearances that change with story progress. | Use the BiA-compatible Remastered main file. When upgrading from 2.x, delete the old mod folder first. Give it priority over Brothers In Arms in `mods.settings`; see the [priority note](docs/setup.md#brothers-in-arms-priority). |
-| [Light Rewrite](https://www.nexusmods.com/witcher3/mods/12144) | 0.14.0 | Changes to local lights, including candles and torches. | Install all supplied folders; inspect the in-game mod settings. |
+| [Light Rewrite](https://www.nexusmods.com/witcher3/mods/12144) | 0.19.1 | Changes to local lights, including candles and torches. | Install all supplied folders; inspect the in-game mod settings. |
 | [A Proper Send-off](https://www.nexusmods.com/witcher3/mods/10881) | PL Remaster 1.21 | A voiced quest with Dandelion and Zoltan during Final Preparations. | Polish Remaster variant; installed as `moddandelionsballad`. Mind its quest window. |
 | [A Witcher Can Hide Another](https://www.nexusmods.com/witcher3/mods/9453) | 1.1.1 script baseline + local fixes | A voiced questline with a new location and playable character. | Add its input bindings and apply the [two documented script repairs](docs/a-witcher-can-hide-another.md). |
 | [Path Tracing and Ray Tracing Optimization](https://www.nexusmods.com/witcher3/mods/13025) | Nexus release 4 / PT Optimization 2.0 | Rendering controls for light bounces, shadows, and caustics. | Installs under `bin`; another `xinput9_1_0.dll` mod can conflict. |
-| [VAXIS's ULTRA Plus Blood Physics](https://www.nexusmods.com/witcher3/mods/13506) | Standard 1.2 | Physics-based blood spray and wall drips, according to the author. | Keep `mods/modULTRAplussVaxisBlood`; tagged Remastered Compatible on Nexus. Gameplay compatibility remains unverified. |
+| [VAXIS's ULTRA Plus Blood Physics](https://www.nexusmods.com/witcher3/mods/13506) | 1.4 | Physics-based blood spray and wall drips, according to the author. | Keep `mods/modULTRAplussVaxisBlood` and its menu file; tagged Remastered Compatible on Nexus. Gameplay compatibility remains unverified. |
 
 ## In-game installations
 

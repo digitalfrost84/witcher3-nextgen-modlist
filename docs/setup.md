@@ -34,6 +34,7 @@ For an archive with loose `mod...` and `dlc...` folders, place them inside `mods
 | Light Rewrite | `mods/modLightRewrite`, `dlc/dlclightrewrite`, menu `LightRewrite.xml` |
 | A Proper Send-off | `mods/moddandelionsballad`, `dlc/dlcdandelionjh1` |
 | A Witcher Can Hide Another | `mods/modAWitcherCanHideAnother`, `dlc/dlcAWitcherCanHideAnother`; input bindings in the Documents settings |
+| VAXIS's ULTRA Plus Blood Physics | `mods/modULTRAplussVaxisBlood`, menu `modULTRAplussVaxisBlood.xml` |
 | PT Optimization | `bin/x64_dx12/xinput9_1_0.dll`, `bin/config/platform/pc/RTOptimization.ini`, menu `pt_optimization.xml` |
 
 The menu XML directory is `bin/config/r4game/user_config_matrix/pc`.
@@ -43,41 +44,45 @@ See the [Remastered menu explanation](https://www.nexusmods.com/witcher3/mods/12
 
 ### Brothers In Arms and Sharedutils
 
-Use the [Remastered Brothers In Arms files](https://www.nexusmods.com/witcher3/mods/11260?tab=files) and [Sharedutils All-In-One 4.0](https://www.nexusmods.com/witcher3/mods/12997?tab=files).
+Use the [Remastered Brothers In Arms files](https://www.nexusmods.com/witcher3/mods/11260?tab=files) and [Sharedutils All-In-One 4.1](https://www.nexusmods.com/witcher3/mods/12997?tab=files).
 Missing Sharedutils can cause inheritance errors such as `SU_MenuDescriptor`.
 Check both Sharedutils folders before attempting unrelated script changes.
 
 The October 4 snapshot recorded Brothers In Arms 4.0.1.
 Release 4.0.3 (uploaded October 4) replaced it later that day; its `info.json` reports `4.0.2`.
 The author released 4.0.4 on October 8, 2026, the same day as the game patch.
+Brothers In Arms 4.0.4 and Sharedutils 4.1 were installed on October 10, 2026.
 Follow the author's upgrade instructions when moving from an older installation.
 The Started Playthrough Patch applies only to saves previously played with Brothers In Arms: Ultimate Edition below 4.0.
 Do not add it to a new game or a first-time installation.
 
 #### Updating Brothers In Arms to 4.0.4
 
-On the patched executable (`5.0.0.1048522`) with 4.0.3 installed, reading the *Lands of North Velen* book crashes the game with an access violation (`0xc0000005`) in `witcher3.exe`.
+On the patched executable (`5.0.0.1048522`) with 4.0.3 installed, reading the *Lands of North Velen* book crashed the game with an access violation (`0xc0000005`) in `witcher3.exe`.
 The crash dump shows a stale object reference being released during script execution; no mod DLL is on the crashing stack.
 Brothers In Arms wraps two book-reading methods of `CInventoryComponent`, `UpdateInitialReadState` and `AddBestiaryFromBook`, which add and remove glossary items while a book is read.
 The game patch changed `inventoryComponent.ws`; in the patched file, `ReadBook` calls `ReadBookByNameId`, which calls `AddBestiaryFromBook`.
 Brothers In Arms 4.0.3 ships precompiled scripts (`precompiled.rsblob`) installed on October 4, before that patch.
-Without debug symbols this is the most likely cause, not a proven one.
+The crash dump alone could not prove this cause, but updating Brothers In Arms fixed the crash.
 
 To update:
 
 1. Back up `mods/modbrothersinarms`, `dlc/dlcbrothersinarms`, and `Documents/The Witcher 3/mods.settings`.
 2. Delete both old folders before installing, so no stale files remain.
-3. Install the [4.0.4 Remastered main file](https://www.nexusmods.com/witcher3/mods/11260?tab=files) with its menu file. Keep Sharedutils unchanged.
+3. Install the [4.0.4 Remastered main file](https://www.nexusmods.com/witcher3/mods/11260?tab=files) with its menu file.
 4. Confirm that Dynamic Appearances Project still has priority over Brothers In Arms; see [Brothers In Arms priority](#brothers-in-arms-priority).
 5. Load a save from before the crash and read *Lands of North Velen* again.
 
-The 4.0.4 changelog was not checked, and the fix has not yet been confirmed in game.
+The update was applied on October 10, 2026, together with Sharedutils 4.1.
+All 75 files of the 4.0.4 archive match the installed files by SHA-256, and no extra files remain in the mod and DLC folders.
+The player confirmed that reading *Lands of North Velen* no longer crashes.
+The 4.0.4 changelog was not checked.
 
 ### Animations, appearances, and lighting
 
 - **Complete Animations Redux:** removed on October 7, 2026 and no longer part of this list. Its leftover inventory props break saves; see [why it was removed](complete-animations-redux.md).
 - **Dynamic Appearances Project:** use the [BiA-compatible Remastered main file](https://www.nexusmods.com/witcher3/mods/9219?tab=files) (3.0b). The author says this variant needs no extra BiA patch. Install one main variant only. It must have priority over Brothers In Arms; see [Brothers In Arms priority](#brothers-in-arms-priority). Its presence here does not prove complete 5.0 compatibility.
-- **Light Rewrite:** copy the complete archive. Its [0.14.0 release notes](https://github.com/webspam/LightRewrite/releases/tag/v0.14.0) describe the Remastered lighting changes. The Shared Imports requirement in older 4.04 instructions does not apply to the Remastered instructions.
+- **Light Rewrite:** copy the complete archive. Its [release notes](https://github.com/webspam/LightRewrite/releases) describe the Remastered lighting changes; the installed release is 0.19.1. The Shared Imports requirement in older 4.04 instructions does not apply to the Remastered instructions.
 
 #### Upgrading Dynamic Appearances Project to 3.0b
 
@@ -190,7 +195,7 @@ Verify the collection's interactions in game before treating the order as valida
 
 ### Notes for individual mods
 
-- **[VAXIS's ULTRA Plus Blood Physics](https://www.nexusmods.com/witcher3/mods/13506):** the installed standard 1.2 archive contains only `mods/modULTRAplussVaxisBlood`. Copy that folder into `mods`; this package contains no DLC, menu XML, or native DLL files. Nexus tags it Remastered Compatible. Enablement, performance, and compatibility with the full mod set have not been tested in game.
+- **[VAXIS's ULTRA Plus Blood Physics](https://www.nexusmods.com/witcher3/mods/13506):** the installed 1.4 archive contains `mods/modULTRAplussVaxisBlood` and the menu file `bin/config/r4game/user_config_matrix/pc/modULTRAplussVaxisBlood.xml`. Copy both; this package contains no DLC or native DLL files. Release 1.2 had no menu file. Nexus tags it Remastered Compatible. Enablement, performance, and compatibility with the full mod set have not been tested in game.
 - **Hoods:** the installed package includes both mod and DLC components. It does not include the optional `Hoods.input.settings` file. Use the [documented inventory controls](https://www.nexusmods.com/witcher3/mods/4242) for compatible equipped hoods; a keyboard shortcut is not established here.
 - **Corvo Bianco Enhanced Collection:** use the collection instead of its five individual component mods. See the [Remastered edition](https://www.nexusmods.com/witcher3/mods/12982) for unlock conditions and features.
 - **The Last Wish Final Scene Restoration:** other mods that replace `sq202_10_ending_djinn` can conflict. See the [author's compatibility notes](https://www.nexusmods.com/witcher3/mods/10653).
@@ -212,8 +217,20 @@ Dynamic Appearances Project 3.0b received a full SHA-256 comparison of all 12 ar
 VAXIS's ULTRA Plus Blood Physics standard 1.2 received a full SHA-256 comparison of all 29 archive files on October 6, 2026; all matched the installed files (5,325,009 bytes total).
 The repair document records separate evidence for A Witcher Can Hide Another.
 
+On October 10, 2026, four updated installations received a full SHA-256 comparison of every archive file, and all matched, with no leftover files from the previous release:
+
+| Mod | Release | Files | Bytes |
+| --- | --- | --- | --- |
+| Brothers In Arms | 4.0.4 | 75 | 576,698,743 |
+| Sharedutils | 4.1 | 56 | 182,836 |
+| Light Rewrite | 0.19.1 | 62 | 562,325 |
+| VAXIS's ULTRA Plus Blood Physics | 1.4 | 48 | 5,367,666 |
+
+Before that update, a full comparison showed that Light Rewrite 0.16.0 had been installed since October 5, not the 0.14.0 recorded in the snapshot.
+PT Optimization 2.0 was rechecked on the same day and still matches its three files.
+
 Internal metadata can retain older labels.
-For example, the matched Brothers In Arms 4.0.1 archive reports `4.0.0` internally, and Sharedutils 4.0 reports `3.1.1`.
+For example, the matched Brothers In Arms 4.0.4 archive reports `4.0.2` internally, and Sharedutils 4.1 reports `3.1.1`.
 Those are metadata differences, not proof of separate installed versions.
 
 Nexus and mod.io also use different releases:
@@ -243,9 +260,19 @@ Brothers In Arms wraps methods of `CInventoryComponent`, defined in the patched 
 Scripts still compile, but mod releases from before the patch are not verified on the new executable.
 PT Optimization detected the new build and applied its rendering changes, according to its log.
 
+## Available updates
+
+Checked on October 10, 2026 against the Nexus files pages and the mod.io pages.
+
+| Mod | Installed | Latest | Released | Notes |
+| --- | --- | --- | --- | --- |
+| PT Optimization | 2.0 (Nexus release 4) | 2.1 BETA (Nexus release 6) | October 8, 2026 | Not installed because it is a BETA. The author says it works with game patch 5.01 and moves its settings to Options > Mods. |
+
+All other manual installations are on the latest Nexus release.
+All six in-game mod.io installations match the current mod.io versions: Hoods 3.6, Corvo Bianco Enhanced Collection 5.00, The Last Wish Final Scene Restoration 0.1, Ciri Witcher Ending Restoration 0.2, Fast Travel Pack 2.1.0, and The Spider and The Wolf 1.2.2.
+
 ## Gameplay checks still needed
 
-- Confirm that reading *Lands of North Velen* no longer crashes after the Brothers In Arms 4.0.4 update.
 - Confirm a clean launch and script compilation with the full set enabled.
 - Check the documented mod menus and input controls.
 - Check the Corvo Bianco interactions and their priority against Brothers In Arms.
