@@ -1,14 +1,16 @@
 {
   "schemaVersion": 1,
   "inventoriedOn": "2026-10-04",
-  "updatedOn": "2026-10-07",
+  "updatedOn": "2026-10-10",
   "scope": "Manually installed mod payloads in the game directory, corroborated by downloaded archive contents.",
   "pathBase": "Game installation directory; all installed paths below are relative to this directory.",
   "game": {
     "executable": "bin/x64_dx12/witcher3.exe",
-    "fileVersion": "5.0.0.1044392",
-    "productVersion": "5.0.0.1044392",
-    "versionResourceSuffix": "(Build Machine)"
+    "fileVersion": "5.0.0.1048522",
+    "productVersion": "5.0.0.1048522",
+    "versionResourceSuffix": "(Build Machine)",
+    "previousFileVersion": "5.0.0.1044392",
+    "patchedOn": "2026-10-08"
   },
   "notes": [
     "Seven mod folders and six DLC folders are installed, plus one native DX12 mod: eight manual mods in total.",
@@ -16,6 +18,7 @@
     "The October 7 update removes Complete Animations Redux; its record moves to removedMods.",
     "The October 7 update replaces Dynamic Appearances Project 2.1.1 with 3.0b Remastered, verified against all 12 archive files.",
     "Dynamic Appearances Project has a mods.settings priority of 98 so it overrides Brothers In Arms.",
+    "The October 10 update records the October 8 game patch (executable 5.0.0.1048522) and Brothers In Arms 4.0.3, installed after the snapshot. 4.0.4 is available and recommended but not installed; the 4.0.3 files were not hash-compared.",
     "Archive release labels and embedded descriptor versions are recorded separately because several disagree.",
     "Selected-file SHA-256 comparisons cover .json, .ws, .xml, .ini and .dll archive entries present at the corresponding installed paths. They do not establish that every bundled asset was compared.",
     "A Proper Send-off was compared across all 14 archive files. A Witcher Can Hide Another was checked against its two preserved original scripts and installed descriptor.",
@@ -130,18 +133,32 @@
         {
           "path": "mods/modbrothersinarms/content/info.json",
           "name": "brothersinarms",
-          "version": "4.0.0",
+          "version": "4.0.2",
           "redkitGameVersion": "29",
           "useLooseScripts": false
         }
       ],
+      "installedRelease": {
+        "version": "4.0.3",
+        "nexusUploaded": "2026-10-04",
+        "source": "player report; info.json reports 4.0.2",
+        "hashVerified": false
+      },
+      "availableRelease": {
+        "version": "4.0.4",
+        "nexusUploaded": "2026-10-08",
+        "status": "recommended update, not installed",
+        "reason": "Reading the Lands of North Velen book crashes the game on executable 5.0.0.1048522 with 4.0.3.",
+        "documentation": "docs/setup.md#updating-brothers-in-arms-to-404"
+      },
       "archiveEvidence": {
         "archiveName": "Brothers In Arms - Ultimate Edition (Remastered) 11260 4.0.1 2026-09-30T15-28Z rIB9DAtwG.zip",
         "releaseLabel": "4.0.1",
         "comparisonScope": "selected file extensions described in inventory notes",
         "matchedFiles": 37,
         "allComparedFilesMatch": true,
-        "method": "SHA-256"
+        "method": "SHA-256",
+        "note": "Evidence for the 4.0.1 installation in the October 4 snapshot; superseded by 4.0.3."
       },
       "gameplayVerified": false
     },

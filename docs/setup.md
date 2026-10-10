@@ -1,7 +1,8 @@
 # Installation and compatibility notes
 
 This guide describes the recorded **Windows / GOG / Remastered 5.0** setup.
-The executable version is `5.0.0.1044392`; the snapshot date is October 4, 2026.
+The executable version was `5.0.0.1044392` on the snapshot date, October 4, 2026.
+A GOG game patch on October 8, 2026 updated it to `5.0.0.1048522`; see [the October 8 game patch](#october-8-2026-game-patch).
 VAXIS's ULTRA Plus Blood Physics standard 1.2 was added to the record on October 6, 2026; the earlier inventory was not rechecked in full.
 Paths below are relative to the game installation unless specified otherwise.
 
@@ -46,11 +47,31 @@ Use the [Remastered Brothers In Arms files](https://www.nexusmods.com/witcher3/m
 Missing Sharedutils can cause inheritance errors such as `SU_MenuDescriptor`.
 Check both Sharedutils folders before attempting unrelated script changes.
 
-The recorded Brothers In Arms release is 4.0.1; the author now lists 4.0.2.
-That newer release is not part of this snapshot.
+The October 4 snapshot recorded Brothers In Arms 4.0.1.
+Release 4.0.3 (uploaded October 4) replaced it later that day; its `info.json` reports `4.0.2`.
+The author released 4.0.4 on October 8, 2026, the same day as the game patch.
 Follow the author's upgrade instructions when moving from an older installation.
 The Started Playthrough Patch applies only to saves previously played with Brothers In Arms: Ultimate Edition below 4.0.
 Do not add it to a new game or a first-time installation.
+
+#### Updating Brothers In Arms to 4.0.4
+
+On the patched executable (`5.0.0.1048522`) with 4.0.3 installed, reading the *Lands of North Velen* book crashes the game with an access violation (`0xc0000005`) in `witcher3.exe`.
+The crash dump shows a stale object reference being released during script execution; no mod DLL is on the crashing stack.
+Brothers In Arms wraps two book-reading methods of `CInventoryComponent`, `UpdateInitialReadState` and `AddBestiaryFromBook`, which add and remove glossary items while a book is read.
+The game patch changed `inventoryComponent.ws`; in the patched file, `ReadBook` calls `ReadBookByNameId`, which calls `AddBestiaryFromBook`.
+Brothers In Arms 4.0.3 ships precompiled scripts (`precompiled.rsblob`) installed on October 4, before that patch.
+Without debug symbols this is the most likely cause, not a proven one.
+
+To update:
+
+1. Back up `mods/modbrothersinarms`, `dlc/dlcbrothersinarms`, and `Documents/The Witcher 3/mods.settings`.
+2. Delete both old folders before installing, so no stale files remain.
+3. Install the [4.0.4 Remastered main file](https://www.nexusmods.com/witcher3/mods/11260?tab=files) with its menu file. Keep Sharedutils unchanged.
+4. Confirm that Dynamic Appearances Project still has priority over Brothers In Arms; see [Brothers In Arms priority](#brothers-in-arms-priority).
+5. Load a save from before the crash and read *Lands of North Velen* again.
+
+The 4.0.4 changelog was not checked, and the fix has not yet been confirmed in game.
 
 ### Animations, appearances, and lighting
 
@@ -213,8 +234,18 @@ Those entries are excluded from the inventory.
 The mod.io configuration uses repeated top-level `mod` keys; a parser that keeps only the final duplicate loses entries.
 Each entry was read separately for this inventory.
 
+## October 8, 2026 game patch
+
+GOG updated `bin/x64_dx12/witcher3.exe` from `5.0.0.1044392` to `5.0.0.1048522` (Windows reports `5.0.15.61352` and `5.0.15.65482`).
+The patch changed 19 base scripts under `content/content0/scripts`, including `inventoryComponent.ws`, `r4Player.ws`, `commonMenu.ws`, `mapMenu.ws`, and `commonMapManager.ws`.
+No installed manual or in-game mod replaces any of those files.
+Brothers In Arms wraps methods of `CInventoryComponent`, defined in the patched `inventoryComponent.ws`.
+Scripts still compile, but mod releases from before the patch are not verified on the new executable.
+PT Optimization detected the new build and applied its rendering changes, according to its log.
+
 ## Gameplay checks still needed
 
+- Confirm that reading *Lands of North Velen* no longer crashes after the Brothers In Arms 4.0.4 update.
 - Confirm a clean launch and script compilation with the full set enabled.
 - Check the documented mod menus and input controls.
 - Check the Corvo Bianco interactions and their priority against Brothers In Arms.

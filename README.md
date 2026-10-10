@@ -8,6 +8,8 @@ This guide records the versions I have installed and the extra steps needed to r
 **Removal: October 7, 2026.** Complete Animations Redux was removed after its item handling was found to corrupt the inventory; see [Removed mods](#removed-mods).
 **Update: October 7, 2026.** Dynamic Appearances Project was upgraded from BiA-compatible 2.1.1 to 3.0b Remastered; see the [upgrade note](docs/setup.md#upgrading-dynamic-appearances-project-to-30b).
 **Fix: October 7, 2026.** Dynamic Appearances Project needs priority over Brothers In Arms in `mods.settings`; otherwise Keira Metz stays nude after her bath in Wandering in the Dark. See the [priority note](docs/setup.md#brothers-in-arms-priority).
+**Game patch: October 8, 2026.** GOG updated the DirectX 12 executable to `5.0.0.1048522` and changed 19 base scripts, including `inventoryComponent.ws`.
+**Update pending: October 10, 2026.** Brothers In Arms 4.0.4 was released on October 8, the same day as the game patch. Reading the *Lands of North Velen* book crashes the game with 4.0.3 installed on the patched executable; updating to 4.0.4 is recommended. See the [Brothers In Arms update note](docs/setup.md#updating-brothers-in-arms-to-404).
 There are **14 installed mods: eight manual installations and six enabled in-game installations**, including Sharedutils as a dependency.
 
 **Review status:** the installed files and settings have been checked.
@@ -31,7 +33,7 @@ Some internal `info.json` labels differ from the release number; see [version ev
 
 | Mod / Nexus link | Installed release | What it adds | Setup note |
 | --- | --- | --- | --- |
-| [Brothers In Arms — Ultimate Edition](https://www.nexusmods.com/witcher3/mods/11260) | Remastered 4.0.1 | Bug fixes and restored dialogue, quests, and other content. | Install Sharedutils; retain the mod, DLC, and menu files. |
+| [Brothers In Arms — Ultimate Edition](https://www.nexusmods.com/witcher3/mods/11260) | Remastered 4.0.3 (4.0.4 available) | Bug fixes and restored dialogue, quests, and other content. | Install Sharedutils; retain the mod, DLC, and menu files. Update to 4.0.4 after the October 8 game patch; see the [update note](docs/setup.md#updating-brothers-in-arms-to-404). |
 | [Sharedutils — All In One](https://www.nexusmods.com/witcher3/mods/12997) | 4.0 | Shared functions required by other mods, including Brothers In Arms. | Keep `modzzz_sharedutils` and `dlcsharedutils`. |
 | [Dynamic Appearances Project](https://www.nexusmods.com/witcher3/mods/9219) | BiA-compatible 3.0b Remastered | Character appearances that change with story progress. | Use the BiA-compatible Remastered main file. When upgrading from 2.x, delete the old mod folder first. Give it priority over Brothers In Arms in `mods.settings`; see the [priority note](docs/setup.md#brothers-in-arms-priority). |
 | [Light Rewrite](https://www.nexusmods.com/witcher3/mods/12144) | 0.14.0 | Changes to local lights, including candles and torches. | Install all supplied folders; inspect the in-game mod settings. |
