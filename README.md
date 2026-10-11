@@ -80,6 +80,7 @@ If a save was already played with it, follow the [safe removal steps](docs/compl
 - [Installation, dependencies, quest requirements, and recorded priorities](docs/setup.md)
 - [A Witcher Can Hide Another: exact script repair and rollback](docs/a-witcher-can-hide-another.md)
 - [Complete Animations Redux: why it was removed, with a fix and safe removal steps](docs/complete-animations-redux.md)
+- [Graphics and lighting settings: RT shadows and the mods' picture options](docs/graphics-settings.md)
 - [Manual installation inventory](inventory/manual.json)
 - [In-game installation inventory](inventory/ingame.json)
 
