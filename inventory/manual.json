@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "inventoriedOn": "2026-10-04",
-  "updatedOn": "2026-10-10",
+  "updatedOn": "2026-10-11",
   "scope": "Manually installed mod payloads in the game directory, corroborated by downloaded archive contents.",
   "pathBase": "Game installation directory; all installed paths below are relative to this directory.",
   "game": {
@@ -13,12 +13,13 @@
     "patchedOn": "2026-10-08"
   },
   "notes": [
-    "Seven mod folders and six DLC folders are installed, plus one native DX12 mod: eight manual mods in total.",
+    "Eight mod folders and six DLC folders are installed, plus one native DX12 mod: nine manual mods in total.",
     "The October 6 update adds VAXIS's ULTRA Plus Blood Physics standard 1.2 with a full 29-file SHA-256 comparison; the earlier inventory was not rechecked in full.",
     "The October 7 update removes Complete Animations Redux; its record moves to removedMods.",
     "The October 7 update replaces Dynamic Appearances Project 2.1.1 with 3.0b Remastered, verified against all 12 archive files.",
     "Dynamic Appearances Project has a mods.settings priority of 98 so it overrides Brothers In Arms.",
     "The October 10 update records the October 8 game patch (executable 5.0.0.1048522) and four updated mods: Brothers In Arms 4.0.4, Sharedutils 4.1, Light Rewrite 0.19.1, and VAXIS's Blood Physics 1.4. Each was verified by a full SHA-256 comparison of every archive file. PT Optimization stays on 2.0; its 2.1 BETA is not installed.",
+    "The October 11 update adds Fixed and Slimmer Griffin Armor 1.5 (main file) with a full 6-file SHA-256 comparison. A stale modGriffinArmorOnThePath entry in mods.settings has no installed files.",
     "Archive release labels and embedded descriptor versions are recorded separately because several disagree.",
     "Selected-file SHA-256 comparisons cover .json, .ws, .xml, .ini and .dll archive entries present at the corresponding installed paths. They do not establish that every bundled asset was compared.",
     "A Proper Send-off was compared across all 14 archive files. A Witcher Can Hide Another was checked against its two preserved original scripts and installed descriptor.",
@@ -234,6 +235,42 @@
       "gameplayVerified": false,
       "notes": [
         "Before the October 10 update, the installed files matched 0.16.0 (all 56 files), not the 0.14.0 recorded in the October 4 snapshot."
+      ]
+    },
+    {
+      "name": "Fixed and Slimmer Griffin Armor",
+      "channel": "manual",
+      "nexusModId": 5631,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/5631",
+      "payloadFolders": [
+        "mods/modSlimmer_Griffin_Armor"
+      ],
+      "menuFiles": [],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [
+        {
+          "path": "mods/modSlimmer_Griffin_Armor/content/info.json",
+          "name": "slimmergriffinarmor",
+          "version": "1.5",
+          "redkitGameVersion": "",
+          "useLooseScripts": false
+        }
+      ],
+      "archiveEvidence": {
+        "archiveName": "Slimmer Griffin Armor 5631 1.5 2026-09-27T20-03Z p5316CUVb.zip",
+        "releaseLabel": "1.5",
+        "comparisonScope": "all archive files",
+        "matchedFiles": 6,
+        "matchedBytes": 6213998,
+        "allComparedFilesMatch": true,
+        "method": "SHA-256",
+        "comparedOn": "2026-10-11"
+      },
+      "gameplayVerified": false,
+      "notes": [
+        "Main file only; the On The Path T5 and Vanilla Laces variants are not installed.",
+        "mods.settings has no entry for this mod; a stale modGriffinArmorOnThePath entry (Priority=41) has no installed files."
       ]
     },
     {

@@ -10,7 +10,8 @@ This guide records the versions I have installed and the extra steps needed to r
 **Fix: October 7, 2026.** Dynamic Appearances Project needs priority over Brothers In Arms in `mods.settings`; otherwise Keira Metz stays nude after her bath in Wandering in the Dark. See the [priority note](docs/setup.md#brothers-in-arms-priority).
 **Game patch: October 8, 2026.** GOG updated the DirectX 12 executable to `5.0.0.1048522` and changed 19 base scripts, including `inventoryComponent.ws`.
 **Update: October 10, 2026.** Four mods were updated: Brothers In Arms 4.0.4, Sharedutils 4.1, Light Rewrite 0.19.1, and VAXIS's Blood Physics 1.4. Every installation matches its archive file for file. Brothers In Arms 4.0.4 fixed a crash when reading the *Lands of North Velen* book on the patched executable; see the [Brothers In Arms update note](docs/setup.md#updating-brothers-in-arms-to-404). PT Optimization stays on 2.0; its 2.1 release is a BETA. See [available updates](docs/setup.md#available-updates).
-There are **14 installed mods: eight manual installations and six enabled in-game installations**, including Sharedutils as a dependency.
+**Addition: October 11, 2026.** Fixed and Slimmer Griffin Armor 1.5 was added and verified file for file against its archive. It slims the Griffin breastplate. It has not been launched in game yet; see the [setup note](docs/setup.md#fixed-and-slimmer-griffin-armor).
+There are **15 installed mods: nine manual installations and six enabled in-game installations**, including Sharedutils as a dependency.
 
 **Review status:** the installed files and settings have been checked.
 The A Witcher Can Hide Another repair is documented below, but the complete combination has not passed an end-to-end gameplay test.
@@ -41,6 +42,7 @@ Some internal `info.json` labels differ from the release number; see [version ev
 | [A Witcher Can Hide Another](https://www.nexusmods.com/witcher3/mods/9453) | 1.1.1 script baseline + local fixes | A voiced questline with a new location and playable character. | Add its input bindings and apply the [two documented script repairs](docs/a-witcher-can-hide-another.md). |
 | [Path Tracing and Ray Tracing Optimization](https://www.nexusmods.com/witcher3/mods/13025) | Nexus release 4 / PT Optimization 2.0 | Rendering controls for light bounces, shadows, and caustics. | Installs under `bin`; another `xinput9_1_0.dll` mod can conflict. |
 | [VAXIS's ULTRA Plus Blood Physics](https://www.nexusmods.com/witcher3/mods/13506) | 1.4 | Physics-based blood spray and wall drips, according to the author. | Keep `mods/modULTRAplussVaxisBlood` and its menu file; tagged Remastered Compatible on Nexus. Gameplay compatibility remains unverified. |
+| [Fixed and Slimmer Griffin Armor](https://www.nexusmods.com/witcher3/mods/5631) | 1.5 (main file) | Slims the Griffin breastplate by reducing its curvature, plus smaller fixes. | Install only the main file; the On The Path files are not installed. Not yet launched in game. |
 
 ## In-game installations
 

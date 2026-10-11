@@ -35,6 +35,7 @@ For an archive with loose `mod...` and `dlc...` folders, place them inside `mods
 | A Proper Send-off | `mods/moddandelionsballad`, `dlc/dlcdandelionjh1` |
 | A Witcher Can Hide Another | `mods/modAWitcherCanHideAnother`, `dlc/dlcAWitcherCanHideAnother`; input bindings in the Documents settings |
 | VAXIS's ULTRA Plus Blood Physics | `mods/modULTRAplussVaxisBlood`, menu `modULTRAplussVaxisBlood.xml` |
+| Fixed and Slimmer Griffin Armor | `mods/modSlimmer_Griffin_Armor` |
 | PT Optimization | `bin/x64_dx12/xinput9_1_0.dll`, `bin/config/platform/pc/RTOptimization.ini`, menu `pt_optimization.xml` |
 
 The menu XML directory is `bin/config/r4game/user_config_matrix/pc`.
@@ -77,6 +78,15 @@ The update was applied on October 10, 2026, together with Sharedutils 4.1.
 All 75 files of the 4.0.4 archive match the installed files by SHA-256, and no extra files remain in the mod and DLC folders.
 The player confirmed that reading *Lands of North Velen* no longer crashes.
 The 4.0.4 changelog was not checked.
+
+### Fixed and Slimmer Griffin Armor
+
+- Installed on October 11, 2026 from the [main file](https://www.nexusmods.com/witcher3/mods/5631?tab=files) (release 1.5, uploaded September 27, 2026). Nexus tags it Remastered Compatible and Next-Gen Update Compatible.
+- The package is a single `mods/modSlimmer_Griffin_Armor` folder with no DLC, menu, or script files. All six archive files match the installed files by SHA-256.
+- Only the main file is installed. The optional *SGA T5 for On The Path* and the Vanilla Laces variants are not. Install the T5 file only together with the On The Path retexture, and give it higher priority than any other Griffin mod.
+- `mods.settings` still has an enabled `modGriffinArmorOnThePath` entry (priority 41) although no matching folder is installed. It is a stale entry and is not treated as an installation.
+- `mods.settings` had no entry for this mod at the time of recording; the game creates one on the first launch with the mod installed.
+- Not yet launched in game: confirm the slimmer breastplate on the Griffin armor tiers.
 
 ### Animations, appearances, and lighting
 
@@ -186,7 +196,7 @@ They record the current configuration, rather than a proven optimal order or a r
 
 The manual `mods.settings` entry for Brothers In Arms is enabled with `Priority=99`.
 Dynamic Appearances Project is enabled with `Priority=98`, so it overrides Brothers In Arms; see [Brothers In Arms priority](#brothers-in-arms-priority).
-The other five manual `mods` folders have no matching entries in that file; the PT DLL is outside this mechanism.
+The other six manual `mods` folders have no matching entries in that file; the PT DLL is outside this mechanism.
 Absence of an explicit entry does not establish that a mod is disabled.
 
 The [Corvo Bianco author](https://www.nexusmods.com/witcher3/mods/12982) requests priority over Brothers In Arms.
@@ -205,7 +215,7 @@ Verify the collection's interactions in game before treating the order as valida
 
 ## Versions and inventory evidence
 
-The [manual inventory](../inventory/manual.json) records eight manual installations; Complete Animations Redux is kept under `removedMods` for reference.
+The [manual inventory](../inventory/manual.json) records nine manual installations; Complete Animations Redux is kept under `removedMods` for reference.
 The [in-game inventory](../inventory/ingame.json) records six installed payloads and their enabled configuration entries.
 All six in-game packages have files on disk; their file sizes match the local package metadata.
 
@@ -275,6 +285,7 @@ All six in-game mod.io installations match the current mod.io versions: Hoods 3.
 
 - Confirm a clean launch and script compilation with the full set enabled.
 - Check the documented mod menus and input controls.
+- Confirm that the Fixed and Slimmer Griffin Armor mesh loads on the Griffin armor tiers.
 - Check the Corvo Bianco interactions and their priority against Brothers In Arms.
 - Play the added quests and restored scenes through their relevant triggers.
 - Revisit an observed blank quest-journal entry; its cause remains unresolved.
