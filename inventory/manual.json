@@ -13,15 +13,15 @@
     "patchedOn": "2026-10-08"
   },
   "notes": [
-    "Eight mod folders and six DLC folders are installed, plus one native DX12 mod: nine manual mods in total.",
+    "Ten mod folders and six DLC folders are installed, plus one native DX12 mod: eleven manual mods in total.",
     "The October 6 update adds VAXIS's ULTRA Plus Blood Physics standard 1.2 with a full 29-file SHA-256 comparison; the earlier inventory was not rechecked in full.",
     "The October 7 update removes Complete Animations Redux; its record moves to removedMods.",
     "The October 7 update replaces Dynamic Appearances Project 2.1.1 with 3.0b Remastered, verified against all 12 archive files.",
     "Dynamic Appearances Project has a mods.settings priority of 98 so it overrides Brothers In Arms.",
     "The October 10 update records the October 8 game patch (executable 5.0.0.1048522) and four updated mods: Brothers In Arms 4.0.4, Sharedutils 4.1, Light Rewrite 0.19.1, and VAXIS's Blood Physics 1.4. Each was verified by a full SHA-256 comparison of every archive file. PT Optimization stays on 2.0; its 2.1 BETA is not installed.",
-    "The October 11 update adds Fixed and Slimmer Griffin Armor 1.5 (main file) with a full 6-file SHA-256 comparison. A stale modGriffinArmorOnThePath entry in mods.settings has no installed files.",
     "Archive release labels and embedded descriptor versions are recorded separately because several disagree.",
     "Selected-file SHA-256 comparisons cover .json, .ws, .xml, .ini and .dll archive entries present at the corresponding installed paths. They do not establish that every bundled asset was compared.",
+    "The evening October 11 update adds Griffin Armour (On The Path) Final and SGA T5 for On The Path 1.5, each with a full SHA-256 comparison of every archive file (4 and 6 files). The three Griffin mods have mods.settings priorities 41, 42 and 43; a stale modSlimT5forOTP entry was removed.",
     "A Proper Send-off was compared across all 14 archive files. A Witcher Can Hide Another was checked against its two preserved original scripts and installed descriptor.",
     "Stale mods.settings entries are not treated as proof of installation.",
     "This inventory verifies installed files and archive provenance evidence, not enablement or functional compatibility."
@@ -34,7 +34,9 @@
       "verifiedOn": "2026-10-10",
       "nexusModId": 13506,
       "nexusUrl": "https://www.nexusmods.com/witcher3/mods/13506",
-      "payloadFolders": ["mods/modULTRAplussVaxisBlood"],
+      "payloadFolders": [
+        "mods/modULTRAplussVaxisBlood"
+      ],
       "menuFiles": [
         "bin/config/r4game/user_config_matrix/pc/modULTRAplussVaxisBlood.xml"
       ],
@@ -269,8 +271,72 @@
       },
       "gameplayVerified": false,
       "notes": [
-        "Main file only; the On The Path T5 and Vanilla Laces variants are not installed.",
-        "mods.settings has no entry for this mod; a stale modGriffinArmorOnThePath entry (Priority=41) has no installed files."
+        "Main file only; the Vanilla Laces variants are not installed.",
+        "mods.settings: Enabled=1, Priority=42."
+      ]
+    },
+    {
+      "name": "Griffin Armour (On The Path) Update",
+      "channel": "manual",
+      "nexusModId": 3251,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/3251",
+      "payloadFolders": [
+        "mods/modGriffinArmorOnThePath"
+      ],
+      "menuFiles": [],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [],
+      "archiveEvidence": {
+        "archiveName": "Griffin full set-3251-Final-1591262537.zip",
+        "releaseLabel": "Final",
+        "comparisonScope": "all archive files",
+        "matchedFiles": 4,
+        "matchedBytes": 99233911,
+        "allComparedFilesMatch": true,
+        "method": "SHA-256",
+        "comparedOn": "2026-10-11"
+      },
+      "gameplayVerified": false,
+      "notes": [
+        "Retexture only; no embedded info.json.",
+        "mods.settings: Enabled=1, Priority=41."
+      ]
+    },
+    {
+      "name": "SGA T5 for On The Path",
+      "channel": "manual",
+      "nexusModId": 5631,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/5631?tab=files",
+      "payloadFolders": [
+        "mods/modSGA_T5_for_OTP"
+      ],
+      "menuFiles": [],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [
+        {
+          "path": "mods/modSGA_T5_for_OTP/content/info.json",
+          "name": "slimt5forotp",
+          "version": "1.5",
+          "redkitGameVersion": "",
+          "useLooseScripts": false
+        }
+      ],
+      "archiveEvidence": {
+        "archiveName": "SGA T5 for On The Path 5631 1.5 2026-09-27T20-15Z 864tMlA37.zip",
+        "releaseLabel": "1.5",
+        "comparisonScope": "all archive files",
+        "matchedFiles": 6,
+        "matchedBytes": 950970,
+        "allComparedFilesMatch": true,
+        "method": "SHA-256",
+        "comparedOn": "2026-10-11"
+      },
+      "gameplayVerified": false,
+      "notes": [
+        "Optional file of Slimmer Griffin Armor; the descriptor is named Slim T5 for OTP.",
+        "Needs higher priority than the slim mod and any other Griffin mod. mods.settings: Enabled=1, Priority=43."
       ]
     },
     {

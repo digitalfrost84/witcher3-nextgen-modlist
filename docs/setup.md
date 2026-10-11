@@ -36,6 +36,8 @@ For an archive with loose `mod...` and `dlc...` folders, place them inside `mods
 | A Witcher Can Hide Another | `mods/modAWitcherCanHideAnother`, `dlc/dlcAWitcherCanHideAnother`; input bindings in the Documents settings |
 | VAXIS's ULTRA Plus Blood Physics | `mods/modULTRAplussVaxisBlood`, menu `modULTRAplussVaxisBlood.xml` |
 | Fixed and Slimmer Griffin Armor | `mods/modSlimmer_Griffin_Armor` |
+| Griffin Armour (On The Path) | `mods/modGriffinArmorOnThePath` |
+| SGA T5 for On The Path | `mods/modSGA_T5_for_OTP` |
 | PT Optimization | `bin/x64_dx12/xinput9_1_0.dll`, `bin/config/platform/pc/RTOptimization.ini`, menu `pt_optimization.xml` |
 
 The menu XML directory is `bin/config/r4game/user_config_matrix/pc`.
@@ -79,14 +81,27 @@ All 75 files of the 4.0.4 archive match the installed files by SHA-256, and no e
 The player confirmed that reading *Lands of North Velen* no longer crashes.
 The 4.0.4 changelog was not checked.
 
-### Fixed and Slimmer Griffin Armor
+### Griffin armor: retexture, slim mesh, and T5 patch
 
-- Installed on October 11, 2026 from the [main file](https://www.nexusmods.com/witcher3/mods/5631?tab=files) (release 1.5, uploaded September 27, 2026). Nexus tags it Remastered Compatible and Next-Gen Update Compatible.
-- The package is a single `mods/modSlimmer_Griffin_Armor` folder with no DLC, menu, or script files. All six archive files match the installed files by SHA-256.
-- Only the main file is installed. The optional *SGA T5 for On The Path* and the Vanilla Laces variants are not. Install the T5 file only together with the On The Path retexture, and give it higher priority than any other Griffin mod.
-- `mods.settings` still has an enabled `modGriffinArmorOnThePath` entry (priority 41) although no matching folder is installed. It is a stale entry and is not treated as an installation.
-- `mods.settings` had no entry for this mod at the time of recording; the game creates one on the first launch with the mod installed.
-- Not yet launched in game: confirm the slimmer breastplate on the Griffin armor tiers.
+Three mods work together here; each does a different job.
+
+- **[Griffin Armour (On The Path)](https://www.nexusmods.com/witcher3/mods/3251):** the retexture, Final release (June 2020 file); the author's update adds the Grandmaster tier. Folder `mods/modGriffinArmorOnThePath`. Nexus tags it Remastered and Next-Gen Update Compatible.
+- **[Fixed and Slimmer Griffin Armor](https://www.nexusmods.com/witcher3/mods/5631?tab=files):** release 1.5, main file. It slims the breastplate on all tiers. Folder `mods/modSlimmer_Griffin_Armor`.
+- **SGA T5 for On The Path:** release 1.5, optional file on the same page. It makes the slim Grandmaster chainmail match OTP. Folder `mods/modSGA_T5_for_OTP`. Its descriptor is named `Slim T5 for OTP`.
+
+All three were installed on October 11, 2026. Every archive file matches the installed file by SHA-256: OTP 4 of 4, the slim main file 6 of 6, and the T5 patch 6 of 6. The Vanilla Laces variants are not installed.
+
+`mods.settings` has these entries, all enabled:
+
+| Mod folder | Priority |
+| --- | --- |
+| `modGriffinArmorOnThePath` | 41 |
+| `modSlimmer_Griffin_Armor` | 42 |
+| `modSGA_T5_for_OTP` | 43 |
+
+The slim mod's page requires the T5 patch to have a higher priority than the slim mod and any other Griffin mod. Putting the slim mod above OTP, so its mesh wins, is a choice made here rather than something the authors specify. An old `[modSlimT5forOTP]` entry (priority 40) with no matching folder was removed.
+
+Not yet checked in game: the slim breastplate and OTP textures on each Griffin tier, and the Grandmaster chainmail with the T5 patch. One commenter on Nexus reported odd shoulder-pad colors on the T5 tier with OTP.
 
 ### Animations, appearances, and lighting
 
@@ -215,7 +230,7 @@ Verify the collection's interactions in game before treating the order as valida
 
 ## Versions and inventory evidence
 
-The [manual inventory](../inventory/manual.json) records nine manual installations; Complete Animations Redux is kept under `removedMods` for reference.
+The [manual inventory](../inventory/manual.json) records eleven manual installations; Complete Animations Redux is kept under `removedMods` for reference.
 The [in-game inventory](../inventory/ingame.json) records six installed payloads and their enabled configuration entries.
 All six in-game packages have files on disk; their file sizes match the local package metadata.
 
@@ -285,7 +300,7 @@ All six in-game mod.io installations match the current mod.io versions: Hoods 3.
 
 - Confirm a clean launch and script compilation with the full set enabled.
 - Check the documented mod menus and input controls.
-- Confirm that the Fixed and Slimmer Griffin Armor mesh loads on the Griffin armor tiers.
+- Confirm that the slim mesh and OTP textures load on each Griffin tier, including the T5 chainmail and shoulder pads.
 - Check the Corvo Bianco interactions and their priority against Brothers In Arms.
 - Play the added quests and restored scenes through their relevant triggers.
 - Revisit an observed blank quest-journal entry; its cause remains unresolved.
