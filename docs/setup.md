@@ -38,6 +38,10 @@ For an archive with loose `mod...` and `dlc...` folders, place them inside `mods
 | Fixed and Slimmer Griffin Armor | `mods/modSlimmer_Griffin_Armor` |
 | Griffin Armour (On The Path) | `mods/modGriffinArmorOnThePath` |
 | SGA T5 for On The Path | `mods/modSGA_T5_for_OTP` |
+| The Living Continent | `mods/modW3LivingSky`; `bin/x64_dx12/W3LivingSky.addon64`, `w3_living_sky.hlsl`, `w3_living_sky_font.bin`, `w3_living_sky_leaves.bin`; menu `mod00LivingContinent.xml`; needs ReShade |
+| ReShade (for The Living Continent) | `bin/x64_dx12/dxgi.dll`, `ReShade.ini`, `reshade-shaders` |
+| Deaths Reworked | `mods/modDeathsReworkedWoundsAndBrutality` |
+| Blood And Steel | `mods/modBloodAndSteel`, `dlc/dlcBloodAndSteel`, menu `modBloodAndSteel.xml` |
 | PT Optimization | `bin/x64_dx12/xinput9_1_0.dll`, `bin/config/platform/pc/RTOptimization.ini`, menu `pt_optimization.xml` |
 
 The menu XML directory is `bin/config/r4game/user_config_matrix/pc`.
@@ -102,6 +106,32 @@ All three were installed on October 11, 2026. Every archive file matches the ins
 The slim mod's page requires the T5 patch to have a higher priority than the slim mod and any other Griffin mod. Putting the slim mod above OTP, so its mesh wins, is a choice made here rather than something the authors specify. An old `[modSlimT5forOTP]` entry (priority 40) with no matching folder was removed.
 
 Not yet checked in game: the slim breastplate and OTP textures on each Griffin tier, and the Grandmaster chainmail with the T5 patch. One commenter on Nexus reported odd shoulder-pad colors on the T5 tier with OTP.
+
+### The Living Continent and ReShade
+
+- **[The Living Continent - Seasons - Sky - Weather](https://www.nexusmods.com/witcher3/mods/13650):** release 1.4 (October 11, 2026). It adds four seasons, snow, icicles, a real night sky, daytime halos, and seasonal villager behaviour. It is for Remastered on DirectX 12 only (game version 5.0 or newer); DX11 is not supported.
+- **ReShade is required, not optional.** The main component, `W3LivingSky.addon64`, is a ReShade add-on DLL that only ReShade can load. Install [ReShade](https://reshade.me) 6.8 or newer using the **"with full add-on support"** installer (the regular build cannot load add-ons), for `bin/x64_dx12/witcher3.exe` under DirectX 12. No effects or presets are needed.
+- Installed: ReShade 6.8.0.2155 from `ReShade_Setup_6.8.0_Addon.exe`, as `bin/x64_dx12/dxgi.dll`. It loaded in the same session as PT Optimization's `xinput9_1_0.dll` without errors.
+- Copy the archive's `bin` and `Mods` folders into the game folder. The W3 Mod Manager copies only `Mods`, so with it the four `bin/x64_dx12` files and `mod00LivingContinent.xml` must be copied by hand. Every installed file matches the archive (39 of 39; the readme is not installed).
+- Check: `bin/x64_dx12/ReShade.log` must contain `Registered add-on "The Living Continent"`, and `w3_living_sky_errors.txt` should read `ok`. Both were confirmed on October 11, 2026, and the in-game calendar and winter snow appeared in Velen.
+- Settings are under Options > Mods > The Living Continent. The game can open only about 230 options across all mod pages together.
+- Uninstall: turn off Winter Clothes for the Villagers and play a little first, then delete the files listed on the mod page.
+- The ReShade installer also added some effects (Deband, DisplayDepth, UIMask). They stay off unless enabled in the ReShade overlay and are not needed.
+- Not yet checked: the night sky together with Light Rewrite.
+
+### Deaths Reworked
+
+- **[Deaths Reworked - Wounds and Brutality](https://www.nexusmods.com/witcher3/mods/11964):** release 2.70, Next Gen main file. The installed descriptor still says version 1.0, internal name `dynamicragdoll`.
+- Folder `mods/modDeathsReworkedWoundsAndBrutality`; all 6 archive files match.
+- The author's notes: remove older versions first. The Next Gen main file needs the mod's wound script; script-heavy setups can use an older optional file without it. Run Script Merger with other script mods. The author expects conflicts with other death-animation, ragdoll, finisher, wound, or damage-processor mods.
+- It changes death animations and blood. Check it together with VAXIS's Blood Physics and Blood And Steel. Not yet tested in game.
+
+### Blood And Steel
+
+- **[Blood And Steel](https://www.nexusmods.com/witcher3/mods/9674):** release 3.02, Remastered file. It changes attack animations and targeting, and adds dodges while holding block.
+- Folders `mods/modBloodAndSteel` and `dlc/dlcBloodAndSteel`, plus the optional settings menu `modBloodAndSteel.xml`. All 24 archive files match.
+- The author says it conflicts with mods that change attack animations and recommends Script Merger for other conflicts. The author also writes that compatibility with Remastered mods has not been established yet.
+- Not yet tested in game, particularly with Brothers In Arms and Deaths Reworked.
 
 ### Animations, appearances, and lighting
 
@@ -211,7 +241,7 @@ They record the current configuration, rather than a proven optimal order or a r
 
 The manual `mods.settings` entry for Brothers In Arms is enabled with `Priority=99`.
 Dynamic Appearances Project is enabled with `Priority=98`, so it overrides Brothers In Arms; see [Brothers In Arms priority](#brothers-in-arms-priority).
-The other six manual `mods` folders have no matching entries in that file; the PT DLL is outside this mechanism.
+The three Griffin mods have enabled entries at priorities 41-43; see the [Griffin armor note](#griffin-armor-retexture-slim-mesh-and-t5-patch). The other eight manual `mods` folders have no matching entries in that file; the PT DLL is outside this mechanism.
 Absence of an explicit entry does not establish that a mod is disabled.
 
 The [Corvo Bianco author](https://www.nexusmods.com/witcher3/mods/12982) requests priority over Brothers In Arms.
@@ -230,7 +260,7 @@ Verify the collection's interactions in game before treating the order as valida
 
 ## Versions and inventory evidence
 
-The [manual inventory](../inventory/manual.json) records eleven manual installations; Complete Animations Redux is kept under `removedMods` for reference.
+The [manual inventory](../inventory/manual.json) records fourteen manual installations; Complete Animations Redux is kept under `removedMods` for reference.
 The [in-game inventory](../inventory/ingame.json) records six installed payloads and their enabled configuration entries.
 All six in-game packages have files on disk; their file sizes match the local package metadata.
 
@@ -301,6 +331,8 @@ All six in-game mod.io installations match the current mod.io versions: Hoods 3.
 - Confirm a clean launch and script compilation with the full set enabled.
 - Check the documented mod menus and input controls.
 - Confirm that the slim mesh and OTP textures load on each Griffin tier, including the T5 chainmail and shoulder pads.
+- Test combat with Deaths Reworked and Blood And Steel together, alongside Brothers In Arms and VAXIS's Blood Physics.
+- Check The Living Continent at night with Light Rewrite.
 - Check the Corvo Bianco interactions and their priority against Brothers In Arms.
 - Play the added quests and restored scenes through their relevant triggers.
 - Revisit an observed blank quest-journal entry; its cause remains unresolved.

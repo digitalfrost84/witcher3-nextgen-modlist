@@ -13,7 +13,7 @@
     "patchedOn": "2026-10-08"
   },
   "notes": [
-    "Ten mod folders and six DLC folders are installed, plus one native DX12 mod: eleven manual mods in total.",
+    "Thirteen mod folders and seven DLC folders are installed, plus native DX12 files for PT Optimization and The Living Continent: fourteen manual mods in total. ReShade 6.8.0 (add-on build) is installed as a requirement of The Living Continent.",
     "The October 6 update adds VAXIS's ULTRA Plus Blood Physics standard 1.2 with a full 29-file SHA-256 comparison; the earlier inventory was not rechecked in full.",
     "The October 7 update removes Complete Animations Redux; its record moves to removedMods.",
     "The October 7 update replaces Dynamic Appearances Project 2.1.1 with 3.0b Remastered, verified against all 12 archive files.",
@@ -22,6 +22,7 @@
     "Archive release labels and embedded descriptor versions are recorded separately because several disagree.",
     "Selected-file SHA-256 comparisons cover .json, .ws, .xml, .ini and .dll archive entries present at the corresponding installed paths. They do not establish that every bundled asset was compared.",
     "The evening October 11 update adds Griffin Armour (On The Path) Final and SGA T5 for On The Path 1.5, each with a full SHA-256 comparison of every archive file (4 and 6 files). The three Griffin mods have mods.settings priorities 41, 42 and 43; a stale modSlimT5forOTP entry was removed.",
+    "The night October 11 update adds The Living Continent 1.4, Deaths Reworked 2.70, and Blood And Steel 3.02, each with a full SHA-256 comparison of every installed archive file (39, 6, and 24 files; The Living Continent's readme is not installed). None of the three has a mods.settings entry.",
     "A Proper Send-off was compared across all 14 archive files. A Witcher Can Hide Another was checked against its two preserved original scripts and installed descriptor.",
     "Stale mods.settings entries are not treated as proof of installation.",
     "This inventory verifies installed files and archive provenance evidence, not enablement or functional compatibility."
@@ -442,6 +443,136 @@
         "status": "not installed: BETA",
         "note": "The author says it works with game patch 5.01."
       }
+    },
+    {
+      "name": "The Living Continent - Seasons - Sky - Weather",
+      "channel": "manual",
+      "nexusModId": 13650,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/13650",
+      "payloadFolders": [
+        "mods/modW3LivingSky"
+      ],
+      "menuFiles": [
+        "bin/config/r4game/user_config_matrix/pc/mod00LivingContinent.xml"
+      ],
+      "nativeFiles": [
+        "bin/x64_dx12/W3LivingSky.addon64",
+        "bin/x64_dx12/w3_living_sky.hlsl",
+        "bin/x64_dx12/w3_living_sky_font.bin",
+        "bin/x64_dx12/w3_living_sky_leaves.bin"
+      ],
+      "configFiles": [],
+      "embeddedInfo": [],
+      "archiveEvidence": {
+        "archiveName": "The Living Continent 1.4 13650 1.4 2026-10-11T05-47Z lPL5EVoWu.zip",
+        "releaseLabel": "1.4",
+        "comparisonScope": "all archive files",
+        "matchedFiles": 39,
+        "matchedBytes": 23239703,
+        "allComparedFilesMatch": true,
+        "method": "SHA-256",
+        "comparedOn": "2026-10-11"
+      },
+      "gameplayVerified": true,
+      "notes": [
+        "Requires ReShade 6.8+ with full add-on support for bin/x64_dx12/witcher3.exe (DX12); see requirements.",
+        "The archive's readme (The Living Continent - Readme.md) is not installed and is excluded from the match count.",
+        "ReShade.log shows the add-on registered as The Living Continent v1.4.0.0; w3_living_sky_errors.txt reads ok.",
+        "Confirmed in game on 2026-10-11: calendar widget and winter snow in Velen."
+      ],
+      "requirements": [
+        {
+          "name": "ReShade",
+          "variant": "with full add-on support",
+          "version": "6.8.0.2155",
+          "url": "https://reshade.me",
+          "installer": "ReShade_Setup_6.8.0_Addon.exe",
+          "installerSha256": "afe4c8f13048306307983b8b3d41d5bf00a86820440b0e57dea10950e1176445",
+          "installedFiles": [
+            "bin/x64_dx12/dxgi.dll",
+            "bin/x64_dx12/ReShade.ini",
+            "bin/x64_dx12/ReShadePreset.ini",
+            "bin/x64_dx12/reshade-shaders"
+          ],
+          "dxgiSha256": "0cee63f9c9f13f3ac909c5b4903f4dbb4b719a7ab3b4f13b0deaf83c814b94f7",
+          "note": "Loaded in the same session as PT Optimization's xinput9_1_0.dll without errors."
+        }
+      ]
+    },
+    {
+      "name": "Deaths Reworked - Wounds and Brutality",
+      "channel": "manual",
+      "nexusModId": 11964,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/11964",
+      "payloadFolders": [
+        "mods/modDeathsReworkedWoundsAndBrutality"
+      ],
+      "menuFiles": [],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [
+        {
+          "path": "mods/modDeathsReworkedWoundsAndBrutality/content/info.json",
+          "name": "dynamicragdoll",
+          "version": "1.0",
+          "redkitGameVersion": "29",
+          "useLooseScripts": false
+        }
+      ],
+      "archiveEvidence": {
+        "archiveName": "ModDeathsReworkedWoundsAndBrutality 11964 2.70 2026-10-10T13-15Z Otuhmp4Ko.7z",
+        "releaseLabel": "2.70",
+        "comparisonScope": "all archive files",
+        "matchedFiles": 6,
+        "matchedBytes": 80008702,
+        "allComparedFilesMatch": true,
+        "method": "SHA-256",
+        "comparedOn": "2026-10-11"
+      },
+      "gameplayVerified": false,
+      "notes": [
+        "Next Gen main file. The embedded descriptor version (1.0) differs from the release label (2.70).",
+        "The author expects conflicts with other death-animation, ragdoll, finisher, wound, or damage-processor mods."
+      ]
+    },
+    {
+      "name": "Blood And Steel",
+      "channel": "manual",
+      "nexusModId": 9674,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/9674",
+      "payloadFolders": [
+        "mods/modBloodAndSteel",
+        "dlc/dlcBloodAndSteel"
+      ],
+      "menuFiles": [
+        "bin/config/r4game/user_config_matrix/pc/modBloodAndSteel.xml"
+      ],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [
+        {
+          "path": "mods/modBloodAndSteel/content/info.json",
+          "name": "bloodandsteel",
+          "version": "v3.02",
+          "redkitGameVersion": "29",
+          "useLooseScripts": false
+        }
+      ],
+      "archiveEvidence": {
+        "archiveName": "modBloodAndSteel (Remastered) 9674 v3.02 2026-10-11T14-43Z mlFpu6vWq.zip",
+        "releaseLabel": "v3.02",
+        "comparisonScope": "all archive files",
+        "matchedFiles": 24,
+        "matchedBytes": 1979424,
+        "allComparedFilesMatch": true,
+        "method": "SHA-256",
+        "comparedOn": "2026-10-11"
+      },
+      "gameplayVerified": false,
+      "notes": [
+        "Remastered file. The menu XML is optional.",
+        "The author says it conflicts with mods that change attack animations."
+      ]
     }
   ],
   "removedMods": [
