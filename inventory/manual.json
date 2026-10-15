@@ -13,7 +13,7 @@
     "patchedOn": "2026-10-08"
   },
   "notes": [
-    "Twenty-one mod folders (including the strings-only modPTOptimization) and seven DLC folders are installed, plus native DX12 files for PT Optimization and The Living Continent: twenty-one manual mods in total. ReShade 6.8.0 (add-on build) is installed as a requirement of The Living Continent.",
+    "Twenty-two mod folders (including the strings-only modPTOptimization) and seven DLC folders are installed, plus native DX12 files for PT Optimization and The Living Continent: twenty-two manual mods in total. ReShade 6.8.0 (add-on build) is installed as a requirement of The Living Continent.",
     "The October 6 update adds VAXIS's ULTRA Plus Blood Physics standard 1.2 with a full 29-file SHA-256 comparison; the earlier inventory was not rechecked in full.",
     "The October 7 update removes Complete Animations Redux; its record moves to removedMods.",
     "The October 7 update replaces Dynamic Appearances Project 2.1.1 with 3.0b Remastered, verified against all 12 archive files.",
@@ -26,6 +26,7 @@
     "The October 15 update adds Gwent Redux (Remastered 5.X Port) release 20 BiA edition, Gwent Redux Animated Gwent Cards release 4, and ModjiggleRR MED release 1, each verified by a full SHA-256 comparison of every installed archive file. Animated Gwent Cards was given mods.settings Priority=97 so it wins over Gwent Redux (Priority=99).",
     "The October 15 update also records Light Rewrite 0.23.0, VAXIS's Blood Physics 1.5, The Living Continent 1.5, and PT Optimization 2.1 FINAL (Nexus release 7), each verified by a full SHA-256 comparison with no leftover files. PT Optimization 2.1 BETA had been installed on October 11 without being recorded.",
     "A later October 15 update adds Map Remastered 2.4.1, verified against all 8 installed archive files, and records Restored High Quality Weather Icons and Moon Phases 1 under removedMods: it was installed and removed the same day because Map Remastered replaces the same minimap file.",
+    "Another October 15 update adds New Hairstyles and Beards For Geralt 4.0 (Priority=94, above Brothers In Arms for the Skellige barber scenes), verified against all 25 archive files.",
     "A closing October 15 update adds The Elder Bush (Ciri Pube, Priority=8) and Humans of the Continent B3. Females of the Continent - Bushy Option (Priority=99, moved from 20), both texture-only and verified against their archives.",
     "The last October 15 update replaces modShouldBeNude with the Nudes Collection Ultimate Edition 4.2.1.F (Priority=98, verified against all 4 archive files) and records modShouldBeNude and All Nudes Bushy under removedMods. At the launch that day, PT Optimization 2.1 and The Living Continent 1.5 loaded without errors.",
     "A final October 15 update records modShouldBeNude (reinstalled from an earlier installation; the Should Be Nude file of the Nudes Collection, Nexus 5436) and renumbers mods.settings: Dynamic Appearances Project 95, Brothers In Arms 96, Animated Gwent Cards 97, modShouldBeNude 98, Gwent Redux 99.",
@@ -887,6 +888,56 @@
       "notes": [
         "Texture-only: 231 female body and head textures in 4K, 1.3 GB texture.cache. Pre-Next-Gen; may not load on Remastered or may look softer than Remastered textures.",
         "Shares Ciri's body texture with The Elder Bush, and Cerys's head and the burned prostitute's body with the Nudes Collection."
+      ],
+      "gameplayVerified": false
+    },
+    {
+      "name": "New Hairstyles and Beards For Geralt",
+      "variant": "DLC2 Improved, main file",
+      "channel": "manual",
+      "verifiedOn": "2026-10-15",
+      "nexusModId": 4400,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/4400",
+      "payloadFolders": [
+        "mods/modNewHairstylesAndBeards"
+      ],
+      "menuFiles": [],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [
+        {
+          "path": "mods/modNewHairstylesAndBeards/content/info.json",
+          "name": "newhairstylesandbeards",
+          "version": "4.0",
+          "redkitGameVersion": "29",
+          "useLooseScripts": true
+        }
+      ],
+      "archiveEvidence": {
+        "archiveName": "New Hairstyles and Beards 4400 4.0 2026-10-13T23-15Z 5sT4VvKK9.zip",
+        "releaseLabel": "4.0",
+        "comparisonScope": "all archive files",
+        "matchedFiles": 25,
+        "matchedBytes": 6867117,
+        "allComparedFilesMatch": true,
+        "noExtraInstalledFiles": true,
+        "method": "SHA-256",
+        "comparedOn": "2026-10-15"
+      },
+      "loadOrder": {
+        "file": "Documents/The Witcher 3/mods.settings",
+        "section": "modNewHairstylesAndBeards",
+        "enabled": true,
+        "priority": 94,
+        "setOn": "2026-10-15",
+        "backup": "Documents/The Witcher 3/mods.settings.bak-2026-10-15-hair",
+        "reason": "Must override Brothers In Arms (96), which replaces the same Skellige barber scenes and dlc2.w2phase; players report only vanilla styles otherwise.",
+        "documentation": "docs/setup.md#new-hairstyles-and-beards-for-geralt"
+      },
+      "notes": [
+        "Shares shop_brokvar_barber_01.w2scene, shop_glinsk_barber_01.w2scene, shop_kaer_trolde_sjusta.w2scene, and dlc/dlc2/data/quests/dlc2.w2phase with Brothers In Arms; only shader-graph files with other mods.",
+        "Loose annotated scripts; wraps SetScar only.",
+        "4.0 is a single main file; earlier releases had a separate BiA edition. 4.0 renamed its console commands."
       ],
       "gameplayVerified": false
     }
