@@ -47,6 +47,7 @@ For an archive with loose `mod...` and `dlc...` folders, place them inside `mods
 | Gwent Redux Animated Gwent Cards | `mods/modGwentAnimatedCards` |
 | ModjiggleRR | `mods/modjiggleRR_MED` |
 | Map Remastered | `mods/modmapredraw` |
+| modShouldBeNude | `mods/modShouldBeNude`; `mods.settings` `Priority=98` |
 
 The menu XML directory is `bin/config/r4game/user_config_matrix/pc`.
 Keep the supplied XML files for this Remastered setup.
@@ -122,7 +123,7 @@ Not yet checked in game: the slim breastplate and OTP textures on each Griffin t
 - Uninstall: turn off Winter Clothes for the Villagers and play a little first, then delete the files listed on the mod page.
 - The ReShade installer also added some effects (Deband, DisplayDepth, UIMask). They stay off unless enabled in the ReShade overlay and are not needed.
 - Release 1.5 adds realistic cloud lighting, nebulae, frozen marshes, drifting snow, Darker Nights in HDR, and seasons that follow the story. Update by copying `bin` and `Mods` over the old files; settings carry over.
-- Overlap: its bundle replaces 14 NPC entity files that Brothers In Arms also replaces, among them `nml_villager_woman.w2ent`, `skellige_villager.w2ent`, and several Toussaint and Novigrad community NPCs. Brothers In Arms has `Priority=99` and The Living Continent has no entry, so the Brothers In Arms copies are used, and those NPC types may not get the winter clothes.
+- Overlap: its bundle replaces 14 NPC entity files that Brothers In Arms also replaces, among them `nml_villager_woman.w2ent`, `skellige_villager.w2ent`, and several Toussaint and Novigrad community NPCs. Brothers In Arms has an explicit priority (96) and The Living Continent has no entry, so the Brothers In Arms copies are used, and those NPC types may not get the winter clothes.
 - Not yet checked: the night sky together with Light Rewrite.
 
 ### Deaths Reworked
@@ -177,16 +178,22 @@ The Brothers In Arms copy of the character file has only the vanilla appearances
 When Brothers In Arms won, the game requested an appearance that did not exist, and Keira stayed in her bath appearance (`naked_wet`) in the ruins.
 Her nudity in the bath scene at her hut is vanilla content.
 
-`mods.settings` gives Brothers In Arms `Priority=99`, and Dynamic Appearances Project had no entry.
-Adding this entry to `Documents/The Witcher 3/mods.settings` fixed it after a game restart on October 7, 2026:
+`mods.settings` gave Brothers In Arms `Priority=99`, and Dynamic Appearances Project had no entry.
+Adding an entry with `Priority=98` for Dynamic Appearances Project fixed it after a game restart on October 7, 2026.
+On October 15 both were renumbered to make room for modShouldBeNude below them; the order is unchanged:
 
 ```ini
 [moddynamicappearancesprojectremastered-bia]
 Enabled=1
-Priority=98
+Priority=95
+
+[modBrothersInArms]
+Enabled=1
+Priority=96
 ```
 
 Lower numbers have higher priority.
+Dynamic Appearances Project must keep a lower number than Brothers In Arms.
 The setting is read only at game launch.
 The Dynamic Appearances copy omits Brothers In Arms' custom Keira lingerie reference (`dlc\dlcbia\characters\models\t_02_wa__lingerie_keira.w2ent`), so that Brothers In Arms change does not apply.
 
@@ -261,7 +268,7 @@ Enabled=1
 Priority=97
 ```
 
-Any number below 99 works; 97 keeps it clear of Dynamic Appearances Project's 98.
+Any number below 99 works; 97 sits between Brothers In Arms (96) and modShouldBeNude (98), which share no files with it.
 The entry was added on October 15, 2026 (backup: `mods.settings.bak-2026-10-15-gwent`).
 It takes effect at the next game launch; the animations have not been checked in game yet.
 
@@ -281,6 +288,48 @@ Two installed mods also replace some of them:
 
 ModjiggleRR has no `mods.settings` entry, so those two mods win, and its physics changes do not apply to those meshes.
 Before giving ModjiggleRR priority over either mod, check Keira's and Yennefer's appearances in game; see [Brothers In Arms priority](#brothers-in-arms-priority).
+
+### modShouldBeNude
+
+`mods/modShouldBeNude` is an adult mod that makes characters nude in scenes and places where nudity fits.
+It was reinstalled on October 15, 2026 from the earlier `G:\The Witcher 3 Wild Hunt.v40modded` installation; both copies are identical by SHA-256.
+Its files are dated January 2022, so it is an old-gen build from before Next-Gen and Remastered.
+It has no `info.json`, readme, or archive, and its original Nexus page has not been found; adult mods are hidden from logged-out Nexus searches.
+The player confirmed on October 15 that it works in game: Ciri is nude in the sauna.
+
+Its bundle replaces 55 files:
+
+- **Ciri:** her lingerie model and her bandaged naked body (`body_01_wa__ciri_bandaged_naked.w2ent`).
+- **Brothels and courtesans:** Pegleg Peggy's and Passiflora's girls in Novigrad, three Toussaint street prostitutes, and the working girl in "Prostitute in Distress".
+- **Bathhouse:** the women and their towel variants in Count Reuven's Treasure (`q302`), and a community bathhouse woman.
+- **Succubi:** the succubus contract, the Skellige alchemist quest, and the succubus cutscene model.
+- **Quest NPCs:** among others Jane Avril, Sacha, the Triss party guests, Felicia Cori, Skwarka, Astrid, the shieldmaiden, the berserker feast dancer, Lisa, the Lady of the Lake, Rosalinda, Iris, Avallac'h's lover, the Geels model, Anabelle, Whistling Wendy, and the epilogue herbalist.
+- **Crowds:** the naked Novigrad and Skellige village women and a Nilfgaardian citizen woman.
+- **Textures:** two paintings (Geels and the Toussaint mandragora paintings), in an old-format `texture.cache` that may not load on Remastered.
+
+Five files are shared with other installed mods:
+
+| File | Also in | Winner |
+| --- | --- | --- |
+| `q505_herbalist_no_reactions.w2ent`, `mq2038_shieldmaiden.w2ent`, `q301_felicia_cori.w2ent`, `q308_skwarka.w2ent` | Dynamic Appearances Project | Dynamic Appearances Project (95) |
+| `whistling_wendy.w2ent` | Brothers In Arms | Brothers In Arms (96) |
+| `body_01_wa__ciri_bandaged_naked.w2ent` | ModjiggleRR | modShouldBeNude (98; ModjiggleRR has no entry) |
+
+An old entry `[modShouldBeNude]` with `Priority=80` was still in `mods.settings` and became active again when the folder was reinstalled.
+At 80 it overrode Dynamic Appearances Project and Brothers In Arms on those five NPCs, which risks the same missing-appearance problem as [Keira](#brothers-in-arms-priority).
+Every `mods.settings` file on this setup, including old backups, stays within 0-99, so a value above 99 was not used.
+Instead, on October 15 the entries were renumbered (backup: `mods.settings.bak-2026-10-15-renumber`):
+
+| Mod folder | Before | After |
+| --- | --- | --- |
+| `moddynamicappearancesprojectremastered-bia` | 98 | 95 |
+| `modBrothersInArms` | 99 | 96 |
+| `modGwentAnimatedCards` | 97 | 97 |
+| `modShouldBeNude` | 80 | 98 |
+| `modGwentRedux` | 99 | 99 |
+
+Brothers In Arms shares no files with either Gwent mod, so moving it from 99 to 96 changes nothing else.
+Its old-gen character files may undo Next-Gen and Remastered model changes on the NPCs it replaces; check them in game.
 
 ### Map Remastered
 
@@ -340,10 +389,18 @@ They record the current configuration, rather than a proven optimal order or a r
 | 4 | Fast Travel Pack | Yes |
 | 5 | The Spider and The Wolf | Yes |
 
-The manual `mods.settings` entry for Brothers In Arms is enabled with `Priority=99`.
-Dynamic Appearances Project is enabled with `Priority=98`, so it overrides Brothers In Arms; see [Brothers In Arms priority](#brothers-in-arms-priority).
-The three Griffin mods have enabled entries at priorities 41-43; see the [Griffin armor note](#griffin-armor-retexture-slim-mesh-and-t5-patch).
-Gwent Redux is enabled with `Priority=99`, and Animated Gwent Cards with `Priority=97` so it wins; see [Animated Gwent Cards load order](#animated-gwent-cards-load-order).
+The manual `mods.settings` entries, renumbered on October 15, 2026 (lower numbers win):
+
+| Priority | Mod folder | Why |
+| --- | --- | --- |
+| 41-43 | Griffin armor mods | See the [Griffin armor note](#griffin-armor-retexture-slim-mesh-and-t5-patch). |
+| 95 | `moddynamicappearancesprojectremastered-bia` | Must override Brothers In Arms; see [Brothers In Arms priority](#brothers-in-arms-priority). |
+| 96 | `modBrothersInArms` | |
+| 97 | `modGwentAnimatedCards` | Must override Gwent Redux; see [Animated Gwent Cards load order](#animated-gwent-cards-load-order). |
+| 98 | `modShouldBeNude` | Must lose to Dynamic Appearances Project and Brothers In Arms; see [modShouldBeNude](#modshouldbenude). |
+| 99 | `modGwentRedux` | |
+
+All entries are enabled.
 The other eleven manual `mods` folders, including the strings-only `modPTOptimization`, have no matching entries in that file; the PT DLL and the Living Continent ReShade add-on are outside this mechanism.
 Absence of an explicit entry does not establish that a mod is disabled.
 
@@ -363,7 +420,7 @@ Verify the collection's interactions in game before treating the order as valida
 
 ## Versions and inventory evidence
 
-The [manual inventory](../inventory/manual.json) records eighteen manual installations; Complete Animations Redux and Restored High Quality Weather Icons are kept under `removedMods` for reference.
+The [manual inventory](../inventory/manual.json) records nineteen manual installations; Complete Animations Redux and Restored High Quality Weather Icons are kept under `removedMods` for reference.
 The [in-game inventory](../inventory/ingame.json) records six installed payloads and their enabled configuration entries.
 All six in-game packages have files on disk; their file sizes match the local package metadata.
 
@@ -456,6 +513,7 @@ All six in-game mod.io installations match the current mod.io versions: Hoods 3.
 - Check which ragdoll files win between Deaths Reworked and VAXIS's Blood Physics.
 - Check that the animated Gwent cards appear and that mouse input works in a match and the deck builder, now that Animated Gwent Cards has `Priority=97`.
 - Check Map Remastered's world map, minimap icons, and region emblems, including Brothers In Arms and Sharedutils map pins.
+- Check the NPCs that modShouldBeNude replaces for broken or old-gen models, and that the five shared NPCs keep their Dynamic Appearances and Brothers In Arms looks.
 - Check that PT Optimization 2.1 FINAL loads (`bin/x64_dx12/rt_optimizer.log`) and its settings appear under Options → Mods.
 - Check the Corvo Bianco interactions and their priority against Brothers In Arms.
 - Play the added quests and restored scenes through their relevant triggers.

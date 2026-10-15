@@ -13,11 +13,11 @@
     "patchedOn": "2026-10-08"
   },
   "notes": [
-    "Eighteen mod folders (including the strings-only modPTOptimization) and seven DLC folders are installed, plus native DX12 files for PT Optimization and The Living Continent: eighteen manual mods in total. ReShade 6.8.0 (add-on build) is installed as a requirement of The Living Continent.",
+    "Nineteen mod folders (including the strings-only modPTOptimization) and seven DLC folders are installed, plus native DX12 files for PT Optimization and The Living Continent: nineteen manual mods in total. ReShade 6.8.0 (add-on build) is installed as a requirement of The Living Continent.",
     "The October 6 update adds VAXIS's ULTRA Plus Blood Physics standard 1.2 with a full 29-file SHA-256 comparison; the earlier inventory was not rechecked in full.",
     "The October 7 update removes Complete Animations Redux; its record moves to removedMods.",
     "The October 7 update replaces Dynamic Appearances Project 2.1.1 with 3.0b Remastered, verified against all 12 archive files.",
-    "Dynamic Appearances Project has a mods.settings priority of 98 so it overrides Brothers In Arms.",
+    "Dynamic Appearances Project has a mods.settings priority of 98 so it overrides Brothers In Arms (renumbered on October 15 to 95, with Brothers In Arms at 96).",
     "The October 10 update records the October 8 game patch (executable 5.0.0.1048522) and four updated mods: Brothers In Arms 4.0.4, Sharedutils 4.1, Light Rewrite 0.19.1, and VAXIS's Blood Physics 1.4. Each was verified by a full SHA-256 comparison of every archive file. PT Optimization stays on 2.0; its 2.1 BETA is not installed.",
     "Archive release labels and embedded descriptor versions are recorded separately because several disagree.",
     "Selected-file SHA-256 comparisons cover .json, .ws, .xml, .ini and .dll archive entries present at the corresponding installed paths. They do not establish that every bundled asset was compared.",
@@ -26,6 +26,7 @@
     "The October 15 update adds Gwent Redux (Remastered 5.X Port) release 20 BiA edition, Gwent Redux Animated Gwent Cards release 4, and ModjiggleRR MED release 1, each verified by a full SHA-256 comparison of every installed archive file. Animated Gwent Cards was given mods.settings Priority=97 so it wins over Gwent Redux (Priority=99).",
     "The October 15 update also records Light Rewrite 0.23.0, VAXIS's Blood Physics 1.5, The Living Continent 1.5, and PT Optimization 2.1 FINAL (Nexus release 7), each verified by a full SHA-256 comparison with no leftover files. PT Optimization 2.1 BETA had been installed on October 11 without being recorded.",
     "A later October 15 update adds Map Remastered 2.4.1, verified against all 8 installed archive files, and records Restored High Quality Weather Icons and Moon Phases 1 under removedMods: it was installed and removed the same day because Map Remastered replaces the same minimap file.",
+    "A final October 15 update records modShouldBeNude (reinstalled from an earlier installation, source page not found) and renumbers mods.settings: Dynamic Appearances Project 95, Brothers In Arms 96, Animated Gwent Cards 97, modShouldBeNude 98, Gwent Redux 99.",
     "A Proper Send-off was compared across all 14 archive files. A Witcher Can Hide Another was checked against its two preserved original scripts and installed descriptor.",
     "Stale mods.settings entries are not treated as proof of installation.",
     "This inventory verifies installed files and archive provenance evidence, not enablement or functional compatibility."
@@ -163,7 +164,16 @@
       "gameplayVerified": false,
       "notes": [
         "4.0.4 fixed a crash when reading the Lands of North Velen book on executable 5.0.0.1048522 (player-confirmed on 2026-10-10)."
-      ]
+      ],
+      "loadOrder": {
+        "file": "Documents/The Witcher 3/mods.settings",
+        "section": "modBrothersInArms",
+        "enabled": true,
+        "priority": 96,
+        "previousPriority": 99,
+        "renumberedOn": "2026-10-15",
+        "reason": "Below Dynamic Appearances Project (95), above modShouldBeNude (98)."
+      }
     },
     {
       "name": "Dynamic Appearances Project",
@@ -199,8 +209,10 @@
         "file": "Documents/The Witcher 3/mods.settings",
         "section": "moddynamicappearancesprojectremastered-bia",
         "enabled": true,
-        "priority": 98,
-        "reason": "Must override Brothers In Arms (Priority=99); both replace Keira Metz's character files, and only this mod's copy defines its new appearances.",
+        "priority": 95,
+        "previousPriority": 98,
+        "renumberedOn": "2026-10-15",
+        "reason": "Must override Brothers In Arms (Priority=96); both replace Keira Metz's character files, and only this mod's copy defines its new appearances.",
         "documentation": "docs/setup.md#brothers-in-arms-priority",
         "verifiedInGame": "2026-10-07"
       },
@@ -501,7 +513,7 @@
         "The archive's readme (The Living Continent - Readme.md) is not installed and is excluded from the match count.",
         "ReShade.log showed the 1.4 add-on registered as The Living Continent v1.4.0.0; w3_living_sky_errors.txt read ok.",
         "1.4 was confirmed in game on 2026-10-11: calendar widget and winter snow in Velen. 1.5 has not been launched yet.",
-        "Its bundle shares 14 NPC entity files with Brothers In Arms (Priority=99), such as nml_villager_woman.w2ent and skellige_villager.w2ent. It has no mods.settings entry, so the Brothers In Arms copies win, and those NPC types may not get its winter clothes."
+        "Its bundle shares 14 NPC entity files with Brothers In Arms (Priority=96), such as nml_villager_woman.w2ent and skellige_villager.w2ent. It has no mods.settings entry, so the Brothers In Arms copies win, and those NPC types may not get its winter clothes."
       ],
       "requirements": [
         {
@@ -670,7 +682,7 @@
         "priority": 97,
         "addedOn": "2026-10-15",
         "backup": "Documents/The Witcher 3/mods.settings.bak-2026-10-15-gwent",
-        "reason": "Both mods replace gwint_game.redswf and deck_builder.redswf. Gwent Redux has Priority=99, and a mod without an entry lost to Priority=99 on this setup.",
+        "reason": "Both mods replace gwint_game.redswf and deck_builder.redswf. Gwent Redux has Priority=99, and a mod without an entry lost to Priority=99 on this setup. Brothers In Arms (96) and modShouldBeNude (98) share no files with it.",
         "documentation": "docs/setup.md#animated-gwent-cards-load-order"
       },
       "notes": [
@@ -754,6 +766,49 @@
         "Given the minimap file over Restored High Quality Weather Icons, which was removed."
       ],
       "gameplayVerified": false
+    },
+    {
+      "name": "modShouldBeNude",
+      "channel": "manual",
+      "verifiedOn": "2026-10-15",
+      "nexusModId": null,
+      "nexusUrl": null,
+      "sourceNote": "Original Nexus page not found; adult mods are hidden from logged-out searches. Reinstalled from G:/The Witcher 3 Wild Hunt.v40modded/mods/modShouldBeNude.",
+      "payloadFolders": [
+        "mods/modShouldBeNude"
+      ],
+      "menuFiles": [],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [],
+      "archiveEvidence": {
+        "archiveName": null,
+        "comparisonScope": "all 3 files against the copy in the earlier installation",
+        "matchedFiles": 3,
+        "matchedBytes": 6257362,
+        "allComparedFilesMatch": true,
+        "method": "SHA-256",
+        "comparedOn": "2026-10-15",
+        "fileDates": "2022-01-17 (old-gen build)"
+      },
+      "loadOrder": {
+        "file": "Documents/The Witcher 3/mods.settings",
+        "section": "modShouldBeNude",
+        "enabled": true,
+        "priority": 98,
+        "previousPriority": 80,
+        "renumberedOn": "2026-10-15",
+        "backup": "Documents/The Witcher 3/mods.settings.bak-2026-10-15-renumber",
+        "reason": "A stale Priority=80 entry became active on reinstall and overrode Dynamic Appearances Project and Brothers In Arms; at 98 both win their shared files.",
+        "documentation": "docs/setup.md#modshouldbenude"
+      },
+      "notes": [
+        "Replaces 55 files: Ciri's lingerie and bandaged naked body, brothel and bathhouse women, succubi, several quest NPCs, crowd women, and two painting textures.",
+        "Shares 4 quest NPC files with Dynamic Appearances Project, whistling_wendy.w2ent with Brothers In Arms, and Ciri's bandaged naked body with ModjiggleRR.",
+        "Its texture.cache is in the old format and may not load on Remastered.",
+        "Player-confirmed in game on 2026-10-15: Ciri is nude in the sauna."
+      ],
+      "gameplayVerified": true
     }
   ],
   "removedMods": [
