@@ -47,7 +47,7 @@ For an archive with loose `mod...` and `dlc...` folders, place them inside `mods
 | Gwent Redux Animated Gwent Cards | `mods/modGwentAnimatedCards` |
 | ModjiggleRR | `mods/modjiggleRR_MED` |
 | Map Remastered | `mods/modmapredraw` |
-| Nudes Collection Ultimate Edition | `mods/modNudesCollectionUltimate`; `mods.settings` `Priority=98` |
+| Nudes Collection – Should Be Nude | `mods/modShouldBeNude`; `mods.settings` `Priority=98` |
 | The Elder Bush | `mods/modACiriPube`; `mods.settings` `Priority=8` |
 | Females of the Continent (Bushy) | `mods/modHC4K02FemalesVanillaBushy`; `mods.settings` `Priority=99` |
 | New Hairstyles and Beards For Geralt | `mods/modNewHairstylesAndBeards`; `mods.settings` `Priority=94` |
@@ -294,6 +294,13 @@ Before giving ModjiggleRR priority over either mod, check Keira's and Yennefer's
 
 ### Nudes Collection Ultimate Edition
 
+> **Removed on October 15, 2026, and replaced by `modShouldBeNude` (the collection's "Should Be Nude" file) at the same `Priority=98`.**
+> Besides the scene characters, the Ultimate Edition undresses about 47 everyday community women, for example `novigrad_citizen_woman`, `novigrad_peasant_woman`, and `novigrad_poor_woman` in Novigrad, plus villagers in Velen, Skellige, the prologue, and Toussaint. Ordinary townswomen walked the streets nude.
+> Should Be Nude covers only characters who are nude in their scene: Passiflora and Pegleg Peggy's girls, the q302 bathhouse, succubi, quest NPCs, and Ciri's sauna and lingerie bodies. The only plain townsfolk in it are the game's own "naked" variants (`novigrad_naked_citizen_woman`, `skellige_naked_woman`). Main characters still come from Dynamic Appearances Project and Brothers In Arms.
+> The installed `modShouldBeNude` matches the Nexus archive **B01. Should Be Nude 3.8.F** (`B01. Should Be Nude-5436-3-8-F-1642435997.7z`, uploaded January 17, 2022) by SHA-256 for all 3 files: `blob0.bundle` `4058F2D5…`, `metadata.store` `A18F50DF…`, `texture.cache` `7D72A22E…`.
+> On the Nexus files tab the Ultimate Edition is B01 plus the single-character files B02–B32 (several "nude all the time") and the crowd packs B33–B49. **B48. Community NPCs Nude Pack** undresses the everyday townswomen. Add-ons the author built for B01 (B42, Opt03, Opt04, Opt06, Opt07, Opt11) only affect their own scenes. Opt05 Keira is incompatible with other mods that edit Keira's `.w2ent`, which includes Brothers In Arms and Dynamic Appearances Project.
+> The installed Ultimate folder is gone, and only a stray `metadata.store` remains in `mod-fix-backups/removed-2026-10-15/modNudesCollectionUltimate`. The original archive is still in Downloads. `mods.settings` backup: `mods.settings.bak-2026-10-15-shouldbenude`. The notes below describe the removed Ultimate Edition.
+
 PaulR0013's [Nudes Collection](https://www.nexusmods.com/witcher3/mods/5436) is an adult collection of nude characters and scenes: nobody is completely nude, everyone keeps some accessories, and the focus is on secondary NPCs.
 Each character is also offered as a standalone file; this setup uses the all-in-one **A01. All Together Ultimate Edition 4.2.1.F** (uploaded August 9, 2024), installed on October 15, 2026 as `mods/modNudesCollectionUltimate`.
 All 4 archive files match the installed files by SHA-256 (79,655,817 bytes).
@@ -449,7 +456,7 @@ The manual `mods.settings` entries, renumbered on October 15, 2026 (lower number
 | 95 | `moddynamicappearancesprojectremastered-bia` | Must override Brothers In Arms; see [Brothers In Arms priority](#brothers-in-arms-priority). |
 | 96 | `modBrothersInArms` | |
 | 97 | `modGwentAnimatedCards` | Must override Gwent Redux; see [Animated Gwent Cards load order](#animated-gwent-cards-load-order). |
-| 98 | `modNudesCollectionUltimate` | Must lose to Dynamic Appearances Project and Brothers In Arms; see [Nudes Collection](#nudes-collection-ultimate-edition). |
+| 98 | `modShouldBeNude` | Must lose to Dynamic Appearances Project and Brothers In Arms; see [Nudes Collection](#nudes-collection-ultimate-edition). |
 | 99 | `modGwentRedux` | |
 | 99 | `modHC4K02FemalesVanillaBushy` | Below the Nudes Collection; no files in common with Gwent Redux. |
 
