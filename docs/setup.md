@@ -47,7 +47,7 @@ For an archive with loose `mod...` and `dlc...` folders, place them inside `mods
 | Gwent Redux Animated Gwent Cards | `mods/modGwentAnimatedCards` |
 | ModjiggleRR | `mods/modjiggleRR_MED` |
 | Map Remastered | `mods/modmapredraw` |
-| modShouldBeNude | `mods/modShouldBeNude`; `mods.settings` `Priority=98` |
+| Nudes Collection Ultimate Edition | `mods/modNudesCollectionUltimate`; `mods.settings` `Priority=98` |
 
 The menu XML directory is `bin/config/r4game/user_config_matrix/pc`.
 Keep the supplied XML files for this Remastered setup.
@@ -118,7 +118,7 @@ Not yet checked in game: the slim breastplate and OTP textures on each Griffin t
 - **ReShade is required, not optional.** The main component, `W3LivingSky.addon64`, is a ReShade add-on DLL that only ReShade can load. Install [ReShade](https://reshade.me) 6.8 or newer using the **"with full add-on support"** installer (the regular build cannot load add-ons), for `bin/x64_dx12/witcher3.exe` under DirectX 12. No effects or presets are needed.
 - Installed: ReShade 6.8.0.2155 from `ReShade_Setup_6.8.0_Addon.exe`, as `bin/x64_dx12/dxgi.dll`. It loaded in the same session as PT Optimization's `xinput9_1_0.dll` without errors.
 - Copy the archive's `bin` and `Mods` folders into the game folder. The W3 Mod Manager copies only `Mods`, so with it the four `bin/x64_dx12` files and `mod00LivingContinent.xml` must be copied by hand. Every installed file matches the 1.5 archive (39 of 39; the readme is not installed), with no leftover files.
-- Check: `bin/x64_dx12/ReShade.log` must contain `Registered add-on "The Living Continent"`, and `w3_living_sky_errors.txt` should read `ok`. Both were confirmed with 1.4 on October 11, 2026, and the in-game calendar and winter snow appeared in Velen. Release 1.5 has not been launched yet.
+- Check: `bin/x64_dx12/ReShade.log` must contain `Registered add-on "The Living Continent"`, and `w3_living_sky_errors.txt` should read `ok`. Both were confirmed with 1.4 on October 11, 2026, and the in-game calendar and winter snow appeared in Velen. At the launch on October 15, `ReShade.log` showed `Registered add-on "The Living Continent" v1.5.0.0`, and the error file read `ok`.
 - Settings are under Options > Mods > The Living Continent. The game can open only about 230 options across all mod pages together.
 - Uninstall: turn off Winter Clothes for the Villagers and play a little first, then delete the files listed on the mod page.
 - The ReShade installer also added some effects (Deband, DisplayDepth, UIMask). They stay off unless enabled in the ReShade overlay and are not needed.
@@ -180,7 +180,7 @@ Her nudity in the bath scene at her hut is vanilla content.
 
 `mods.settings` gave Brothers In Arms `Priority=99`, and Dynamic Appearances Project had no entry.
 Adding an entry with `Priority=98` for Dynamic Appearances Project fixed it after a game restart on October 7, 2026.
-On October 15 both were renumbered to make room for modShouldBeNude below them; the order is unchanged:
+On October 15 both were renumbered to make room for a nude mod below them; the order is unchanged:
 
 ```ini
 [moddynamicappearancesprojectremastered-bia]
@@ -230,7 +230,7 @@ Release 2.0 stays on Nexus as an optional file for anyone who has problems with 
 
 Before this update, the 2.1 BETA (release 6) had been installed on October 11, which the October 10 record did not show.
 Its log, last written at 11:54 on October 15, showed the DLL loading and set `path tracer: bounces = 1, indirect light = 105%`.
-The FINAL DLL has not run yet; check `bin/x64_dx12/rt_optimizer.log` after the next launch.
+At the launch on October 15 at 14:50, `rt_optimizer.log` reported `PT Optimization 2.1 loaded`, with the mod enabled and 14 settings registered in the menu.
 No frame-rate improvement has been measured for this setup.
 
 ### Gwent Redux and Animated Gwent Cards
@@ -268,7 +268,7 @@ Enabled=1
 Priority=97
 ```
 
-Any number below 99 works; 97 sits between Brothers In Arms (96) and modShouldBeNude (98), which share no files with it.
+Any number below 99 works; 97 sits between Brothers In Arms (96) and the Nudes Collection (98), which share no files with it.
 The entry was added on October 15, 2026 (backup: `mods.settings.bak-2026-10-15-gwent`).
 It takes effect at the next game launch; the animations have not been checked in game yet.
 
@@ -289,47 +289,53 @@ Two installed mods also replace some of them:
 ModjiggleRR has no `mods.settings` entry, so those two mods win, and its physics changes do not apply to those meshes.
 Before giving ModjiggleRR priority over either mod, check Keira's and Yennefer's appearances in game; see [Brothers In Arms priority](#brothers-in-arms-priority).
 
-### modShouldBeNude
+### Nudes Collection Ultimate Edition
 
-`mods/modShouldBeNude` is an adult mod that makes characters nude in scenes and places where nudity fits.
-It was reinstalled on October 15, 2026 from the earlier `G:\The Witcher 3 Wild Hunt.v40modded` installation; both copies are identical by SHA-256.
-Its files are dated January 2022, so it is an old-gen build from before Next-Gen and Remastered.
-It has no `info.json`, readme, or archive, and its original Nexus page has not been found; adult mods are hidden from logged-out Nexus searches.
-The player confirmed on October 15 that it works in game: Ciri is nude in the sauna.
+PaulR0013's [Nudes Collection](https://www.nexusmods.com/witcher3/mods/5436) is an adult collection of nude characters and scenes: nobody is completely nude, everyone keeps some accessories, and the focus is on secondary NPCs.
+Each character is also offered as a standalone file; this setup uses the all-in-one **A01. All Together Ultimate Edition 4.2.1.F** (uploaded August 9, 2024), installed on October 15, 2026 as `mods/modNudesCollectionUltimate`.
+All 4 archive files match the installed files by SHA-256 (79,655,817 bytes).
+Nexus tags it Remastered and Next-Gen compatible, and the description says it is compatible with Remastered, but the author also writes that it was built and tested on game version 1.32.
+It adds no pubic hair or genital textures; the author recommends separate texture mods such as [Humans of the Continent](https://www.nexusmods.com/witcher3/mods/5710) and [The Elder Bush](https://www.nexusmods.com/witcher3/mods/3433).
 
-Its bundle replaces 55 files:
+Its bundle lists about 300 files, almost all character `.w2ent` files: 77 from Blood and Wine, 47 community NPCs, Ciri's body variants and character files, Triss, Yennefer, Keira, Philippa, Shani, Anna Henrietta, Syanna, and many quest NPCs.
+It also replaces the Skellige sauna scene, `q205_08a_3b_sauna_changing_clothes.w2scene`; no other installed mod replaces that file.
+In game on October 15, Ciri keeps a bandage in the sauna scene, consistent with the collection's accessories approach.
 
-- **Ciri:** her lingerie model and her bandaged naked body (`body_01_wa__ciri_bandaged_naked.w2ent`).
-- **Brothels and courtesans:** Pegleg Peggy's and Passiflora's girls in Novigrad, three Toussaint street prostitutes, and the working girl in "Prostitute in Distress".
-- **Bathhouse:** the women and their towel variants in Count Reuven's Treasure (`q302`), and a community bathhouse woman.
-- **Succubi:** the succubus contract, the Skellige alchemist quest, and the succubus cutscene model.
-- **Quest NPCs:** among others Jane Avril, Sacha, the Triss party guests, Felicia Cori, Skwarka, Astrid, the shieldmaiden, the berserker feast dancer, Lisa, the Lady of the Lake, Rosalinda, Iris, Avallac'h's lover, the Geels model, Anabelle, Whistling Wendy, and the epilogue herbalist.
-- **Crowds:** the naked Novigrad and Skellige village women and a Nilfgaardian citizen woman.
-- **Textures:** two paintings (Geels and the Toussaint mandragora paintings), in an old-format `texture.cache` that may not load on Remastered.
+Shared files and the winner at `Priority=98`:
 
-Five files are shared with other installed mods:
+| Also in | Files | Winner | Effect |
+| --- | --- | --- | --- |
+| Dynamic Appearances Project (95) | 27, including `ciri.w2ent`, `ciri_player.w2ent`, `triss.w2ent`, `yennefer.w2ent`, `keira_metz.w2ent`, `shani.w2ent`, `syanna.w2ent` | Dynamic Appearances Project | These main characters keep the Dynamic Appearances versions and are not changed by the collection. |
+| Brothers In Arms (96) | 15, including `keira_metz.w2ent`, `philippa_eilhart.w2ent`, `whistling_wendy.w2ent`, and Toussaint community women | Brothers In Arms | Keeps the Brothers In Arms versions. |
+| ModjiggleRR (no entry) | 11 Ciri body files, including `body_01_wa__ciri_bandaged_naked.w2ent` | Nudes Collection | No jiggle changes on those Ciri bodies. |
+| The Living Continent (no entry) | 55 community NPCs (Toussaint, Novigrad, Velen, Skellige, White Orchard women) | Nudes Collection | No winter clothes for those villager types. The Living Continent checks that an entity has its `lc_winter_` twin appearance before switching (`Wants` and `HasTwin` in `w3livingsky_folk.ws`), so nothing breaks. |
 
-| File | Also in | Winner |
-| --- | --- | --- |
-| `q505_herbalist_no_reactions.w2ent`, `mq2038_shieldmaiden.w2ent`, `q301_felicia_cori.w2ent`, `q308_skwarka.w2ent` | Dynamic Appearances Project | Dynamic Appearances Project (95) |
-| `whistling_wendy.w2ent` | Brothers In Arms | Brothers In Arms (96) |
-| `body_01_wa__ciri_bandaged_naked.w2ent` | ModjiggleRR | modShouldBeNude (98; ModjiggleRR has no entry) |
+Dynamic Appearances Project and Brothers In Arms must keep winning: their scenes and community files request appearances that exist only in their own copies, as with [Keira](#brothers-in-arms-priority).
+The author recommends giving the collection a higher priority than other mods; that is deliberately not done here.
+`Priority=98` reuses the slot of `modShouldBeNude` (backup: `mods.settings.bak-2026-10-15-nudes`).
+The collection's old-gen character files may undo Next-Gen and Remastered model changes on the NPCs it replaces; check them in game.
 
-An old entry `[modShouldBeNude]` with `Priority=80` was still in `mods.settings` and became active again when the folder was reinstalled.
-At 80 it overrode Dynamic Appearances Project and Brothers In Arms on those five NPCs, which risks the same missing-appearance problem as [Keira](#brothers-in-arms-priority).
+#### Removed: modShouldBeNude and modAllNudeBushy
+
+Both were reinstalled on October 15, 2026 from the earlier `G:\The Witcher 3 Wild Hunt.v40modded` installation and removed again the same day.
+
+- **modShouldBeNude** is the "Should Be Nude" file of the same collection, files dated January 2022. The Ultimate Edition contains 54 of its 55 files in a newer release; only `q210_avallach_lover.w2ent` is not included. It worked in game: Ciri was nude without a bandage in the sauna.
+- **modAllNudeBushy** is [All Nudes Bushy](https://www.nexusmods.com/witcher3/mods/1127) 1.1, files dated January 2016. It replaced 17 body textures (generic and old women, Ciri, Yennefer, the Crones' beauty forms, and the burned prostitute) and predates Next-Gen. It was installed only for a test.
+
+While modShouldBeNude was installed, its stale `Priority=80` entry made it override Dynamic Appearances Project and Brothers In Arms on five NPCs.
 Every `mods.settings` file on this setup, including old backups, stays within 0-99, so a value above 99 was not used.
-Instead, on October 15 the entries were renumbered (backup: `mods.settings.bak-2026-10-15-renumber`):
+Instead the entries were renumbered (backup: `mods.settings.bak-2026-10-15-renumber`):
 
 | Mod folder | Before | After |
 | --- | --- | --- |
 | `moddynamicappearancesprojectremastered-bia` | 98 | 95 |
 | `modBrothersInArms` | 99 | 96 |
 | `modGwentAnimatedCards` | 97 | 97 |
-| `modShouldBeNude` | 80 | 98 |
+| `modShouldBeNude`, now `modNudesCollectionUltimate` | 80 | 98 |
 | `modGwentRedux` | 99 | 99 |
 
 Brothers In Arms shares no files with either Gwent mod, so moving it from 99 to 96 changes nothing else.
-Its old-gen character files may undo Next-Gen and Remastered model changes on the NPCs it replaces; check them in game.
+The stale `[modAllNudeBushy]` and `[modBushyOptionB]` entries (both `Priority=2`) remain in `mods.settings` with no folders installed.
 
 ### Map Remastered
 
@@ -397,7 +403,7 @@ The manual `mods.settings` entries, renumbered on October 15, 2026 (lower number
 | 95 | `moddynamicappearancesprojectremastered-bia` | Must override Brothers In Arms; see [Brothers In Arms priority](#brothers-in-arms-priority). |
 | 96 | `modBrothersInArms` | |
 | 97 | `modGwentAnimatedCards` | Must override Gwent Redux; see [Animated Gwent Cards load order](#animated-gwent-cards-load-order). |
-| 98 | `modShouldBeNude` | Must lose to Dynamic Appearances Project and Brothers In Arms; see [modShouldBeNude](#modshouldbenude). |
+| 98 | `modNudesCollectionUltimate` | Must lose to Dynamic Appearances Project and Brothers In Arms; see [Nudes Collection](#nudes-collection-ultimate-edition). |
 | 99 | `modGwentRedux` | |
 
 All entries are enabled.
@@ -513,8 +519,7 @@ All six in-game mod.io installations match the current mod.io versions: Hoods 3.
 - Check which ragdoll files win between Deaths Reworked and VAXIS's Blood Physics.
 - Check that the animated Gwent cards appear and that mouse input works in a match and the deck builder, now that Animated Gwent Cards has `Priority=97`.
 - Check Map Remastered's world map, minimap icons, and region emblems, including Brothers In Arms and Sharedutils map pins.
-- Check the NPCs that modShouldBeNude replaces for broken or old-gen models, and that the five shared NPCs keep their Dynamic Appearances and Brothers In Arms looks.
-- Check that PT Optimization 2.1 FINAL loads (`bin/x64_dx12/rt_optimizer.log`) and its settings appear under Options → Mods.
+- Check the NPCs that the Nudes Collection replaces for broken or old-gen models, and that the main characters it shares with Dynamic Appearances Project and Brothers In Arms keep those mods' looks.
 - Check the Corvo Bianco interactions and their priority against Brothers In Arms.
 - Play the added quests and restored scenes through their relevant triggers.
 - Revisit an observed blank quest-journal entry; its cause remains unresolved.
