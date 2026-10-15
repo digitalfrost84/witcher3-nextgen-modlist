@@ -46,6 +46,7 @@ For an archive with loose `mod...` and `dlc...` folders, place them inside `mods
 | Gwent Redux | `mods/modGwentRedux`, menu `modGwentReduxConfig.xml` |
 | Gwent Redux Animated Gwent Cards | `mods/modGwentAnimatedCards` |
 | ModjiggleRR | `mods/modjiggleRR_MED` |
+| Map Remastered | `mods/modmapredraw` |
 
 The menu XML directory is `bin/config/r4game/user_config_matrix/pc`.
 Keep the supplied XML files for this Remastered setup.
@@ -281,6 +282,38 @@ Two installed mods also replace some of them:
 ModjiggleRR has no `mods.settings` entry, so those two mods win, and its physics changes do not apply to those meshes.
 Before giving ModjiggleRR priority over either mod, check Keira's and Yennefer's appearances in game; see [Brothers In Arms priority](#brothers-in-arms-priority).
 
+### Map Remastered
+
+[Map Remastered](https://www.nexusmods.com/witcher3/mods/13347) redraws the regional maps, the world map and its region emblems, and the map and minimap icons, keeping their original size and position.
+The author says the artwork was AI-generated and then checked against the game's resources.
+This setup uses the main file **Map and Icons Remastered 2.4.1** (uploaded October 9, 2026), installed on October 15 as `mods/modmapredraw`.
+The archive's folder goes straight into `mods`; its `README.txt` and `CHANGELOG.txt` are documentation only.
+When updating, replace the whole folder and keep only one copy.
+
+Its bundle replaces two Flash files: the world map, `gameplay\gui_new\swf\worldmap\panel_worldmap.redswf`, and the HUD minimap, `gameplay\gui_new\swf\hud\hud_minimap2.redswf`.
+No other installed mod replaces either file.
+It has loose, annotated scripts (`useLooseScripts: true`) and no `mods.settings` entry.
+Its options include a Remastered Map Icons toggle.
+
+Script hooks shared with other installed mods all use `@wrapMethod` and call the original method, so they chain rather than replace each other:
+
+- `CR4MapMenu.UpdateEntityPins`, also wrapped by Brothers In Arms (`bia_mapMenu_anno_2.ws`).
+- `CR4HudModuleMinimap2.OnTick`, also wrapped by The Living Continent for its calendar.
+
+Sharedutils adds its own map pins; whether they keep their icons on the redrawn map has not been checked.
+Nothing has been checked in game yet.
+
+#### Removed: Restored High Quality Weather Icons and Moon Phases
+
+[Restored High Quality Weather Icons and Moon Phases - Remastered](https://www.nexusmods.com/witcher3/mods/14389) release 1 was installed on October 15, 2026 and removed the same day.
+It restores the higher-resolution weather icons of the game's 1.0 release and adds full-moon and red-moon phases.
+Its icons are in its own copy of `hud_minimap2.redswf`, the file Map Remastered also replaces, so only one of the two can take effect.
+Map Remastered was given the minimap, which left the weather mod with only its scripts (`UpdateWeatherDisplay`, `GetCurMoonState`, `IsFullMoon`, `IsRedMoon`) and none of its artwork.
+The Living Continent also hides the game's weather box by the minimap while its calendar is showing (`W3lsShowWorldCondition` in `w3livingsky.ws`), so the icons would rarely have been visible.
+All 4 installed files had matched the archive.
+The folder was moved to `mod-fix-backups/removed-2026-10-15/modHighQualityWeatherIcons`; it never had a `mods.settings` entry.
+It adds no items or quests, so removing it should not affect saves, according to its description.
+
 ## In-game installations
 
 1. Open **Mods** from the main menu.
@@ -311,7 +344,7 @@ The manual `mods.settings` entry for Brothers In Arms is enabled with `Priority=
 Dynamic Appearances Project is enabled with `Priority=98`, so it overrides Brothers In Arms; see [Brothers In Arms priority](#brothers-in-arms-priority).
 The three Griffin mods have enabled entries at priorities 41-43; see the [Griffin armor note](#griffin-armor-retexture-slim-mesh-and-t5-patch).
 Gwent Redux is enabled with `Priority=99`, and Animated Gwent Cards with `Priority=97` so it wins; see [Animated Gwent Cards load order](#animated-gwent-cards-load-order).
-The other ten manual `mods` folders, including the strings-only `modPTOptimization`, have no matching entries in that file; the PT DLL and the Living Continent ReShade add-on are outside this mechanism.
+The other eleven manual `mods` folders, including the strings-only `modPTOptimization`, have no matching entries in that file; the PT DLL and the Living Continent ReShade add-on are outside this mechanism.
 Absence of an explicit entry does not establish that a mod is disabled.
 
 The [Corvo Bianco author](https://www.nexusmods.com/witcher3/mods/12982) requests priority over Brothers In Arms.
@@ -330,7 +363,7 @@ Verify the collection's interactions in game before treating the order as valida
 
 ## Versions and inventory evidence
 
-The [manual inventory](../inventory/manual.json) records seventeen manual installations; Complete Animations Redux is kept under `removedMods` for reference.
+The [manual inventory](../inventory/manual.json) records eighteen manual installations; Complete Animations Redux and Restored High Quality Weather Icons are kept under `removedMods` for reference.
 The [in-game inventory](../inventory/ingame.json) records six installed payloads and their enabled configuration entries.
 All six in-game packages have files on disk; their file sizes match the local package metadata.
 
@@ -365,8 +398,9 @@ On October 15, 2026, every installation added or updated that day received a ful
 | VAXIS's ULTRA Plus Blood Physics | 1.5 | 48 | 5,369,048 |
 | PT Optimization | 2.1 FINAL (Nexus release 7) | 21 | 137,903 |
 | The Living Continent | 1.5 | 39 | 23,447,455 |
+| Map Remastered | 2.4.1 | 8 | 598,947,435 |
 
-The top-level readme files of the Gwent Redux, PT Optimization, and Living Continent archives are not installed and are not counted.
+The top-level readme files of the Gwent Redux, PT Optimization, Living Continent, and Map Remastered archives (and Map Remastered's changelog) are not installed and are not counted.
 
 Internal metadata can retain older labels.
 For example, the matched Brothers In Arms 4.0.4 archive reports `4.0.2` internally, and Sharedutils 4.1 reports `3.1.1`.
@@ -421,6 +455,7 @@ All six in-game mod.io installations match the current mod.io versions: Hoods 3.
 - Check The Living Continent at night with Light Rewrite, and whether villagers that Brothers In Arms overrides get its winter clothes.
 - Check which ragdoll files win between Deaths Reworked and VAXIS's Blood Physics.
 - Check that the animated Gwent cards appear and that mouse input works in a match and the deck builder, now that Animated Gwent Cards has `Priority=97`.
+- Check Map Remastered's world map, minimap icons, and region emblems, including Brothers In Arms and Sharedutils map pins.
 - Check that PT Optimization 2.1 FINAL loads (`bin/x64_dx12/rt_optimizer.log`) and its settings appear under Options → Mods.
 - Check the Corvo Bianco interactions and their priority against Brothers In Arms.
 - Play the added quests and restored scenes through their relevant triggers.

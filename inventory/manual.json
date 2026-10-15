@@ -13,7 +13,7 @@
     "patchedOn": "2026-10-08"
   },
   "notes": [
-    "Seventeen mod folders (including the strings-only modPTOptimization) and seven DLC folders are installed, plus native DX12 files for PT Optimization and The Living Continent: seventeen manual mods in total. ReShade 6.8.0 (add-on build) is installed as a requirement of The Living Continent.",
+    "Eighteen mod folders (including the strings-only modPTOptimization) and seven DLC folders are installed, plus native DX12 files for PT Optimization and The Living Continent: eighteen manual mods in total. ReShade 6.8.0 (add-on build) is installed as a requirement of The Living Continent.",
     "The October 6 update adds VAXIS's ULTRA Plus Blood Physics standard 1.2 with a full 29-file SHA-256 comparison; the earlier inventory was not rechecked in full.",
     "The October 7 update removes Complete Animations Redux; its record moves to removedMods.",
     "The October 7 update replaces Dynamic Appearances Project 2.1.1 with 3.0b Remastered, verified against all 12 archive files.",
@@ -25,6 +25,7 @@
     "The night October 11 update adds The Living Continent 1.4, Deaths Reworked 2.70, and Blood And Steel 3.02, each with a full SHA-256 comparison of every installed archive file (39, 6, and 24 files; The Living Continent's readme is not installed). None of the three has a mods.settings entry.",
     "The October 15 update adds Gwent Redux (Remastered 5.X Port) release 20 BiA edition, Gwent Redux Animated Gwent Cards release 4, and ModjiggleRR MED release 1, each verified by a full SHA-256 comparison of every installed archive file. Animated Gwent Cards was given mods.settings Priority=97 so it wins over Gwent Redux (Priority=99).",
     "The October 15 update also records Light Rewrite 0.23.0, VAXIS's Blood Physics 1.5, The Living Continent 1.5, and PT Optimization 2.1 FINAL (Nexus release 7), each verified by a full SHA-256 comparison with no leftover files. PT Optimization 2.1 BETA had been installed on October 11 without being recorded.",
+    "A later October 15 update adds Map Remastered 2.4.1, verified against all 8 installed archive files, and records Restored High Quality Weather Icons and Moon Phases 1 under removedMods: it was installed and removed the same day because Map Remastered replaces the same minimap file.",
     "A Proper Send-off was compared across all 14 archive files. A Witcher Can Hide Another was checked against its two preserved original scripts and installed descriptor.",
     "Stale mods.settings entries are not treated as proof of installation.",
     "This inventory verifies installed files and archive provenance evidence, not enablement or functional compatibility."
@@ -713,9 +714,86 @@
         "Brothers In Arms (4 Novigrad sorceress torsos, 5 Keira Metz bodies) and Dynamic Appearances Project (the same 5 Keira bodies and Yennefer's lingerie body) replace some of its files. It has no mods.settings entry, so those mods win for those files."
       ],
       "gameplayVerified": false
+    },
+    {
+      "name": "Map Remastered",
+      "variant": "Map and Icons Remastered",
+      "channel": "manual",
+      "verifiedOn": "2026-10-15",
+      "nexusModId": 13347,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/13347",
+      "payloadFolders": [
+        "mods/modmapredraw"
+      ],
+      "menuFiles": [],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [
+        {
+          "path": "mods/modmapredraw/content/info.json",
+          "name": "mapredraw",
+          "version": "2.4.1",
+          "redkitGameVersion": "29",
+          "useLooseScripts": true
+        }
+      ],
+      "archiveEvidence": {
+        "archiveName": "Map and Icons Remastered 13347 2.4.1 2026-10-09T03-13Z 5sT4VvKOW.zip",
+        "releaseLabel": "2.4.1",
+        "comparisonScope": "all installed archive files; README.txt and CHANGELOG.txt are not installed",
+        "matchedFiles": 8,
+        "matchedBytes": 598947435,
+        "allComparedFilesMatch": true,
+        "noExtraInstalledFiles": true,
+        "method": "SHA-256",
+        "comparedOn": "2026-10-15"
+      },
+      "notes": [
+        "Replaces gameplay/gui_new/swf/worldmap/panel_worldmap.redswf and gameplay/gui_new/swf/hud/hud_minimap2.redswf; no other installed mod replaces them.",
+        "Wraps CR4MapMenu.UpdateEntityPins (also wrapped by Brothers In Arms) and CR4HudModuleMinimap2.OnTick (also wrapped by The Living Continent); all wrappers call the original method.",
+        "Given the minimap file over Restored High Quality Weather Icons, which was removed."
+      ],
+      "gameplayVerified": false
     }
   ],
   "removedMods": [
+    {
+      "name": "Restored High Quality Weather Icons and Moon Phases - Remastered",
+      "channel": "manual",
+      "nexusModId": 14389,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/14389",
+      "payloadFolders": [
+        "mods/modHighQualityWeatherIcons"
+      ],
+      "menuFiles": [],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [
+        {
+          "path": "mods/modHighQualityWeatherIcons/content/info.json",
+          "name": "Restored High Quality Weather Icons and Moon Phases ",
+          "version": "1",
+          "redkitGameVersion": "29",
+          "useLooseScripts": false
+        }
+      ],
+      "archiveEvidence": {
+        "archiveName": "HighQualityWeatherIcons 14389 1 2026-10-15T08-31Z kQW7gSk6Q.zip",
+        "releaseLabel": "1",
+        "comparisonScope": "all archive files",
+        "matchedFiles": 4,
+        "matchedBytes": 1199116,
+        "allComparedFilesMatch": true,
+        "method": "SHA-256",
+        "comparedOn": "2026-10-15"
+      },
+      "gameplayVerified": false,
+      "installedOn": "2026-10-15",
+      "removedOn": "2026-10-15",
+      "removalReason": "Its icons and moon phases are in its copy of gameplay/gui_new/swf/hud/hud_minimap2.redswf, which Map Remastered also replaces. Map Remastered was given that file, leaving this mod with only its scripts; The Living Continent's calendar also hides the weather box.",
+      "backupLocation": "mod-fix-backups/removed-2026-10-15/modHighQualityWeatherIcons",
+      "removalDocumentation": "docs/setup.md#removed-restored-high-quality-weather-icons-and-moon-phases"
+    },
     {
       "name": "Complete Animations Redux",
       "variant": "Remastered",
