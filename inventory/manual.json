@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "inventoriedOn": "2026-10-04",
-  "updatedOn": "2026-10-11",
+  "updatedOn": "2026-10-15",
   "scope": "Manually installed mod payloads in the game directory, corroborated by downloaded archive contents.",
   "pathBase": "Game installation directory; all installed paths below are relative to this directory.",
   "game": {
@@ -13,7 +13,7 @@
     "patchedOn": "2026-10-08"
   },
   "notes": [
-    "Thirteen mod folders and seven DLC folders are installed, plus native DX12 files for PT Optimization and The Living Continent: fourteen manual mods in total. ReShade 6.8.0 (add-on build) is installed as a requirement of The Living Continent.",
+    "Seventeen mod folders (including the strings-only modPTOptimization) and seven DLC folders are installed, plus native DX12 files for PT Optimization and The Living Continent: seventeen manual mods in total. ReShade 6.8.0 (add-on build) is installed as a requirement of The Living Continent.",
     "The October 6 update adds VAXIS's ULTRA Plus Blood Physics standard 1.2 with a full 29-file SHA-256 comparison; the earlier inventory was not rechecked in full.",
     "The October 7 update removes Complete Animations Redux; its record moves to removedMods.",
     "The October 7 update replaces Dynamic Appearances Project 2.1.1 with 3.0b Remastered, verified against all 12 archive files.",
@@ -23,6 +23,8 @@
     "Selected-file SHA-256 comparisons cover .json, .ws, .xml, .ini and .dll archive entries present at the corresponding installed paths. They do not establish that every bundled asset was compared.",
     "The evening October 11 update adds Griffin Armour (On The Path) Final and SGA T5 for On The Path 1.5, each with a full SHA-256 comparison of every archive file (4 and 6 files). The three Griffin mods have mods.settings priorities 41, 42 and 43; a stale modSlimT5forOTP entry was removed.",
     "The night October 11 update adds The Living Continent 1.4, Deaths Reworked 2.70, and Blood And Steel 3.02, each with a full SHA-256 comparison of every installed archive file (39, 6, and 24 files; The Living Continent's readme is not installed). None of the three has a mods.settings entry.",
+    "The October 15 update adds Gwent Redux (Remastered 5.X Port) release 20 BiA edition, Gwent Redux Animated Gwent Cards release 4, and ModjiggleRR MED release 1, each verified by a full SHA-256 comparison of every installed archive file. Animated Gwent Cards was given mods.settings Priority=97 so it wins over Gwent Redux (Priority=99).",
+    "The October 15 update also records Light Rewrite 0.23.0, VAXIS's Blood Physics 1.5, The Living Continent 1.5, and PT Optimization 2.1 FINAL (Nexus release 7), each verified by a full SHA-256 comparison with no leftover files. PT Optimization 2.1 BETA had been installed on October 11 without being recorded.",
     "A Proper Send-off was compared across all 14 archive files. A Witcher Can Hide Another was checked against its two preserved original scripts and installed descriptor.",
     "Stale mods.settings entries are not treated as proof of installation.",
     "This inventory verifies installed files and archive provenance evidence, not enablement or functional compatibility."
@@ -32,7 +34,7 @@
       "name": "VAXIS's ULTRA Plus Blood Physics",
       "variant": "standard",
       "channel": "manual",
-      "verifiedOn": "2026-10-10",
+      "verifiedOn": "2026-10-15",
       "nexusModId": 13506,
       "nexusUrl": "https://www.nexusmods.com/witcher3/mods/13506",
       "payloadFolders": [
@@ -45,15 +47,17 @@
       "configFiles": [],
       "embeddedInfo": [],
       "archiveEvidence": {
-        "archiveName": "VAXIS_Blood_Physics_v1.4.zip 13506 1.4 2026-10-07T20-54Z hw6Xp1E51.zip",
-        "releaseLabel": "1.4",
+        "archiveName": "VAXIS_Blood_Physics_v1.5.zip 13506 1.5 2026-10-13T20-37Z kQW7gSpLf.zip",
+        "releaseLabel": "1.5",
         "comparisonScope": "all archive files",
         "matchedFiles": 48,
-        "matchedBytes": 5367666,
+        "matchedBytes": 5369048,
         "allComparedFilesMatch": true,
+        "noExtraInstalledFiles": true,
         "method": "SHA-256",
-        "comparedOn": "2026-10-10"
+        "comparedOn": "2026-10-15"
       },
+      "previousRelease": { "releaseLabel": "1.4", "replacedOn": "2026-10-15" },
       "notes": [
         "Nexus tags the mod Remastered Compatible as observed on October 6, 2026; this is an author-page claim, not a local gameplay test.",
         "Release 1.4 adds a menu XML file; the archive has no info.json descriptor, DLC folder, or native DLL."
@@ -226,15 +230,17 @@
       "configFiles": [],
       "embeddedInfo": [],
       "archiveEvidence": {
-        "archiveName": "Light Rewrite 12144 0.19.1 2026-10-10T00-43Z Q81OXm5Ii.zip",
-        "releaseLabel": "0.19.1",
+        "archiveName": "Light Rewrite 12144 0.23.0 2026-10-15T07-03Z vo9LcevNd.zip",
+        "releaseLabel": "0.23.0",
         "comparisonScope": "all archive files",
-        "matchedFiles": 62,
-        "matchedBytes": 562325,
+        "matchedFiles": 70,
+        "matchedBytes": 660412,
         "allComparedFilesMatch": true,
+        "noExtraInstalledFiles": true,
         "method": "SHA-256",
-        "comparedOn": "2026-10-10"
+        "comparedOn": "2026-10-15"
       },
+      "previousRelease": { "releaseLabel": "0.19.1", "replacedOn": "2026-10-15" },
       "gameplayVerified": false,
       "notes": [
         "Before the October 10 update, the installed files matched 0.16.0 (all 56 files), not the 0.14.0 recorded in the October 4 snapshot."
@@ -412,7 +418,8 @@
       "channel": "manual",
       "nexusModId": 13025,
       "nexusUrl": "https://www.nexusmods.com/witcher3/mods/13025",
-      "payloadFolders": [],
+      "verifiedOn": "2026-10-15",
+      "payloadFolders": ["mods/modPTOptimization"],
       "menuFiles": [
         "bin/config/r4game/user_config_matrix/pc/pt_optimization.xml"
       ],
@@ -424,25 +431,33 @@
       ],
       "embeddedInfo": [],
       "internalVersion": {
-        "value": "2.0",
+        "value": "2.1",
         "source": "bin/config/platform/pc/RTOptimization.ini",
-        "evidence": "Header identifies Path Tracing Optimization for The Witcher 3 Remastered, v2.0."
+        "evidence": "Header identifies Path Tracing Optimization for The Witcher 3 Remastered, v2.1."
       },
       "archiveEvidence": {
-        "archiveName": "PT Optimization 2.0 13025 4 2026-10-01T14-37Z KA0dHIpaE.zip",
-        "releaseLabel": "4",
-        "comparisonScope": "selected file extensions described in inventory notes",
-        "matchedFiles": 3,
+        "archiveName": "PT Optimization 2.1 FINAL 13025 7 2026-10-13T12-05Z 2h8gGWuP4.zip",
+        "releaseLabel": "7 (2.1 FINAL)",
+        "comparisonScope": "all installed archive files; PT-Optimization-README.txt is not installed",
+        "matchedFiles": 21,
+        "matchedBytes": 137903,
         "allComparedFilesMatch": true,
-        "method": "SHA-256"
+        "noExtraInstalledFiles": true,
+        "method": "SHA-256",
+        "comparedOn": "2026-10-15"
       },
-      "gameplayVerified": false,
-      "availableRelease": {
-        "version": "2.1 BETA (Nexus release 6)",
-        "nexusUploaded": "2026-10-08",
-        "status": "not installed: BETA",
-        "note": "The author says it works with game patch 5.01."
-      }
+      "previousRelease": {
+        "releaseLabel": "6 (2.1 BETA)",
+        "installedOn": "2026-10-11",
+        "replacedOn": "2026-10-15",
+        "note": "The October 10 record still showed 2.0 (release 4); the BETA install on October 11 was not recorded at the time."
+      },
+      "notes": [
+        "Release 2.1 moves the settings to Options > Mods > RT/PT optimization; mods/modPTOptimization contains only translated strings.",
+        "The author lists 2.1 FINAL for game patches 5.01 (GOG, Steam, Epic), 5.00c, and 5.00b.",
+        "The FINAL DLL had not run yet when verified; rt_optimizer.log was last written by the BETA."
+      ],
+      "gameplayVerified": false
     },
     {
       "name": "The Living Continent - Seasons - Sky - Weather",
@@ -464,21 +479,28 @@
       "configFiles": [],
       "embeddedInfo": [],
       "archiveEvidence": {
-        "archiveName": "The Living Continent 1.4 13650 1.4 2026-10-11T05-47Z lPL5EVoWu.zip",
-        "releaseLabel": "1.4",
+        "archiveName": "The Living Continent 1.5 13650 1.5 2026-10-14T05-55Z KA0dHIKQd.zip",
+        "releaseLabel": "1.5",
         "comparisonScope": "all archive files",
         "matchedFiles": 39,
-        "matchedBytes": 23239703,
+        "matchedBytes": 23447455,
         "allComparedFilesMatch": true,
+        "noExtraInstalledFiles": true,
         "method": "SHA-256",
-        "comparedOn": "2026-10-11"
+        "comparedOn": "2026-10-15"
+      },
+      "previousRelease": {
+        "releaseLabel": "1.4",
+        "installedOn": "2026-10-11",
+        "replacedOn": "2026-10-15"
       },
       "gameplayVerified": true,
       "notes": [
         "Requires ReShade 6.8+ with full add-on support for bin/x64_dx12/witcher3.exe (DX12); see requirements.",
         "The archive's readme (The Living Continent - Readme.md) is not installed and is excluded from the match count.",
-        "ReShade.log shows the add-on registered as The Living Continent v1.4.0.0; w3_living_sky_errors.txt reads ok.",
-        "Confirmed in game on 2026-10-11: calendar widget and winter snow in Velen."
+        "ReShade.log showed the 1.4 add-on registered as The Living Continent v1.4.0.0; w3_living_sky_errors.txt read ok.",
+        "1.4 was confirmed in game on 2026-10-11: calendar widget and winter snow in Velen. 1.5 has not been launched yet.",
+        "Its bundle shares 14 NPC entity files with Brothers In Arms (Priority=99), such as nml_villager_woman.w2ent and skellige_villager.w2ent. It has no mods.settings entry, so the Brothers In Arms copies win, and those NPC types may not get its winter clothes."
       ],
       "requirements": [
         {
@@ -532,8 +554,14 @@
       "gameplayVerified": false,
       "notes": [
         "Next Gen main file. The embedded descriptor version (1.0) differs from the release label (2.70).",
-        "The author expects conflicts with other death-animation, ragdoll, finisher, wound, or damage-processor mods."
-      ]
+        "The author expects conflicts with other death-animation, ragdoll, finisher, wound, or damage-processor mods.",
+        "Shares four .w2ragdoll files (dwarf, man, wild hunt, and woman base ragdolls) with VAXIS's ULTRA Plus Blood Physics. Neither has a mods.settings entry; which copy wins has not been determined."
+      ],
+      "availableRelease": {
+        "version": "2.72",
+        "nexusUploaded": "2026-10-12",
+        "status": "not installed"
+      }
     },
     {
       "name": "Blood And Steel",
@@ -571,8 +599,120 @@
       "gameplayVerified": false,
       "notes": [
         "Remastered file. The menu XML is optional.",
-        "The author says it conflicts with mods that change attack animations."
+        "The author says it conflicts with mods that change attack animations.",
+        "Scripts are precompiled (precompiled.rsblob); no loose .ws files. No bundle path overlaps with the other installed mods were found on 2026-10-15."
       ]
+    },
+    {
+      "name": "Gwent Redux",
+      "variant": "Remastered 5.X Port, BiA edition",
+      "channel": "manual",
+      "verifiedOn": "2026-10-15",
+      "nexusModId": 13403,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/13403",
+      "payloadFolders": ["mods/modGwentRedux"],
+      "menuFiles": [
+        "bin/config/r4game/user_config_matrix/pc/modGwentReduxConfig.xml"
+      ],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [],
+      "archiveEvidence": {
+        "archiveName": "Gwent Redux (Remastered 5.X Port) 13403 20 2026-10-11T12-48Z oDUKYHx0t.zip",
+        "releaseLabel": "20",
+        "comparisonScope": "all installed archive files; README-Remastered-Port.txt is not installed",
+        "matchedFiles": 27,
+        "matchedBytes": 131075568,
+        "allComparedFilesMatch": true,
+        "method": "SHA-256",
+        "comparedOn": "2026-10-15"
+      },
+      "loadOrder": {
+        "file": "Documents/The Witcher 3/mods.settings",
+        "section": "modGwentRedux",
+        "enabled": true,
+        "priority": 99
+      },
+      "notes": [
+        "The BiA edition blanks Brothers In Arms' Gwent card definitions; use it only with Brothers In Arms installed.",
+        "Ships patched gwint_game.redswf and deck_builder.redswf; Animated Gwent Cards replaces both and must win."
+      ],
+      "gameplayVerified": false
+    },
+    {
+      "name": "Gwent Redux Animated Gwent Cards",
+      "variant": "optional file of Gwent Redux (Remastered)",
+      "channel": "manual",
+      "verifiedOn": "2026-10-15",
+      "nexusModId": 13403,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/13403?tab=files",
+      "payloadFolders": ["mods/modGwentAnimatedCards"],
+      "menuFiles": [],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [],
+      "archiveEvidence": {
+        "archiveName": "Gwent Redux Animated Gwent Cards 13403 4 2026-10-06T12-18Z AR7JbxQ8z.zip",
+        "releaseLabel": "4",
+        "comparisonScope": "all archive files",
+        "matchedFiles": 3,
+        "matchedBytes": 78159444,
+        "allComparedFilesMatch": true,
+        "method": "SHA-256",
+        "comparedOn": "2026-10-15"
+      },
+      "loadOrder": {
+        "file": "Documents/The Witcher 3/mods.settings",
+        "section": "modGwentAnimatedCards",
+        "requirement": "Load order above Gwent Redux (author's instruction).",
+        "enabled": true,
+        "priority": 97,
+        "addedOn": "2026-10-15",
+        "backup": "Documents/The Witcher 3/mods.settings.bak-2026-10-15-gwent",
+        "reason": "Both mods replace gwint_game.redswf and deck_builder.redswf. Gwent Redux has Priority=99, and a mod without an entry lost to Priority=99 on this setup.",
+        "documentation": "docs/setup.md#animated-gwent-cards-load-order"
+      },
+      "notes": [
+        "Original animations by EthanBlackBT; Remastered port by oerdi25.",
+        "Animates Geralt, Ciri, Triss, Yennefer, Emhyr, Eredin, Foltest, and Francesca with base card art only.",
+        "Uninstall the original Animated Gwent Cards mod first; its 4.0x Flash files break mouse input on Remastered."
+      ],
+      "gameplayVerified": false
+    },
+    {
+      "name": "ModjiggleRR",
+      "variant": "MED",
+      "channel": "manual",
+      "verifiedOn": "2026-10-15",
+      "nexusModId": 13695,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/13695",
+      "payloadFolders": ["mods/modjiggleRR_MED"],
+      "menuFiles": [],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [
+        {
+          "path": "mods/modjiggleRR_MED/content/info.json",
+          "name": "jiggle_adjustments_med",
+          "modName": "Jiggle Physics Adjustments Medium",
+          "version": "1.1"
+        }
+      ],
+      "archiveEvidence": {
+        "archiveName": "ModjiggleRR MED 13695 1 2026-10-06T14-20Z 6VaC3PeVm.7z",
+        "releaseLabel": "1",
+        "comparisonScope": "all archive files",
+        "matchedFiles": 3,
+        "matchedBytes": 1101353,
+        "allComparedFilesMatch": true,
+        "method": "SHA-256",
+        "comparedOn": "2026-10-15"
+      },
+      "notes": [
+        "Adult content; the Nexus page is hidden unless adult content is enabled.",
+        "Brothers In Arms (4 Novigrad sorceress torsos, 5 Keira Metz bodies) and Dynamic Appearances Project (the same 5 Keira bodies and Yennefer's lingerie body) replace some of its files. It has no mods.settings entry, so those mods win for those files."
+      ],
+      "gameplayVerified": false
     }
   ],
   "removedMods": [
