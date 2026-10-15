@@ -48,6 +48,8 @@ For an archive with loose `mod...` and `dlc...` folders, place them inside `mods
 | ModjiggleRR | `mods/modjiggleRR_MED` |
 | Map Remastered | `mods/modmapredraw` |
 | Nudes Collection Ultimate Edition | `mods/modNudesCollectionUltimate`; `mods.settings` `Priority=98` |
+| The Elder Bush | `mods/modACiriPube`; `mods.settings` `Priority=8` |
+| Females of the Continent (Bushy) | `mods/modHC4K02FemalesVanillaBushy`; `mods.settings` `Priority=99` |
 
 The menu XML directory is `bin/config/r4game/user_config_matrix/pc`.
 Keep the supplied XML files for this Remastered setup.
@@ -337,6 +339,31 @@ Instead the entries were renumbered (backup: `mods.settings.bak-2026-10-15-renum
 Brothers In Arms shares no files with either Gwent mod, so moving it from 99 to 96 changes nothing else.
 The stale `[modAllNudeBushy]` and `[modBushyOptionB]` entries (both `Priority=2`) remain in `mods.settings` with no folders installed.
 
+### Body textures: The Elder Bush and Females of the Continent
+
+The Nudes Collection adds no pubic hair; its author recommends separate texture mods.
+Two of them were installed on October 15, 2026, both texture-only, with no scripts, scenes, or character files:
+
+- **[The Elder Bush](https://www.nexusmods.com/witcher3/mods/3433)** (archive `Ciri Pube-3433-1-1545496436.rar`, files dated October 21, 2018), installed as `mods/modACiriPube`. It replaces one texture, Ciri's body diffuse map `characters\models\main_npc\ciri\model\body_03__wa_ciri_d01.xbm`, with white pubic hair. All 3 archive files match the installed files (6,923,975 bytes).
+- **[Humans of the Continent](https://www.nexusmods.com/witcher3/mods/5710), B3. Females of the Continent – Bushy Option** 1.0 (archive `B3. Females of the Continent - Bushy Option-5710-1-0-1620778213.rar`, files dated May 10, 2021), installed as `mods/modHC4K02FemalesVanillaBushy`. It replaces 231 female body and head textures in 4K, in a 1.3 GB `texture.cache`. All 3 archive files match the installed files by SHA-256, streamed from the archive.
+
+Both were built before Next-Gen. If Remastered cannot read their `texture.cache` format, the game falls back to its own textures without an error; check in game.
+They may also look softer than the Remastered textures around them.
+
+Shared textures and the winners:
+
+| Texture | Mods | Winner |
+| --- | --- | --- |
+| Ciri's body (`body_03__wa_ciri_d01.xbm`) | The Elder Bush (8), Females of the Continent (99) | The Elder Bush |
+| Cerys's head (`h_01_wa__cerys_d01.xbm`) | Females of the Continent (99), Nudes Collection (98) | Nudes Collection, whose credits describe a Cerys head texture that removes the neck seam |
+| Burned prostitute's body | Females of the Continent (99), Nudes Collection (98) | Nudes Collection |
+
+Neither shares files with Dynamic Appearances Project, Brothers In Arms, or any other installed mod.
+Both had old `mods.settings` entries from an earlier setup (`modACiriPube` 8, `modHC4K02FemalesVanillaBushy` 20), which became active on install.
+Females of the Continent was moved from 20 to 99 so the Nudes Collection keeps its Cerys texture (backup: `mods.settings.bak-2026-10-15-hc4k`).
+It shares 99 with Gwent Redux, but the two have no files in common.
+The other Humans of the Continent parts (`modHC4K01MalesVanilla`, `modHC4K03ChildrenVanilla`) still have old entries but are not installed.
+
 ### Map Remastered
 
 [Map Remastered](https://www.nexusmods.com/witcher3/mods/13347) redraws the regional maps, the world map and its region emblems, and the map and minimap icons, keeping their original size and position.
@@ -399,12 +426,14 @@ The manual `mods.settings` entries, renumbered on October 15, 2026 (lower number
 
 | Priority | Mod folder | Why |
 | --- | --- | --- |
+| 8 | `modACiriPube` | Wins Ciri's body texture over Females of the Continent; see [body textures](#body-textures-the-elder-bush-and-females-of-the-continent). |
 | 41-43 | Griffin armor mods | See the [Griffin armor note](#griffin-armor-retexture-slim-mesh-and-t5-patch). |
 | 95 | `moddynamicappearancesprojectremastered-bia` | Must override Brothers In Arms; see [Brothers In Arms priority](#brothers-in-arms-priority). |
 | 96 | `modBrothersInArms` | |
 | 97 | `modGwentAnimatedCards` | Must override Gwent Redux; see [Animated Gwent Cards load order](#animated-gwent-cards-load-order). |
 | 98 | `modNudesCollectionUltimate` | Must lose to Dynamic Appearances Project and Brothers In Arms; see [Nudes Collection](#nudes-collection-ultimate-edition). |
 | 99 | `modGwentRedux` | |
+| 99 | `modHC4K02FemalesVanillaBushy` | Below the Nudes Collection; no files in common with Gwent Redux. |
 
 All entries are enabled.
 The other eleven manual `mods` folders, including the strings-only `modPTOptimization`, have no matching entries in that file; the PT DLL and the Living Continent ReShade add-on are outside this mechanism.
@@ -426,7 +455,7 @@ Verify the collection's interactions in game before treating the order as valida
 
 ## Versions and inventory evidence
 
-The [manual inventory](../inventory/manual.json) records nineteen manual installations; Complete Animations Redux and Restored High Quality Weather Icons are kept under `removedMods` for reference.
+The [manual inventory](../inventory/manual.json) records twenty-one manual installations; Complete Animations Redux and Restored High Quality Weather Icons are kept under `removedMods` for reference.
 The [in-game inventory](../inventory/ingame.json) records six installed payloads and their enabled configuration entries.
 All six in-game packages have files on disk; their file sizes match the local package metadata.
 
@@ -519,6 +548,7 @@ All six in-game mod.io installations match the current mod.io versions: Hoods 3.
 - Check which ragdoll files win between Deaths Reworked and VAXIS's Blood Physics.
 - Check that the animated Gwent cards appear and that mouse input works in a match and the deck builder, now that Animated Gwent Cards has `Priority=97`.
 - Check Map Remastered's world map, minimap icons, and region emblems, including Brothers In Arms and Sharedutils map pins.
+- Check that The Elder Bush and Females of the Continent textures load on Remastered, and Cerys's neck with the Nudes Collection's head texture.
 - Check the NPCs that the Nudes Collection replaces for broken or old-gen models, and that the main characters it shares with Dynamic Appearances Project and Brothers In Arms keep those mods' looks.
 - Check the Corvo Bianco interactions and their priority against Brothers In Arms.
 - Play the added quests and restored scenes through their relevant triggers.

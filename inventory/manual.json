@@ -13,7 +13,7 @@
     "patchedOn": "2026-10-08"
   },
   "notes": [
-    "Nineteen mod folders (including the strings-only modPTOptimization) and seven DLC folders are installed, plus native DX12 files for PT Optimization and The Living Continent: nineteen manual mods in total. ReShade 6.8.0 (add-on build) is installed as a requirement of The Living Continent.",
+    "Twenty-one mod folders (including the strings-only modPTOptimization) and seven DLC folders are installed, plus native DX12 files for PT Optimization and The Living Continent: twenty-one manual mods in total. ReShade 6.8.0 (add-on build) is installed as a requirement of The Living Continent.",
     "The October 6 update adds VAXIS's ULTRA Plus Blood Physics standard 1.2 with a full 29-file SHA-256 comparison; the earlier inventory was not rechecked in full.",
     "The October 7 update removes Complete Animations Redux; its record moves to removedMods.",
     "The October 7 update replaces Dynamic Appearances Project 2.1.1 with 3.0b Remastered, verified against all 12 archive files.",
@@ -26,6 +26,7 @@
     "The October 15 update adds Gwent Redux (Remastered 5.X Port) release 20 BiA edition, Gwent Redux Animated Gwent Cards release 4, and ModjiggleRR MED release 1, each verified by a full SHA-256 comparison of every installed archive file. Animated Gwent Cards was given mods.settings Priority=97 so it wins over Gwent Redux (Priority=99).",
     "The October 15 update also records Light Rewrite 0.23.0, VAXIS's Blood Physics 1.5, The Living Continent 1.5, and PT Optimization 2.1 FINAL (Nexus release 7), each verified by a full SHA-256 comparison with no leftover files. PT Optimization 2.1 BETA had been installed on October 11 without being recorded.",
     "A later October 15 update adds Map Remastered 2.4.1, verified against all 8 installed archive files, and records Restored High Quality Weather Icons and Moon Phases 1 under removedMods: it was installed and removed the same day because Map Remastered replaces the same minimap file.",
+    "A closing October 15 update adds The Elder Bush (Ciri Pube, Priority=8) and Humans of the Continent B3. Females of the Continent - Bushy Option (Priority=99, moved from 20), both texture-only and verified against their archives.",
     "The last October 15 update replaces modShouldBeNude with the Nudes Collection Ultimate Edition 4.2.1.F (Priority=98, verified against all 4 archive files) and records modShouldBeNude and All Nudes Bushy under removedMods. At the launch that day, PT Optimization 2.1 and The Living Continent 1.5 loaded without errors.",
     "A final October 15 update records modShouldBeNude (reinstalled from an earlier installation; the Should Be Nude file of the Nudes Collection, Nexus 5436) and renumbers mods.settings: Dynamic Appearances Project 95, Brothers In Arms 96, Animated Gwent Cards 97, modShouldBeNude 98, Gwent Redux 99.",
     "A Proper Send-off was compared across all 14 archive files. A Witcher Can Hide Another was checked against its two preserved original scripts and installed descriptor.",
@@ -809,6 +810,83 @@
         "Tagged Remastered and Next-Gen compatible on Nexus; the author built and tested it on game version 1.32.",
         "Contains 54 of the 55 files of the removed modShouldBeNude in a newer release.",
         "In game on 2026-10-15, Ciri keeps a bandage in the sauna scene."
+      ],
+      "gameplayVerified": false
+    },
+    {
+      "name": "The Elder Bush",
+      "variant": "Ciri Pube",
+      "channel": "manual",
+      "verifiedOn": "2026-10-15",
+      "nexusModId": 3433,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/3433",
+      "payloadFolders": [
+        "mods/modACiriPube"
+      ],
+      "menuFiles": [],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [],
+      "archiveEvidence": {
+        "archiveName": "Ciri Pube-3433-1-1545496436.rar",
+        "releaseLabel": "1",
+        "comparisonScope": "all archive files",
+        "matchedFiles": 3,
+        "matchedBytes": 6923975,
+        "allComparedFilesMatch": true,
+        "method": "SHA-256",
+        "comparedOn": "2026-10-15",
+        "fileDates": "2018-10-21"
+      },
+      "loadOrder": {
+        "file": "Documents/The Witcher 3/mods.settings",
+        "section": "modACiriPube",
+        "enabled": true,
+        "priority": 8,
+        "reason": "Old entry from an earlier setup, kept: wins Ciri's body texture over Females of the Continent (99)."
+      },
+      "notes": [
+        "Texture-only: replaces characters/models/main_npc/ciri/model/body_03__wa_ciri_d01.xbm (white pubic hair). Pre-Next-Gen texture.cache; may not load on Remastered."
+      ],
+      "gameplayVerified": false
+    },
+    {
+      "name": "Humans of the Continent - B3. Females of the Continent - Bushy Option",
+      "channel": "manual",
+      "verifiedOn": "2026-10-15",
+      "nexusModId": 5710,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/5710",
+      "payloadFolders": [
+        "mods/modHC4K02FemalesVanillaBushy"
+      ],
+      "menuFiles": [],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [],
+      "archiveEvidence": {
+        "archiveName": "B3. Females of the Continent - Bushy Option-5710-1-0-1620778213.rar",
+        "releaseLabel": "1.0",
+        "comparisonScope": "all archive files, hashed from the archive stream",
+        "matchedFiles": 3,
+        "matchedBytes": 1312657102,
+        "allComparedFilesMatch": true,
+        "method": "SHA-256",
+        "comparedOn": "2026-10-15",
+        "fileDates": "2021-05-10"
+      },
+      "loadOrder": {
+        "file": "Documents/The Witcher 3/mods.settings",
+        "section": "modHC4K02FemalesVanillaBushy",
+        "enabled": true,
+        "priority": 99,
+        "previousPriority": 20,
+        "setOn": "2026-10-15",
+        "backup": "Documents/The Witcher 3/mods.settings.bak-2026-10-15-hc4k",
+        "reason": "Below the Nudes Collection (98), which keeps its Cerys head texture and the burned prostitute's body; The Elder Bush (8) keeps Ciri's body texture. Shares 99 with Gwent Redux but no files."
+      },
+      "notes": [
+        "Texture-only: 231 female body and head textures in 4K, 1.3 GB texture.cache. Pre-Next-Gen; may not load on Remastered or may look softer than Remastered textures.",
+        "Shares Ciri's body texture with The Elder Bush, and Cerys's head and the burned prostitute's body with the Nudes Collection."
       ],
       "gameplayVerified": false
     }
