@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "inventoriedOn": "2026-10-04",
-  "updatedOn": "2026-10-15",
+  "updatedOn": "2026-10-17",
   "scope": "Manually installed mod payloads in the game directory, corroborated by downloaded archive contents.",
   "pathBase": "Game installation directory; all installed paths below are relative to this directory.",
   "game": {
@@ -30,6 +30,7 @@
     "A closing October 15 update adds The Elder Bush (Ciri Pube, Priority=8) and Humans of the Continent B3. Females of the Continent - Bushy Option (Priority=99, moved from 20), both texture-only and verified against their archives.",
     "The last October 15 update replaces modShouldBeNude with the Nudes Collection Ultimate Edition 4.2.1.F (Priority=98, verified against all 4 archive files) and records modShouldBeNude and All Nudes Bushy under removedMods. At the launch that day, PT Optimization 2.1 and The Living Continent 1.5 loaded without errors.",
     "A final October 15 update records modShouldBeNude (reinstalled from an earlier installation; the Should Be Nude file of the Nudes Collection, Nexus 5436) and renumbers mods.settings: Dynamic Appearances Project 95, Brothers In Arms 96, Animated Gwent Cards 97, modShouldBeNude 98, Gwent Redux 99.",
+    "The October 17 update adds Better Torches Next-Gen 5.1.0 (Remastered main file) and No Indignant NPCs 2.4 (Remastered main file), each verified against every file of its Nexus archive manifest (6 and 1 files). Neither has a mods.settings entry or shares files with another installed mod. With them, twenty-four mod folders are installed: twenty-four manual mods in total.",
     "A Proper Send-off was compared across all 14 archive files. A Witcher Can Hide Another was checked against its two preserved original scripts and installed descriptor.",
     "Stale mods.settings entries are not treated as proof of installation.",
     "This inventory verifies installed files and archive provenance evidence, not enablement or functional compatibility."
@@ -938,6 +939,71 @@
         "Shares shop_brokvar_barber_01.w2scene, shop_glinsk_barber_01.w2scene, shop_kaer_trolde_sjusta.w2scene, and dlc/dlc2/data/quests/dlc2.w2phase with Brothers In Arms; only shader-graph files with other mods.",
         "Loose annotated scripts; wraps SetScar only.",
         "4.0 is a single main file; earlier releases had a separate BiA edition. 4.0 renamed its console commands."
+      ],
+      "gameplayVerified": false
+    },
+    {
+      "name": "Better Torches Next-Gen (and Remastered)",
+      "variant": "Better Torches Next-Gen for W3 Remastered 5.01, main file",
+      "channel": "manual",
+      "verifiedOn": "2026-10-17",
+      "nexusModId": 7186,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/7186",
+      "payloadFolders": [
+        "mods/modBetterTorchesNextGen"
+      ],
+      "menuFiles": [],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [],
+      "archiveEvidence": {
+        "archiveName": "Better Torches Next-Gen for W3 Remastered 5.01 7186 5.1.0 2026-10-09T03-34Z DzkABbis5.7z",
+        "releaseLabel": "5.1.0",
+        "comparisonScope": "all archive files, against the Nexus file manifest",
+        "matchedFiles": 6,
+        "matchedBytes": 677835,
+        "allComparedFilesMatch": true,
+        "noExtraInstalledFiles": true,
+        "method": "SHA-256",
+        "comparedOn": "2026-10-17"
+      },
+      "notes": [
+        "Replaces six base scripts: explorationStateInteraction.ws, itemEntity.ws, playerInput.ws, r4Player.ws, mountHorse.ws, and useVehicle.ws. No other installed manual or mod.io mod replaces any of them.",
+        "Each copy equals the patched 5.0.0.1048522 base script plus lines marked modBetterTorchesNextGen, so it keeps the October 8 patch changes to r4Player.ws.",
+        "Wrapped methods in the same classes are untouched by the mod: CItemEntity.OnAttachmentUpdate and CR4Player.OnInteriorStateChanged (Light Rewrite), CPlayerInput.Initialize and CR4Player.GetSpecialAttackTimeRatio (Brothers In Arms).",
+        "No mods.settings entry; it shares no files with other installed mods. Known issue per the author: Igni's alternate fire stream points the wrong way while a torch is held."
+      ],
+      "gameplayVerified": false
+    },
+    {
+      "name": "No Indignant NPCs",
+      "variant": "No Indignant NPCs - Remastered, main file",
+      "channel": "manual",
+      "verifiedOn": "2026-10-17",
+      "nexusModId": 3190,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/3190",
+      "payloadFolders": [
+        "mods/modNoIndignantNPCs"
+      ],
+      "menuFiles": [],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [],
+      "archiveEvidence": {
+        "archiveName": "No Indignant NPCs - Remastered 3190 2.4 2026-10-13T03-03Z rIB9DAydJ.rar",
+        "releaseLabel": "2.4",
+        "comparisonScope": "all archive files, against the Nexus file manifest",
+        "matchedFiles": 1,
+        "matchedBytes": 37222,
+        "allComparedFilesMatch": true,
+        "noExtraInstalledFiles": true,
+        "method": "SHA-256",
+        "comparedOn": "2026-10-17"
+      },
+      "notes": [
+        "Replaces game/behavior_tree/ai_parameters/humanReactionParams.ws; no other installed mod replaces or wraps it.",
+        "Comments out the bump reaction (CAIActionBumpTree) and the cast-sign reaction (CAIActionCastSign) in the community NPC reaction trees; otherwise equal to the patched base script.",
+        "No mods.settings entry."
       ],
       "gameplayVerified": false
     }

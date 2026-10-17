@@ -51,6 +51,8 @@ For an archive with loose `mod...` and `dlc...` folders, place them inside `mods
 | The Elder Bush | `mods/modACiriPube`; `mods.settings` `Priority=8` |
 | Females of the Continent (Bushy) | `mods/modHC4K02FemalesVanillaBushy`; `mods.settings` `Priority=99` |
 | New Hairstyles and Beards For Geralt | `mods/modNewHairstylesAndBeards`; `mods.settings` `Priority=94` |
+| Better Torches Next-Gen | `mods/modBetterTorchesNextGen` |
+| No Indignant NPCs | `mods/modNoIndignantNPCs` |
 
 The menu XML directory is `bin/config/r4game/user_config_matrix/pc`.
 Keep the supplied XML files for this Remastered setup.
@@ -420,6 +422,35 @@ All 4 installed files had matched the archive.
 The folder was moved to `mod-fix-backups/removed-2026-10-15/modHighQualityWeatherIcons`; it never had a `mods.settings` entry.
 It adds no items or quests, so removing it should not affect saves, according to its description.
 
+### Better Torches and No Indignant NPCs
+
+Both were installed on October 17, 2026 from their Remastered main files.
+They are classic script mods: each ships full copies of base game scripts instead of annotated wrappers.
+All installed files match the SHA-256 hashes in the Nexus file manifests, and nothing else is in the archives.
+Neither mod has a `mods.settings` entry, and no other installed manual or mod.io mod replaces any of their scripts, so no Script Merger run is needed for this set.
+
+[Better Torches Next-Gen (and Remastered)](https://www.nexusmods.com/witcher3/mods/7186) by Phaz42, a port of Syynx's Better Torches, lets Geralt ride, sail, cast signs, block, parry, heavy attack, and climb ladders without putting his torch away.
+Climbing ledges with a torch is already part of the game since Next-Gen.
+This setup uses **Better Torches Next-Gen for W3 Remastered 5.01**, release **5.1.0** (uploaded October 9, 2026), installed as `mods/modBetterTorchesNextGen` (6 files, 677,835 bytes).
+Do not use the optional 4.4.0 file, which is for Next-Gen 4.04 only.
+
+- It replaces `explorationStateInteraction.ws`, `itemEntity.ws`, `playerInput.ws`, `r4Player.ws`, `mountHorse.ws`, and `useVehicle.ws`.
+- Each copy equals the patched `5.0.0.1048522` script plus the lines marked `// modBetterTorchesNextGen`, so it keeps the [October 8 patch](#october-8-2026-game-patch) changes to `r4Player.ws`. Release 5.1.0 also brings the torch back into Geralt's hand after he whistles for Roach.
+- Light Rewrite wraps `CItemEntity.OnAttachmentUpdate` and `CR4Player.OnInteriorStateChanged`; Brothers In Arms wraps `CPlayerInput.Initialize` and `CR4Player.GetSpecialAttackTimeRatio`. The mod does not change those methods, so the wrappers still apply.
+- Known issue from the author: Igni's alternate mode (the fire stream) points the wrong way while a torch is held. Put the torch away first.
+- After a future game patch, check that the author has updated the file before playing; the replaced scripts would otherwise undo the patch's changes to them.
+
+[No Indignant NPCs](https://www.nexusmods.com/witcher3/mods/3190) stops townsfolk from screaming, stumbling, and complaining when Geralt brushes past them, and when they walk into him while he stands still.
+Since 2.3 they also ignore non-hostile signs, such as Igni lighting a fire; hostile magic still gets a reaction, according to the author.
+This setup uses **No Indignant NPCs - Remastered** release **2.4** (uploaded October 13, 2026), installed as `mods/modNoIndignantNPCs` (1 file, 37,222 bytes).
+
+- It replaces `game/behavior_tree/ai_parameters/humanReactionParams.ws` only, commenting out the bump reaction (`CAIActionBumpTree`) and the cast-sign reaction (`CAIActionCastSign`) in the NPC reaction trees.
+- Apart from those lines, the file equals the patched base script. No installed mod replaces or wraps it.
+- NPCs no longer get shoved out of the way, so Geralt has to walk around crowds.
+
+Neither mod adds items or quests; removing the folder undoes it.
+Nothing has been checked in game yet.
+
 ## In-game installations
 
 1. Open **Mods** from the main menu.
@@ -461,7 +492,7 @@ The manual `mods.settings` entries, renumbered on October 15, 2026 (lower number
 | 99 | `modHC4K02FemalesVanillaBushy` | Below the Nudes Collection; no files in common with Gwent Redux. |
 
 All entries are enabled.
-The other eleven manual `mods` folders, including the strings-only `modPTOptimization`, have no matching entries in that file; the PT DLL and the Living Continent ReShade add-on are outside this mechanism.
+The other thirteen manual `mods` folders, including the strings-only `modPTOptimization`, have no matching entries in that file; the PT DLL and the Living Continent ReShade add-on are outside this mechanism.
 Absence of an explicit entry does not establish that a mod is disabled.
 
 The [Corvo Bianco author](https://www.nexusmods.com/witcher3/mods/12982) requests priority over Brothers In Arms.
@@ -480,7 +511,7 @@ Verify the collection's interactions in game before treating the order as valida
 
 ## Versions and inventory evidence
 
-The [manual inventory](../inventory/manual.json) records twenty-two manual installations; Complete Animations Redux and Restored High Quality Weather Icons are kept under `removedMods` for reference.
+The [manual inventory](../inventory/manual.json) records twenty-four manual installations; Complete Animations Redux and Restored High Quality Weather Icons are kept under `removedMods` for reference.
 The [in-game inventory](../inventory/ingame.json) records six installed payloads and their enabled configuration entries.
 All six in-game packages have files on disk; their file sizes match the local package metadata.
 
@@ -519,6 +550,13 @@ On October 15, 2026, every installation added or updated that day received a ful
 
 The top-level readme files of the Gwent Redux, PT Optimization, Living Continent, and Map Remastered archives (and Map Remastered's changelog) are not installed and are not counted.
 
+On October 17, 2026, the two new installations were compared by SHA-256 with every file listed in their Nexus file manifests; all matched, with no extra installed files:
+
+| Mod | Release | Files | Bytes |
+| --- | --- | --- | --- |
+| Better Torches Next-Gen | 5.1.0 | 6 | 677,835 |
+| No Indignant NPCs | 2.4 | 1 | 37,222 |
+
 Internal metadata can retain older labels.
 For example, the matched Brothers In Arms 4.0.4 archive reports `4.0.2` internally, and Sharedutils 4.1 reports `3.1.1`.
 Those are metadata differences, not proof of separate installed versions.
@@ -545,7 +583,8 @@ Each entry was read separately for this inventory.
 
 GOG updated `bin/x64_dx12/witcher3.exe` from `5.0.0.1044392` to `5.0.0.1048522` (Windows reports `5.0.15.61352` and `5.0.15.65482`).
 The patch changed 19 base scripts under `content/content0/scripts`, including `inventoryComponent.ws`, `r4Player.ws`, `commonMenu.ws`, `mapMenu.ws`, and `commonMapManager.ws`.
-No installed manual or in-game mod replaces any of those files.
+When the patch was recorded, no installed manual or in-game mod replaced any of those files.
+Better Torches Next-Gen 5.1.0, added on October 17, replaces `r4Player.ws` with a copy based on the patched script; see [its note](#better-torches-and-no-indignant-npcs).
 Brothers In Arms wraps methods of `CInventoryComponent`, defined in the patched `inventoryComponent.ws`.
 Scripts still compile, but mod releases from before the patch are not verified on the new executable.
 PT Optimization detected the new build and applied its rendering changes, according to its log.
@@ -560,6 +599,7 @@ Checked on October 10, 2026 against the Nexus files pages and the mod.io pages, 
 
 All other manual installations are on the latest Nexus release.
 On October 15, 2026, these were the latest files: Gwent Redux release 20, Animated Gwent Cards release 4, Blood And Steel Remastered v3.02, Light Rewrite 0.23.0, VAXIS's Blood Physics 1.5, The Living Continent 1.5, and PT Optimization 2.1 FINAL.
+Better Torches Next-Gen 5.1.0 and No Indignant NPCs 2.4 were the latest Remastered files when installed on October 17.
 The Griffin armor mods were not rechecked on October 15. The ModjiggleRR page could not be checked without adult content enabled; release 1 is the downloaded version.
 All six in-game mod.io installations match the current mod.io versions: Hoods 3.6, Corvo Bianco Enhanced Collection 5.00, The Last Wish Final Scene Restoration 0.1, Ciri Witcher Ending Restoration 0.2, Fast Travel Pack 2.1.0, and The Spider and The Wolf 1.2.2.
 
@@ -574,6 +614,8 @@ All six in-game mod.io installations match the current mod.io versions: Hoods 3.
 - Check that the animated Gwent cards appear and that mouse input works in a match and the deck builder, now that Animated Gwent Cards has `Priority=97`.
 - Check Map Remastered's world map, minimap icons, and region emblems, including Brothers In Arms and Sharedutils map pins.
 - Check that the new hairstyles and beards appear at the Skellige barbers (Brokvar, Glinsk, Kaer Trolde).
+- Check Better Torches: mount Roach, cast a sign, block, and climb a ladder with a torch out, and whistle for Roach with a torch in hand; check that Light Rewrite's torch light still follows the torch.
+- Check No Indignant NPCs: walk and sprint through a crowd in Novigrad, and light a brazier with Igni near townsfolk.
 - Check that The Elder Bush and Females of the Continent textures load on Remastered, and Cerys's neck with the Nudes Collection's head texture.
 - Check the NPCs that the Nudes Collection replaces for broken or old-gen models, and that the main characters it shares with Dynamic Appearances Project and Brothers In Arms keep those mods' looks.
 - Check the Corvo Bianco interactions and their priority against Brothers In Arms.
