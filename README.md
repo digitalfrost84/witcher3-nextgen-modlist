@@ -104,7 +104,6 @@ If a save was already played with it, follow the [safe removal steps](docs/compl
 - [A Witcher Can Hide Another: exact script repair and rollback](docs/a-witcher-can-hide-another.md)
 - [Complete Animations Redux: why it was removed, with a fix and safe removal steps](docs/complete-animations-redux.md)
 - [Graphics and lighting settings: RT shadows and the mods' picture options](docs/graphics-settings.md)
-- [Gameplay notes: Delusion 3 for Axii dialogue options, and moving skill points with the console](docs/gameplay-notes.md)
 - [Manual installation inventory](inventory/manual.json)
 - [In-game installation inventory](inventory/ingame.json)
 
