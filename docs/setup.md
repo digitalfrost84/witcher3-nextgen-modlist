@@ -238,6 +238,11 @@ Its log, last written at 11:54 on October 15, showed the DLL loading and set `pa
 At the launch on October 15 at 14:50, `rt_optimizer.log` reported `PT Optimization 2.1 loaded`, with the mod enabled and 14 settings registered in the menu.
 No frame-rate improvement has been measured for this setup.
 
+**Keep "CPU: fast bone reads" off.**
+On October 17, the game crashed twice on a worker thread while updating character bone matrices, shortly after loading a save, with this option on.
+It was turned off at 23:35:53 that day, and the other PT Optimization options stay on.
+See the [crash analysis and report for the author](pt-optimization-bone-reads-crash.md).
+
 ### Gwent Redux and Animated Gwent Cards
 
 [Gwent Redux BiA Compatible (Remastered)](https://www.nexusmods.com/witcher3/mods/13403?tab=files) offers four main files: Gwent Redux and Gwent Redux REDOING, each with and without Brothers In Arms.
@@ -616,6 +621,7 @@ All six in-game mod.io installations match the current mod.io versions: Hoods 3.
 - Check that the new hairstyles and beards appear at the Skellige barbers (Brokvar, Glinsk, Kaer Trolde).
 - Check Better Torches: mount Roach, cast a sign, block, and climb a ladder with a torch out, and whistle for Roach with a torch in hand; check that Light Rewrite's torch light still follows the torch.
 - Check No Indignant NPCs: walk and sprint through a crowd in Novigrad, and light a brazier with Igni near townsfolk.
+- Confirm that the worker-thread crashes stop with PT Optimization's "CPU: fast bone reads" off, including over several save loads in one session.
 - Check that The Elder Bush and Females of the Continent textures load on Remastered, and Cerys's neck with the Nudes Collection's head texture.
 - Check the NPCs that the Nudes Collection replaces for broken or old-gen models, and that the main characters it shares with Dynamic Appearances Project and Brothers In Arms keep those mods' looks.
 - Check the Corvo Bianco interactions and their priority against Brothers In Arms.
