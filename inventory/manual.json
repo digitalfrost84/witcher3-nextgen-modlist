@@ -31,7 +31,7 @@
     "The last October 15 update replaces modShouldBeNude with the Nudes Collection Ultimate Edition 4.2.1.F (Priority=98, verified against all 4 archive files) and records modShouldBeNude and All Nudes Bushy under removedMods. At the launch that day, PT Optimization 2.1 and The Living Continent 1.5 loaded without errors.",
     "A final October 15 update records modShouldBeNude (reinstalled from an earlier installation; the Should Be Nude file of the Nudes Collection, Nexus 5436) and renumbers mods.settings: Dynamic Appearances Project 95, Brothers In Arms 96, Animated Gwent Cards 97, modShouldBeNude 98, Gwent Redux 99.",
     "The October 17 update adds Better Torches Next-Gen 5.1.0 (Remastered main file) and No Indignant NPCs 2.4 (Remastered main file), each verified against every file of its Nexus archive manifest (6 and 1 files). Neither has a mods.settings entry or shares files with another installed mod. With them, twenty-four mod folders are installed: twenty-four manual mods in total.",
-    "A later October 17 update records two crashes traced to PT Optimization's 'CPU: fast bone reads' option, now off; no files changed.",
+    "A later October 17 update and an October 18 update record three worker-thread crashes in Novigrad. PT Optimization's 'CPU: fast bone reads' option was turned off but ruled out by the third crash; the cause is open. No files changed.",
     "A Proper Send-off was compared across all 14 archive files. A Witcher Can Hide Another was checked against its two preserved original scripts and installed descriptor.",
     "Stale mods.settings entries are not treated as proof of installation.",
     "This inventory verifies installed files and archive provenance evidence, not enablement or functional compatibility."
@@ -474,7 +474,7 @@
         "Release 2.1 moves the settings to Options > Mods > RT/PT optimization; mods/modPTOptimization contains only translated strings.",
         "The author lists 2.1 FINAL for game patches 5.01 (GOG, Steam, Epic), 5.00c, and 5.00b.",
         "rt_optimizer.log on 2026-10-15 at 14:50 reports PT Optimization 2.1 loaded, with the mod enabled and 14 menu settings.",
-        "On 2026-10-17 two worker-thread crashes in the engine's bone matrix updates were traced to the 'CPU: fast bone reads' option; it was turned off at 23:35:53 (DrawRaysProbeIdZ=20 in dx12user.settings). See docs/pt-optimization-bone-reads-crash.md."
+        "The 'CPU: fast bone reads' option was turned off on 2026-10-17 at 23:35:53 (DrawRaysProbeIdZ=20 in dx12user.settings) after two worker-thread crashes. A third crash on 2026-10-18 happened with it off, so it is not the cause; the mod remains a suspect. See docs/novigrad-worker-thread-crashes.md."
       ],
       "gameplayVerified": false
     },
