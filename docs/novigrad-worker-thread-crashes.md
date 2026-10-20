@@ -70,6 +70,9 @@ Seven earlier crashes, from October 7 to 11, happened at other places inside `wi
 
 Each test needs about 30 minutes in Novigrad at dusk or at night; the last two crashes took 14 minutes there.
 
+**Setup changed on October 20, 2026:** eight manual mods were updated, including both native components, PT Optimization (2.2) and The Living Continent (1.6), as well as Brothers In Arms (4.1.1). No Indignant NPCs 3.2 no longer replaces a base script. See [available updates](setup.md#available-updates).
+A crash after this date is a new data point and is not directly comparable with the three above. If the game runs crash-free in Novigrad for several sessions, one of the updates may have fixed the problem, but the logs cannot show which one.
+
 1. Remove PT Optimization's `bin/x64_dx12/xinput9_1_0.dll` for the session. This is the only remaining native hook on the engine side.
 2. If it still crashes, put the DLL back and remove `mods/modBetterTorchesNextGen` and `mods/modNoIndignantNPCs`.
 3. If it still crashes, remove `mods/modjiggleRR_MED`.

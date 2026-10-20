@@ -38,7 +38,7 @@ For an archive with loose `mod...` and `dlc...` folders, place them inside `mods
 | Fixed and Slimmer Griffin Armor | `mods/modSlimmer_Griffin_Armor` |
 | Griffin Armour (On The Path) | `mods/modGriffinArmorOnThePath` |
 | SGA T5 for On The Path | `mods/modSGA_T5_for_OTP` |
-| The Living Continent | `mods/modW3LivingSky`; `bin/x64_dx12/W3LivingSky.addon64`, `w3_living_sky.hlsl`, `w3_living_sky_font.bin`, `w3_living_sky_leaves.bin`; menu `mod00LivingContinent.xml`; needs ReShade |
+| The Living Continent | `mods/modW3LivingSky`, `dlc/dlcw3lshunt`, `dlc/dlcw3lsrewards`; `bin/x64_dx12/W3LivingSky.addon64` and seven `w3_living_sky*` files; menu `mod00LivingContinent.xml`; needs ReShade |
 | ReShade (for The Living Continent) | `bin/x64_dx12/dxgi.dll`, `ReShade.ini`, `reshade-shaders` |
 | Deaths Reworked | `mods/modDeathsReworkedWoundsAndBrutality` |
 | Blood And Steel | `mods/modBloodAndSteel`, `dlc/dlcBloodAndSteel`, menu `modBloodAndSteel.xml` |
@@ -52,7 +52,7 @@ For an archive with loose `mod...` and `dlc...` folders, place them inside `mods
 | Females of the Continent (Bushy) | `mods/modHC4K02FemalesVanillaBushy`; `mods.settings` `Priority=99` |
 | New Hairstyles and Beards For Geralt | `mods/modNewHairstylesAndBeards`; `mods.settings` `Priority=94` |
 | Better Torches Next-Gen | `mods/modBetterTorchesNextGen` |
-| No Indignant NPCs | `mods/modNoIndignantNPCs` |
+| No Indignant NPCs | `mods/modNoIndignantNPCs`, menu `NoIndignantNPCs.xml` |
 
 The menu XML directory is `bin/config/r4game/user_config_matrix/pc`.
 Keep the supplied XML files for this Remastered setup.
@@ -69,6 +69,9 @@ The October 4 snapshot recorded Brothers In Arms 4.0.1.
 Release 4.0.3 (uploaded October 4) replaced it later that day; its `info.json` reports `4.0.2`.
 The author released 4.0.4 on October 8, 2026, the same day as the game patch.
 Brothers In Arms 4.0.4 and Sharedutils 4.1 were installed on October 10, 2026.
+Brothers In Arms 4.1.1 (uploaded October 17) replaced 4.0.4 on October 20, 2026; its `info.json` now reports `4.1.1`.
+All 77 files of the 4.1.1 archive match the installed files by SHA-256, with no extra files in the mod and DLC folders.
+The author asks to read the new installation instructions before installing; the 4.1.1 changelog was not checked.
 Follow the author's upgrade instructions when moving from an older installation.
 The Started Playthrough Patch applies only to saves previously played with Brothers In Arms: Ultimate Edition below 4.0.
 Do not add it to a new game or a first-time installation.
@@ -119,26 +122,29 @@ Not yet checked in game: the slim breastplate and OTP textures on each Griffin t
 
 ### The Living Continent and ReShade
 
-- **[The Living Continent - Seasons - Sky - Weather](https://www.nexusmods.com/witcher3/mods/13650):** release 1.5, installed on October 15, 2026 over 1.4 (installed October 11). It adds four seasons, snow, icicles, a real night sky, daytime halos, and seasonal villager behaviour. It is for Remastered on DirectX 12 only (game version 5.0 or newer); DX11 is not supported.
+- **[The Living Continent - Seasons - Sky - Weather](https://www.nexusmods.com/witcher3/mods/13650):** release 1.6, installed on October 20, 2026 over 1.5 (October 15) and 1.4 (October 11). It adds four seasons, snow, icicles, a real night sky, daytime halos, and seasonal villager behaviour. It is for Remastered on DirectX 12 only (game version 5.0 or newer); DX11 is not supported.
 - **ReShade is required, not optional.** The main component, `W3LivingSky.addon64`, is a ReShade add-on DLL that only ReShade can load. Install [ReShade](https://reshade.me) 6.8 or newer using the **"with full add-on support"** installer (the regular build cannot load add-ons), for `bin/x64_dx12/witcher3.exe` under DirectX 12. No effects or presets are needed.
 - Installed: ReShade 6.8.0.2155 from `ReShade_Setup_6.8.0_Addon.exe`, as `bin/x64_dx12/dxgi.dll`. It loaded in the same session as PT Optimization's `xinput9_1_0.dll` without errors.
-- Copy the archive's `bin` and `Mods` folders into the game folder. The W3 Mod Manager copies only `Mods`, so with it the four `bin/x64_dx12` files and `mod00LivingContinent.xml` must be copied by hand. Every installed file matches the 1.5 archive (39 of 39; the readme is not installed), with no leftover files.
-- Check: `bin/x64_dx12/ReShade.log` must contain `Registered add-on "The Living Continent"`, and `w3_living_sky_errors.txt` should read `ok`. Both were confirmed with 1.4 on October 11, 2026, and the in-game calendar and winter snow appeared in Velen. At the launch on October 15, `ReShade.log` showed `Registered add-on "The Living Continent" v1.5.0.0`, and the error file read `ok`.
+- Copy the archive's `bin`, `dlc`, and `Mods` folders into the game folder; `dlc` is new in 1.6. The W3 Mod Manager copies only `Mods`, so with it the eight `bin/x64_dx12` files, `mod00LivingContinent.xml`, and the two DLC folders must be copied by hand. Every installed file matches the 1.6 archive (67 of 67; the readme and sound credits are not installed), with no leftover files.
+- Check: `bin/x64_dx12/ReShade.log` must contain `Registered add-on "The Living Continent"`, and `w3_living_sky_errors.txt` should read `ok`. Both were confirmed with 1.4 on October 11, 2026, and the in-game calendar and winter snow appeared in Velen. At the launches on October 15 and October 20, `ReShade.log` showed `Registered add-on "The Living Continent" v1.5.0.0`, and the error file read `ok`.
+- The 1.6 add-on still carries the version number 1.5.0.0, so the log line does not show which release is installed. Its `W3LivingSky.addon64` differs from the 1.5 file, and the installed copy matches the 1.6 archive.
 - Settings are under Options > Mods > The Living Continent. The game can open only about 230 options across all mod pages together.
 - Uninstall: turn off Winter Clothes for the Villagers and play a little first, then delete the files listed on the mod page.
 - The ReShade installer also added some effects (Deband, DisplayDepth, UIMask). They stay off unless enabled in the ReShade overlay and are not needed.
-- Release 1.5 adds realistic cloud lighting, nebulae, frozen marshes, drifting snow, Darker Nights in HDR, and seasons that follow the story. Update by copying `bin` and `Mods` over the old files; settings carry over.
-- Overlap: its bundle replaces 14 NPC entity files that Brothers In Arms also replaces, among them `nml_villager_woman.w2ent`, `skellige_villager.w2ent`, and several Toussaint and Novigrad community NPCs. Brothers In Arms has an explicit priority (96) and The Living Continent has no entry, so the Brothers In Arms copies are used, and those NPC types may not get the winter clothes.
-- Not yet checked: the night sky together with Light Rewrite.
+- Release 1.5 adds realistic cloud lighting, nebulae, frozen marshes, drifting snow, Darker Nights in HDR, and seasons that follow the story.
+- Release 1.6, *The Hunt*, adds a hunting bow, wounds and blood trails, skinning, twenty new animals, legendary animals, and the Huntsman's Compendium in the game menu. Its new content is in `dlc/dlcw3lshunt` and `dlc/dlcw3lsrewards`. Update by extracting `bin`, `dlc`, and `Mods` over the old files; every 1.5 file is still part of 1.6, so no leftovers remain. Settings carry over.
+- Its 29 scripts are all loose, annotated scripts under `content/scripts/local`. They extend classes that Map Remastered, Brothers In Arms, Light Rewrite, and A Witcher Can Hide Another also extend, but none of them adds a field or method with the same name. It reads Map Remastered's `W3MerchantComponent` without replacing it.
+- Overlap: its bundle replaces 14 NPC entity files that Brothers In Arms also replaces, among them `nml_villager_woman.w2ent`, `skellige_villager.w2ent`, and several Toussaint and Novigrad community NPCs. Brothers In Arms has an explicit priority (96) and The Living Continent has no entry, so the Brothers In Arms copies are used, and those NPC types may not get the winter clothes. This overlap was found with 1.5 and not rechecked for 1.6.
+- Not yet checked: the night sky together with Light Rewrite, and the 1.6 hunting content.
 
 ### Deaths Reworked
 
-- **[Deaths Reworked - Wounds and Brutality](https://www.nexusmods.com/witcher3/mods/11964):** release 2.70, Next Gen main file. The installed descriptor still says version 1.0, internal name `dynamicragdoll`.
-- Folder `mods/modDeathsReworkedWoundsAndBrutality`; all 6 archive files match.
+- **[Deaths Reworked - Wounds and Brutality](https://www.nexusmods.com/witcher3/mods/11964):** release 2.73 (uploaded October 16, 2026), Next Gen main file, installed on October 20 over 2.70. The installed descriptor still says version 1.0, internal name `dynamicragdoll`.
+- Folder `mods/modDeathsReworkedWoundsAndBrutality`; all 6 archive files match, with no leftover files.
+- Releases 2.72 and 2.73 add more death-animation variety, new Aard kills, and a new crawling wounded variant; 2.73 restores the legless crawling animations.
 - The author's notes: remove older versions first. The Next Gen main file needs the mod's wound script; script-heavy setups can use an older optional file without it. Run Script Merger with other script mods. The author expects conflicts with other death-animation, ragdoll, finisher, wound, or damage-processor mods.
 - It changes death animations and blood. Check it together with VAXIS's Blood Physics and Blood And Steel. Not yet tested in game.
-- Overlap: it and VAXIS's Blood Physics replace the same four ragdoll files, `dwarf_base_ragdoll`, `man_base_ragdoll`, `wildhunt_base_ragdoll`, and `woman_base_ragdoll` (`.w2ragdoll`). Neither has a `mods.settings` entry, so the game's default order for unlisted folders decides; which copy wins has not been determined. To decide it, give the preferred mod an entry; the author asks to load Deaths Reworked after other physics packs.
-- Release 2.72 (October 12, 2026) is available; see [available updates](#available-updates).
+- Overlap: it and VAXIS's Blood Physics replace the same four ragdoll files, `dwarf_base_ragdoll`, `man_base_ragdoll`, `wildhunt_base_ragdoll`, and `woman_base_ragdoll` (`.w2ragdoll`). Neither has a `mods.settings` entry, so the game's default order for unlisted folders decides; which copy wins has not been determined. To decide it, give the preferred mod an entry; the author asks to load Deaths Reworked after other physics packs. A bundle check on October 20 found the same four shared files in 2.73.
 
 ### Blood And Steel
 
@@ -151,8 +157,8 @@ Not yet checked in game: the slim breastplate and OTP textures on each Griffin t
 ### Animations, appearances, and lighting
 
 - **Complete Animations Redux:** removed on October 7, 2026 and no longer part of this list. Its leftover inventory props break saves; see [why it was removed](complete-animations-redux.md).
-- **Dynamic Appearances Project:** use the [BiA-compatible Remastered main file](https://www.nexusmods.com/witcher3/mods/9219?tab=files) (3.0b). The author says this variant needs no extra BiA patch. Install one main variant only. It must have priority over Brothers In Arms; see [Brothers In Arms priority](#brothers-in-arms-priority). Its presence here does not prove complete 5.0 compatibility.
-- **Light Rewrite:** copy the complete archive. Its [release notes](https://github.com/webspam/LightRewrite/releases) describe the Remastered lighting changes; the installed release is 0.23.0. The Shared Imports requirement in older 4.04 instructions does not apply to the Remastered instructions.
+- **Dynamic Appearances Project:** use the [BiA-compatible Remastered main file](https://www.nexusmods.com/witcher3/mods/9219?tab=files). Release 3.0.2 (uploaded October 19) replaced 3.0b on October 20, 2026; it keeps the 3.0b folder names, and all 12 archive files match. The author says this variant needs no extra BiA patch. Install one main variant only. It must have priority over Brothers In Arms; see [Brothers In Arms priority](#brothers-in-arms-priority). Its presence here does not prove complete 5.0 compatibility.
+- **Light Rewrite:** copy the complete archive. Its [release notes](https://github.com/webspam/LightRewrite/releases) describe the Remastered lighting changes; the installed release is 0.25.1, installed on October 20, 2026 (74 files, all matching). The Shared Imports requirement in older 4.04 instructions does not apply to the Remastered instructions.
 
 #### Upgrading Dynamic Appearances Project to 3.0b
 
@@ -229,7 +235,13 @@ Copy the supplied `bin` and `mods` folders into the game directory; the top-leve
 Release 2.1 moves the settings to **Options → Mods → RT/PT optimization**; `mods/modPTOptimization` holds only their translated strings.
 Another mod that supplies `xinput9_1_0.dll` requires a conflict decision before installation.
 
-This setup uses **PT Optimization 2.1 FINAL** (Nexus release **7**, uploaded October 13, 2026), installed on October 15.
+This setup uses **PT Optimization 2.2** (Nexus release **8**, uploaded October 16, 2026), installed on October 20.
+Release 2.2 removes the stutter when leaving a full-screen menu with DLSS Frame Generation on; the fix is a new switch in the mod menu, on by default.
+To update, replace all files. All 21 installed archive files match, with no leftover files.
+`RTOptimization.ini` still says v2.1 in its header; the DLL identifies itself as 2.2.
+At the launch on October 20 at 22:08, `rt_optimizer.log` reported `PT Optimization 2.2 loaded`.
+
+Release 2.1 FINAL (Nexus release 7, uploaded October 13) was installed from October 15 to 20.
 The author lists it for game patches 5.01 (GOG, Steam, Epic), 5.00c, and 5.00b; updating from the BETA means replacing all files.
 Release 2.0 stays on Nexus as an optional file for anyone who has problems with 2.1.
 
@@ -399,19 +411,28 @@ Check in game that the new styles appear at the Skellige barbers.
 
 [Map Remastered](https://www.nexusmods.com/witcher3/mods/13347) redraws the regional maps, the world map and its region emblems, and the map and minimap icons, keeping their original size and position.
 The author says the artwork was AI-generated and then checked against the game's resources.
-This setup uses the main file **Map and Icons Remastered 2.4.1** (uploaded October 9, 2026), installed on October 15 as `mods/modmapredraw`.
+This setup uses the main file **Map and Icons Remastered 2.4.2** (uploaded October 16, 2026), installed on October 20 as `mods/modmapredraw` over 2.4.1 (October 15).
 The archive's folder goes straight into `mods`; its `README.txt` and `CHANGELOG.txt` are documentation only.
-When updating, replace the whole folder and keep only one copy.
+When updating, **replace the whole folder** instead of extracting over it, as the changelog says, and keep only one copy.
+Extracting 2.4.2 over 2.4.1 here left two old scripts, `mapRedrawQuestLevels.ws` and `mapRedrawSettings.ws`, which 2.4.2 no longer ships; both were moved to the Recycle Bin on October 20.
+All 7 installed files now match the 2.4.2 archive, with no extra files.
+
+Release 2.4.2 keeps the redrawn map terrain but uses the game's original icon artwork on both maps.
+It drops the custom icon toggle, the quest-level setting, and the quest-level labels, so the mod has no options left.
+It keeps its merchant, armorer, and blacksmith pin caching.
+The author lists one known issue: stash icons can disappear.
 
 Its bundle replaces two Flash files: the world map, `gameplay\gui_new\swf\worldmap\panel_worldmap.redswf`, and the HUD minimap, `gameplay\gui_new\swf\hud\hud_minimap2.redswf`.
 No other installed mod replaces either file.
 It has loose, annotated scripts (`useLooseScripts: true`) and no `mods.settings` entry.
-Its options include a Remastered Map Icons toggle.
 
-Script hooks shared with other installed mods all use `@wrapMethod` and call the original method, so they chain rather than replace each other:
+Its script hooks:
 
-- `CR4MapMenu.UpdateEntityPins`, also wrapped by Brothers In Arms (`bia_mapMenu_anno_2.ws`).
-- `CR4HudModuleMinimap2.OnTick`, also wrapped by The Living Continent for its calendar.
+- `@wrapMethod` on `CR4MapMenu.OnConfigUI` and `CR4HudModuleMinimap2.OnConfigUI`.
+- `@wrapMethod` on `CR4HudModuleMinimap2.OnTick`, also wrapped by The Living Continent for its calendar. Both wrappers call the original method, so they chain rather than replace each other.
+- `@replaceMethod` on `W3MerchantComponent.GetScriptInfo`, for the pin cache. No other installed mod replaces that method.
+
+Release 2.4.1 also wrapped `CR4MapMenu.UpdateEntityPins`, which Brothers In Arms wraps too; 2.4.2 no longer does.
 
 Sharedutils adds its own map pins; whether they keep their icons on the redrawn map has not been checked.
 Nothing has been checked in game yet.
@@ -429,14 +450,13 @@ It adds no items or quests, so removing it should not affect saves, according to
 
 ### Better Torches and No Indignant NPCs
 
-Both were installed on October 17, 2026 from their Remastered main files.
-They are classic script mods: each ships full copies of base game scripts instead of annotated wrappers.
-All installed files match the SHA-256 hashes in the Nexus file manifests, and nothing else is in the archives.
-Neither mod has a `mods.settings` entry, and no other installed manual or mod.io mod replaces any of their scripts, so no Script Merger run is needed for this set.
+Both were installed on October 17, 2026 from their Remastered main files; No Indignant NPCs was updated to 3.2 on October 20.
+Better Torches is a classic script mod that ships full copies of base game scripts. Since 3.2, No Indignant NPCs uses an annotated script instead.
+Neither mod has a `mods.settings` entry, and no other installed manual or mod.io mod replaces any of their scripts or methods, so no Script Merger run is needed for this set.
 
 [Better Torches Next-Gen (and Remastered)](https://www.nexusmods.com/witcher3/mods/7186) by Phaz42, a port of Syynx's Better Torches, lets Geralt ride, sail, cast signs, block, parry, heavy attack, and climb ladders without putting his torch away.
 Climbing ledges with a torch is already part of the game since Next-Gen.
-This setup uses **Better Torches Next-Gen for W3 Remastered 5.01**, release **5.1.0** (uploaded October 9, 2026), installed as `mods/modBetterTorchesNextGen` (6 files, 677,835 bytes).
+This setup uses **Better Torches Next-Gen for W3 Remastered 5.01**, release **5.1.0** (uploaded October 9, 2026), installed as `mods/modBetterTorchesNextGen` (6 files, 677,835 bytes, all matching the Nexus file manifest).
 Do not use the optional 4.4.0 file, which is for Next-Gen 4.04 only.
 
 - It replaces `explorationStateInteraction.ws`, `itemEntity.ws`, `playerInput.ws`, `r4Player.ws`, `mountHorse.ws`, and `useVehicle.ws`.
@@ -447,11 +467,15 @@ Do not use the optional 4.4.0 file, which is for Next-Gen 4.04 only.
 
 [No Indignant NPCs](https://www.nexusmods.com/witcher3/mods/3190) stops townsfolk from screaming, stumbling, and complaining when Geralt brushes past them, and when they walk into him while he stands still.
 Since 2.3 they also ignore non-hostile signs, such as Igni lighting a fire; hostile magic still gets a reaction, according to the author.
-This setup uses **No Indignant NPCs - Remastered** release **2.4** (uploaded October 13, 2026), installed as `mods/modNoIndignantNPCs` (1 file, 37,222 bytes).
+This setup uses **No Indignant NPCs - Reworked and Customizable** release **3.2** (uploaded October 18, 2026), installed on October 20.
+Extract the archive into the game directory: it installs `mods/modNoIndignantNPCs` and the menu file `NoIndignantNPCs.xml`, 19 files (27,484 bytes), all matching.
 
-- It replaces `game/behavior_tree/ai_parameters/humanReactionParams.ws` only, commenting out the bump reaction (`CAIActionBumpTree`) and the cast-sign reaction (`CAIActionCastSign`) in the NPC reaction trees.
-- Apart from those lines, the file equals the patched base script. No installed mod replaces or wraps it.
-- NPCs no longer get shoved out of the way, so Geralt has to walk around crowds.
+- 3.2 is a rework with its own settings menu. It is one annotated script, `content/scripts/local/NoIndignantNPCs.ws`, plus strings in 17 languages, and no longer replaces any base script.
+- It wraps `CExplorationCollisionManager` (`CanNPCsCollide`, `UpdateCollisionWithNPCs`, `CanPlayerBePushed`), `W3HorseComponent.MakeNPCCollide`, `CR4Player.CanAttackWhenNotInCombat`, the sign-cast and channeling broadcasts, and the loot popups. It replaces `WeaponHolsterStateSelectingWeapon.SignalDrawSwordAction` and `SignalHolsterSwordAction`.
+- No other installed mod replaces those methods. Better Torches replaces `r4Player.ws`, and the `CR4Player` wrapper applies to that copy.
+- **Upgrading from 2.4:** delete `content/scripts/game/behavior_tree/ai_parameters/humanReactionParams.ws` from the mod folder, or the whole folder before extracting. Extracting 3.2 over 2.4 here left that file behind, and it kept replacing the base script. It was moved to the Recycle Bin on October 20.
+
+Release 2.4 (uploaded October 13, 2026, installed October 17 to 20) replaced `game/behavior_tree/ai_parameters/humanReactionParams.ws` only. It commented out the bump reaction (`CAIActionBumpTree`) and the cast-sign reaction (`CAIActionCastSign`) in the NPC reaction trees, so NPCs no longer got shoved out of the way and Geralt had to walk around crowds.
 
 Neither mod adds items or quests; removing the folder undoes it.
 Nothing has been checked in game yet.
@@ -562,6 +586,23 @@ On October 17, 2026, the two new installations were compared by SHA-256 with eve
 | Better Torches Next-Gen | 5.1.0 | 6 | 677,835 |
 | No Indignant NPCs | 2.4 | 1 | 37,222 |
 
+On October 20, 2026, eight updated installations received a full SHA-256 comparison of every installed archive file; all matched:
+
+| Mod | Release | Files | Bytes |
+| --- | --- | --- | --- |
+| Brothers In Arms | 4.1.1 | 77 | 576,705,928 |
+| Dynamic Appearances Project (BiA) | 3.0.2 | 12 | 128,607,975 |
+| Light Rewrite | 0.25.1 | 74 | 476,563 |
+| PT Optimization | 2.2 (Nexus release 8) | 21 | 141,023 |
+| The Living Continent | 1.6 | 67 | 625,573,141 |
+| Deaths Reworked | 2.73 | 6 | 80,418,487 |
+| Map Remastered | 2.4.2 | 7 | 598,940,487 |
+| No Indignant NPCs | 3.2 | 19 | 27,484 |
+
+Map Remastered and No Indignant NPCs had been extracted over their previous releases, which left old scripts behind: `mapRedrawQuestLevels.ws` and `mapRedrawSettings.ws` from Map Remastered 2.4.1, and `humanReactionParams.ws` from No Indignant NPCs 2.4.
+All three were moved to the Recycle Bin; after that, no installed folder holds files that its archive lacks.
+The Living Continent's readme and sound credits are not installed and are not counted.
+
 Internal metadata can retain older labels.
 For example, the matched Brothers In Arms 4.0.4 archive reports `4.0.2` internally, and Sharedutils 4.1 reports `3.1.1`.
 Those are metadata differences, not proof of separate installed versions.
@@ -596,17 +637,24 @@ PT Optimization detected the new build and applied its rendering changes, accord
 
 ## Available updates
 
-Checked on October 10, 2026 against the Nexus files pages and the mod.io pages, and again on October 15 for the manual mods.
+Checked on October 20, 2026 against the Nexus files pages and the mod.io pages.
+Eight manual mods were updated the same day; see [the October 20 comparison](#versions-and-inventory-evidence).
 
 | Mod | Installed | Latest | Released | Notes |
 | --- | --- | --- | --- | --- |
-| Deaths Reworked - Wounds and Brutality | 2.70 | 2.72 | October 12, 2026 | More death-animation variety, new Aard kills, and a new crawling wounded variant. Remove the old folder first. |
+| Hoods (mod.io) | 3.6 | 3.7 | — | Update pending in the game; see below. |
+| Corvo Bianco Enhanced Collection (mod.io) | 5.00 | 5.01 | — | Update pending in the game. |
+| The Spider and The Wolf (mod.io) | 1.2.2 | 1.2.3 | — | Update pending in the game. |
+| VAXIS's ULTRA Plus Blood Physics | 1.5 | 1.6 (darker blood version) | October 15, 2026 | A second main file next to 1.5, not a replacement. 1.5 stays current unless darker blood is wanted. |
 
-All other manual installations are on the latest Nexus release.
-On October 15, 2026, these were the latest files: Gwent Redux release 20, Animated Gwent Cards release 4, Blood And Steel Remastered v3.02, Light Rewrite 0.23.0, VAXIS's Blood Physics 1.5, The Living Continent 1.5, and PT Optimization 2.1 FINAL.
-Better Torches Next-Gen 5.1.0 and No Indignant NPCs 2.4 were the latest Remastered files when installed on October 17.
-The Griffin armor mods were not rechecked on October 15. The ModjiggleRR page could not be checked without adult content enabled; release 1 is the downloaded version.
-All six in-game mod.io installations match the current mod.io versions: Hoods 3.6, Corvo Bianco Enhanced Collection 5.00, The Last Wish Final Scene Restoration 0.1, Ciri Witcher Ending Restoration 0.2, Fast Travel Pack 2.1.0, and The Spider and The Wolf 1.2.2.
+mod.io registered the three in-game updates on October 20 at 21:53: `mod.io/8254/metadata/state.json` lists the new releases with state 2, update pending.
+Their files on disk are still the installed releases and sizes, so the [in-game inventory](../inventory/ingame.json) keeps the installed versions and records each one under `pendingUpdate`.
+Check them again after the game has finished downloading and been restarted.
+
+All other installations are on the latest release.
+On October 20 these were the latest Nexus files: Brothers In Arms 4.1.1, Sharedutils 4.1, Dynamic Appearances Project 3.0.2, Light Rewrite 0.25.1, A Proper Send-off 1.21, A Witcher Can Hide Another 1.1.1, PT Optimization 2.2, the three Griffin armor files (Slimmer Griffin Armor and SGA T5 1.5, OTP Final), The Living Continent 1.6, Deaths Reworked 2.73, Blood And Steel Remastered v3.02, Gwent Redux release 20, Animated Gwent Cards release 4, New Hairstyles and Beards 4.0, Map Remastered 2.4.2, Better Torches 5.1.0, and No Indignant NPCs 3.2.
+The other three in-game mods match mod.io: The Last Wish Final Scene Restoration 0.1, Ciri Witcher Ending Restoration 0.2, and Fast Travel Pack 2.1.0.
+The pages of ModjiggleRR, the Nudes Collection, The Elder Bush, and Humans of the Continent could not be checked without adult content enabled.
 
 ## Gameplay checks still needed
 
@@ -615,12 +663,14 @@ All six in-game mod.io installations match the current mod.io versions: Hoods 3.
 - Confirm that the slim mesh and OTP textures load on each Griffin tier, including the T5 chainmail and shoulder pads.
 - Test combat with Deaths Reworked and Blood And Steel together, alongside Brothers In Arms and VAXIS's Blood Physics.
 - Check The Living Continent at night with Light Rewrite, and whether villagers that Brothers In Arms overrides get its winter clothes.
+- Check The Living Continent 1.6 hunting: the bow, skinning, the new animals, and the Huntsman's Compendium in the game menu.
 - Check which ragdoll files win between Deaths Reworked and VAXIS's Blood Physics.
 - Check that the animated Gwent cards appear and that mouse input works in a match and the deck builder, now that Animated Gwent Cards has `Priority=97`.
-- Check Map Remastered's world map, minimap icons, and region emblems, including Brothers In Arms and Sharedutils map pins.
+- Check Map Remastered 2.4.2's world map, minimap icons, and region emblems, including Brothers In Arms and Sharedutils map pins and the stash icons.
 - Check that the new hairstyles and beards appear at the Skellige barbers (Brokvar, Glinsk, Kaer Trolde).
 - Check Better Torches: mount Roach, cast a sign, block, and climb a ladder with a torch out, and whistle for Roach with a torch in hand; check that Light Rewrite's torch light still follows the torch.
-- Check No Indignant NPCs: walk and sprint through a crowd in Novigrad, and light a brazier with Igni near townsfolk.
+- Check No Indignant NPCs 3.2: open its settings menu, walk and sprint through a crowd in Novigrad, and light a brazier with Igni near townsfolk.
+- After the three mod.io updates finish, check that Hoods, Corvo Bianco, and The Spider and The Wolf still load.
 - Find the cause of the Novigrad worker-thread crashes with the [next tests](novigrad-worker-thread-crashes.md#next-tests): about 30 minutes in Novigrad at dusk or night per test.
 - Check that The Elder Bush and Females of the Continent textures load on Remastered, and Cerys's neck with the Nudes Collection's head texture.
 - Check the NPCs that the Nudes Collection replaces for broken or old-gen models, and that the main characters it shares with Dynamic Appearances Project and Brothers In Arms keep those mods' looks.

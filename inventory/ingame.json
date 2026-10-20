@@ -12,7 +12,8 @@
     "All six payload directories match the six enabled IDs in the configuration. Each actual byte total matches the mod.io metadata size.",
     "Cached images and stale mods.settings entries were not used as proof of installation.",
     "Nexus URLs identify author pages for the same mod project. They do not prove the current Nexus download equals the installed mod.io package.",
-    "Local files were inspected without launching the game; functional compatibility is not verified by this inventory."
+    "Local files were inspected without launching the game; functional compatibility is not verified by this inventory.",
+    "On 2026-10-20 mod.io registered updates for Hoods (3.7), Corvo Bianco Enhanced Collection (5.01) and The Spider and The Wolf (1.2.3) as pending. Their payloads on disk are unchanged, so the installed versions above stay as recorded until the game finishes the downloads."
   ],
   "mods": [
     {
@@ -188,7 +189,16 @@
         "Toggle compatible equipped hoods from the inventory; the installed package does not contain Hoods.input.settings.",
         "The Nexus changelog identifies 3.6 as the Remaster update and notes older folder names mod__hoods and dlc__hoods were replaced in 3.4. Avoid retaining an old copy when switching channels."
       ],
-      "gameplayVerified": false
+      "gameplayVerified": false,
+      "pendingUpdate": {
+        "modioVersion": "3.7",
+        "modioModfileId": 8333099,
+        "archiveName": "modhoods-gh64.zip",
+        "uncompressedBytes": 108462060,
+        "state": "update pending (State 2 in mod.io/8254/metadata/state.json)",
+        "observedOn": "2026-10-20",
+        "note": "The metadata names the new release, but the files on disk are still the installed version and size."
+      }
     },
     {
       "name": "The Last Wish Final Scene Restoration",
@@ -294,7 +304,16 @@
         "The author says to give the collection mod priority over Brothers In Arms if both are used.",
         "The linked Nexus page is the dedicated Remastered edition, labeled 5.00.00. Installed mod.io metadata labels its package 5.00."
       ],
-      "gameplayVerified": false
+      "gameplayVerified": false,
+      "pendingUpdate": {
+        "modioVersion": "5.01",
+        "modioModfileId": 8302350,
+        "archiveName": "modcorvobiancocollection-9got.zip",
+        "uncompressedBytes": 407322,
+        "state": "update pending (State 2 in mod.io/8254/metadata/state.json)",
+        "observedOn": "2026-10-20",
+        "note": "The metadata names the new release, but the files on disk are still the installed version and size."
+      }
     },
     {
       "name": "New Questline - The Spider and The Wolf",
@@ -351,7 +370,16 @@
         "Author guidance for updating from version 1.0 requires a save from before the mod was installed.",
         "Installed mod.io release is 1.2.2; embedded info.json reports 1.2. Nexus now offers separate Remastered and Next-Gen downloads and reports 2.01. These package versions are not interchangeable evidence."
       ],
-      "gameplayVerified": false
+      "gameplayVerified": false,
+      "pendingUpdate": {
+        "modioVersion": "1.2.3",
+        "modioModfileId": 8264852,
+        "archiveName": "modthe_spider_and_the_wolf.zip",
+        "uncompressedBytes": 680228660,
+        "state": "update pending (State 2 in mod.io/8254/metadata/state.json)",
+        "observedOn": "2026-10-20",
+        "note": "The metadata names the new release, but the files on disk are still the installed version and size."
+      }
     }
   ]
 }
