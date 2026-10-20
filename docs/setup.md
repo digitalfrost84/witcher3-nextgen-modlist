@@ -488,6 +488,10 @@ Nothing has been checked in game yet.
 4. Let the downloads complete and restart the game.
 5. Check that each mod appears under **Installed** with its checkbox selected.
 
+The packages are unpacked to `C:\Users\Public\mod.io`, so keep at least 5 GB free on C:.
+On October 20, 2026, updates failed on a full drive, the game switched three mods off, and a save loaded without their items lost most of the inventory and Geralt's body.
+After the game updates in-game mods, restart it and check this list before loading a save; see [mod.io updates on a full drive](modio-update-missing-items.md).
+
 These steps follow [CD PROJEKT RED's installation instructions](https://support.cdprojektred.com/en/witcher-3/pc/gameplay/issue/3001/cross-platform-mod-support-how-to).
 Keep the in-game packages in the game's managed storage.
 Do not duplicate them by copying Nexus versions into `mods`.
@@ -499,12 +503,15 @@ They record the current configuration, rather than a proven optimal order or a r
 
 | Configured priority | Mod | Enabled |
 | --- | --- | --- |
-| 0 | Hoods | Yes |
-| 1 | Corvo Bianco Enhanced Collection | Yes |
-| 2 | The Last Wish Final Scene Restoration | Yes |
-| 3 | Ciri Witcher Ending Restoration | Yes |
-| 4 | Fast Travel Pack | Yes |
+| 0 | The Last Wish Final Scene Restoration | Yes |
+| 1 | Ciri Witcher Ending Restoration | Yes |
+| 2 | Fast Travel Pack | Yes |
+| 3 | Hoods | Yes |
+| 4 | Corvo Bianco Enhanced Collection | Yes |
 | 5 | The Spider and The Wolf | Yes |
+
+The game renumbered these on October 20, 2026, when Hoods, Corvo Bianco, and The Spider and The Wolf were enabled again after a failed update; see [mod.io updates on a full drive](modio-update-missing-items.md).
+Before that the order was Hoods 0, Corvo Bianco 1, The Last Wish 2, Ciri Witcher Ending 3, Fast Travel Pack 4, and The Spider and The Wolf 5.
 
 The manual `mods.settings` entries, renumbered on October 15, 2026 (lower numbers win):
 
@@ -614,7 +621,7 @@ Nexus and mod.io also use different releases:
 | Ciri Witcher Ending Restoration | 0.2 | 1.3 |
 | The Last Wish Final Scene Restoration | 0.1 | 1.1 |
 | Fast Travel Pack | 2.1.0 | 3.0.0 Remastered |
-| The Spider and The Wolf | 1.2.2 | 2.01 Remastered |
+| The Spider and The Wolf | 1.2.3 (1.2.2 until October 20, 2026) | 2.01 Remastered |
 
 The Nexus pages in the mod list are the source references for these observations.
 These packages have not been proven interchangeable.
@@ -642,18 +649,18 @@ Eight manual mods were updated the same day; see [the October 20 comparison](#ve
 
 | Mod | Installed | Latest | Released | Notes |
 | --- | --- | --- | --- | --- |
-| Hoods (mod.io) | 3.6 | 3.7 | — | Update pending in the game; see below. |
-| Corvo Bianco Enhanced Collection (mod.io) | 5.00 | 5.01 | — | Update pending in the game. |
-| The Spider and The Wolf (mod.io) | 1.2.2 | 1.2.3 | — | Update pending in the game. |
 | VAXIS's ULTRA Plus Blood Physics | 1.5 | 1.6 (darker blood version) | October 15, 2026 | A second main file next to 1.5, not a replacement. 1.5 stays current unless darker blood is wanted. |
 
-mod.io registered the three in-game updates on October 20 at 21:53: `mod.io/8254/metadata/state.json` lists the new releases with state 2, update pending.
-Their files on disk are still the installed releases and sizes, so the [in-game inventory](../inventory/ingame.json) keeps the installed versions and records each one under `pendingUpdate`.
-Check them again after the game has finished downloading and been restarted.
+The game updated three in-game mods on October 20: Hoods 3.6 → 3.7, Corvo Bianco Enhanced Collection 5.00 → 5.01, and The Spider and The Wolf 1.2.2 → 1.2.3.
+mod.io first listed them as update pending (state 2 in `mod.io/8254/metadata/state.json`), but with 1.3 GB free on C: the new files could not be unpacked.
+The game then switched the three mods off, and a save loaded in that state lost most of the inventory and Geralt's body; see [mod.io updates on a full drive](modio-update-missing-items.md).
+After space was freed, all three show state 1, installed, and each payload's file count and size match the mod.io metadata.
+All six were enabled again in the **Mods** menu, and the game renumbered the priorities; see [recorded priorities](#recorded-priorities).
+Hoods 3.7 moved its language string files from `dlc/dlchoods` to `mods/modhoods`.
 
 All other installations are on the latest release.
 On October 20 these were the latest Nexus files: Brothers In Arms 4.1.1, Sharedutils 4.1, Dynamic Appearances Project 3.0.2, Light Rewrite 0.25.1, A Proper Send-off 1.21, A Witcher Can Hide Another 1.1.1, PT Optimization 2.2, the three Griffin armor files (Slimmer Griffin Armor and SGA T5 1.5, OTP Final), The Living Continent 1.6, Deaths Reworked 2.73, Blood And Steel Remastered v3.02, Gwent Redux release 20, Animated Gwent Cards release 4, New Hairstyles and Beards 4.0, Map Remastered 2.4.2, Better Torches 5.1.0, and No Indignant NPCs 3.2.
-The other three in-game mods match mod.io: The Last Wish Final Scene Restoration 0.1, Ciri Witcher Ending Restoration 0.2, and Fast Travel Pack 2.1.0.
+All six in-game mods match mod.io: Hoods 3.7, Corvo Bianco Enhanced Collection 5.01, The Last Wish Final Scene Restoration 0.1, Ciri Witcher Ending Restoration 0.2, Fast Travel Pack 2.1.0, and The Spider and The Wolf 1.2.3.
 The pages of ModjiggleRR, the Nudes Collection, The Elder Bush, and Humans of the Continent could not be checked without adult content enabled.
 
 ## Gameplay checks still needed
@@ -670,7 +677,7 @@ The pages of ModjiggleRR, the Nudes Collection, The Elder Bush, and Humans of th
 - Check that the new hairstyles and beards appear at the Skellige barbers (Brokvar, Glinsk, Kaer Trolde).
 - Check Better Torches: mount Roach, cast a sign, block, and climb a ladder with a torch out, and whistle for Roach with a torch in hand; check that Light Rewrite's torch light still follows the torch.
 - Check No Indignant NPCs 3.2: open its settings menu, walk and sprint through a crowd in Novigrad, and light a brazier with Igni near townsfolk.
-- After the three mod.io updates finish, check that Hoods, Corvo Bianco, and The Spider and The Wolf still load.
+- Check that Hoods 3.7, Corvo Bianco 5.01, and The Spider and The Wolf 1.2.3 load after the update and with the renumbered mod.io priorities.
 - Find the cause of the Novigrad worker-thread crashes with the [next tests](novigrad-worker-thread-crashes.md#next-tests): about 30 minutes in Novigrad at dusk or night per test.
 - Check that The Elder Bush and Females of the Continent textures load on Remastered, and Cerys's neck with the Nudes Collection's head texture.
 - Check the NPCs that the Nudes Collection replaces for broken or old-gen models, and that the main characters it shares with Dynamic Appearances Project and Brothers In Arms keep those mods' looks.
