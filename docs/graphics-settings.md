@@ -33,6 +33,7 @@ Set the shadows in the game's own graphics menu; PT Optimization follows it.
 | --- | --- | --- | --- |
 | [The Living Continent](https://www.nexusmods.com/witcher3/mods/13650) | Seasonal colours (`SeasonalGrade`) | On | A colour grade on the final image. Winter lifts the blacks, drains some colour, and cools the shadows, which can look like gamma set too high, especially in fog. Off indoors and weaker at night. Toggle in the quick panel (Numpad 0) to compare. |
 | The Living Continent | Darker Nights (`DarkerNights`) | As the game made it | Darker / dark / very dark make nights darker while stars, aurora, fires, and torches keep their light. Only with HDR off. |
+| The Living Continent | Lightning in Storms (`StormLightning`) | **Off** | Brightens the whole picture during a lightning flash, by up to 80 % at night. In 1.6 the screen flickers between bright and dark throughout a thunderstorm, indoors too. See [the Living Continent notes](setup.md#the-living-continent-and-reshade). |
 | [Light Rewrite](https://www.nexusmods.com/witcher3/mods/12144) | Fog Removal (Advanced) | 0 | Removes the game's own indoor fog at the chosen strength (0-100), only while inside. Raise it if interiors look hazy. |
 | Light Rewrite | Fog Fade Time (Advanced) | 2 s | How quickly the indoor fog removal blends in and out at doors. |
 | Light Rewrite | Profile | 2 | The lighting preset for candles, torches, and other local lights. |
