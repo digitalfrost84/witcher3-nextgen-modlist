@@ -243,6 +243,12 @@ See the [author's page](https://www.nexusmods.com/witcher3/mods/9453).
 This installation also needed two script repairs: the `InitializeAreaMusic` parameter type and the missing `GetStateByName` method.
 Follow the [exact repair instructions](a-witcher-can-hide-another.md), including backups and rollback.
 
+**Remastered compatibility is unconfirmed.** Nexus warns that the mod may only work with older game versions.
+On October 24, an experimental English conversion from version `163` to `164` preserved all 755 strings.
+An independent reader also verified the converted text, but no in-game test followed.
+The original English file is currently installed; the converted file is retained locally.
+The mod remains enabled with its earlier script repairs. See the [diagnosis, conversion, and validation limits](a-witcher-can-hide-another.md#3-convert-the-english-text-for-remastered).
+
 ### Path Tracing and Ray Tracing Optimization
 
 Copy the supplied `bin` and `mods` folders into the game directory; the top-level `PT-Optimization-README.txt` is documentation only.
