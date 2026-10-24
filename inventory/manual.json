@@ -13,7 +13,7 @@
     "patchedOn": "2026-10-08"
   },
   "notes": [
-    "Twenty-five mod folders (including the strings-only modPTOptimization) and nine DLC folders are installed, plus native DX12 files for PT Optimization, The Living Continent and The Living Continent - The Hunt: twenty-five manual mods in total (as of 2026-10-24). ReShade 6.8.0 (add-on build) is installed as a requirement of The Living Continent.",
+    "Twenty-six mod folders (including the strings-only modPTOptimization) and nine DLC folders are installed, plus native DX12 files for PT Optimization, The Living Continent and The Living Continent - The Hunt: twenty-six manual mods in total (as of 2026-10-24). ReShade 6.8.0 (add-on build) is installed as a requirement of The Living Continent.",
     "The October 6 update adds VAXIS's ULTRA Plus Blood Physics standard 1.2 with a full 29-file SHA-256 comparison; the earlier inventory was not rechecked in full.",
     "The October 7 update removes Complete Animations Redux; its record moves to removedMods.",
     "The October 7 update replaces Dynamic Appearances Project 2.1.1 with 3.0b Remastered, verified against all 12 archive files.",
@@ -1111,6 +1111,45 @@
         "replacedOn": "2026-10-20",
         "note": "3.2 was extracted over 2.4, which left content/scripts/game/behavior_tree/ai_parameters/humanReactionParams.ws behind and kept replacing the base script. It was moved to the Recycle Bin on 2026-10-20."
       }
+    },
+    {
+      "name": "No Loading Screen Narrations",
+      "variant": "Release 2 (info.json: Mute Loading Narrations - Remastered 1.0.1)",
+      "channel": "manual",
+      "verifiedOn": "2026-10-24",
+      "nexusModId": 13280,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/13280",
+      "payloadFolders": [
+        "mods/modMuteLoadingNarrations"
+      ],
+      "menuFiles": [],
+      "nativeFiles": [],
+      "configFiles": [],
+      "embeddedInfo": [
+        {
+          "path": "mods/modMuteLoadingNarrations/content/info.json",
+          "name": "Mute Loading Narrations - Remastered",
+          "version": "1.0.1",
+          "gameVersion": "29"
+        }
+      ],
+      "archiveEvidence": {
+        "archiveName": "ModMuteLoadingNarrations 13280 2 2026-10-08T12-48Z 864tMls1O.zip",
+        "releaseLabel": "2",
+        "comparisonScope": "all archive files",
+        "matchedFiles": 3,
+        "matchedBytes": 36067,
+        "allComparedFilesMatch": true,
+        "noExtraInstalledFiles": true,
+        "method": "SHA-256",
+        "comparedOn": "2026-10-24"
+      },
+      "notes": [
+        "Cooked bundle: blob0.bundle holds a silent replacement clip, and metadata.store points 19 movies\\cutscenes\\storybook\\st_*.usm entries at it.",
+        "No mods.settings entry, no menu, no scripts. No other installed mod's metadata.store contains storybook entries.",
+        "The archive's SHA256SUMS.txt is not installed."
+      ],
+      "gameplayVerified": false
     }
   ],
   "removedMods": [

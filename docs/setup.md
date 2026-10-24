@@ -54,6 +54,7 @@ For an archive with loose `mod...` and `dlc...` folders, place them inside `mods
 | New Hairstyles and Beards For Geralt | `mods/modNewHairstylesAndBeards`; `mods.settings` `Priority=94` |
 | Better Torches Next-Gen | `mods/modBetterTorchesNextGen` |
 | No Indignant NPCs | `mods/modNoIndignantNPCs`, menu `NoIndignantNPCs.xml` |
+| No Loading Screen Narrations | `mods/modMuteLoadingNarrations` |
 
 The menu XML directory is `bin/config/r4game/user_config_matrix/pc`.
 Keep the supplied XML files for this Remastered setup.
@@ -501,6 +502,17 @@ Release 2.4 (uploaded October 13, 2026, installed October 17 to 20) replaced `ga
 Neither mod adds items or quests; removing the folder undoes it.
 Nothing has been checked in game yet.
 
+### No Loading Screen Narrations
+
+[No Loading Screen Narrations](https://www.nexusmods.com/witcher3/mods/13280) removes the narrated storybook recap that plays while a save loads. It is a cooked bundle: `blob0.bundle` carries a short silent clip, and `metadata.store` points 19 clips under `movies\cutscenes\storybook` (`st_1.usm` to `st_23.usm`) at it, so the game plays silence instead of the narration.
+This setup uses Nexus release **2** (archive stamped October 8, 2026), installed on October 24 as `mods/modMuteLoadingNarrations`. Its `info.json` says "Mute Loading Narrations - Remastered" 1.0.1, game version 29, no dependencies.
+Extract the archive into the game directory: it installs 3 files (36,067 bytes), and all three match the archive by SHA-256. The archive's `SHA256SUMS.txt` is not installed.
+
+- It has no menu, no DLC, no scripts, and no `mods.settings` entry. Removing the folder undoes it.
+- No other installed mod replaces the storybook videos; the `metadata.store` files of the other `mods` and `dlc` folders contain no storybook entries.
+- It does not touch the startup logos or the in-game cutscenes.
+- Not yet tested in game: check that a loaded save skips straight to the world with no narrated recap and no hang on a black screen.
+
 ## In-game installations
 
 1. Open **Mods** from the main menu.
@@ -549,7 +561,7 @@ The manual `mods.settings` entries, renumbered on October 15, 2026 (lower number
 | 99 | `modHC4K02FemalesVanillaBushy` | Below the Nudes Collection; no files in common with Gwent Redux. |
 
 All entries are enabled.
-The other fourteen manual `mods` folders, including the strings-only `modPTOptimization` and The Hunt's `modW3LSHunt`, have no matching entries in that file; the PT DLL and the Living Continent ReShade add-on are outside this mechanism.
+The other fifteen manual `mods` folders, including the strings-only `modPTOptimization` and The Hunt's `modW3LSHunt`, have no matching entries in that file; the PT DLL and the Living Continent ReShade add-on are outside this mechanism.
 Absence of an explicit entry does not establish that a mod is disabled.
 
 The [Corvo Bianco author](https://www.nexusmods.com/witcher3/mods/12982) requests priority over Brothers In Arms.
@@ -568,7 +580,7 @@ Verify the collection's interactions in game before treating the order as valida
 
 ## Versions and inventory evidence
 
-The [manual inventory](../inventory/manual.json) records twenty-five manual installations; Complete Animations Redux and Restored High Quality Weather Icons are kept under `removedMods` for reference.
+The [manual inventory](../inventory/manual.json) records twenty-six manual installations; Complete Animations Redux and Restored High Quality Weather Icons are kept under `removedMods` for reference.
 The [in-game inventory](../inventory/ingame.json) records six installed payloads and their enabled configuration entries.
 All six in-game packages have files on disk; their file sizes match the local package metadata.
 
@@ -642,6 +654,8 @@ On October 24, 2026, three updated installations and one new one received a full
 
 Deaths Reworked's 2.73 `en.w3strings` was moved to the Recycle Bin first. The readme and sound-credits files of both Living Continent archives are not installed and are not counted.
 
+No Loading Screen Narrations (release 2, 3 files, 36,067 bytes) was installed later that day and compared the same way; all three files match and nothing extra is installed.
+
 Internal metadata can retain older labels.
 For example, the matched Brothers In Arms 4.0.4 archive reports `4.0.2` internally, and Sharedutils 4.1 reports `3.1.1`.
 Those are metadata differences, not proof of separate installed versions.
@@ -711,6 +725,7 @@ The pages of ModjiggleRR, the Nudes Collection, The Elder Bush, and Humans of th
 - Check that the new hairstyles and beards appear at the Skellige barbers (Brokvar, Glinsk, Kaer Trolde).
 - Check Better Torches: mount Roach, cast a sign, block, and climb a ladder with a torch out, and whistle for Roach with a torch in hand; check that Light Rewrite's torch light still follows the torch.
 - Check No Indignant NPCs 3.2: open its settings menu, walk and sprint through a crowd in Novigrad, and light a brazier with Igni near townsfolk.
+- Check No Loading Screen Narrations: load a save and a fast-travel destination, and confirm that no narrated recap plays and the load does not hang.
 - Check that Hoods 3.7, Corvo Bianco 5.01, and The Spider and The Wolf 1.2.3 load after the update and with the renumbered mod.io priorities.
 - Find the cause of the Novigrad worker-thread crashes with the [next tests](novigrad-worker-thread-crashes.md#next-tests): about 30 minutes in Novigrad at dusk or night per test.
 - Check that The Elder Bush and Females of the Continent textures load on Remastered, and Cerys's neck with the Nudes Collection's head texture.
