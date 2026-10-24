@@ -244,9 +244,10 @@ This installation also needed two script repairs: the `InitializeAreaMusic` para
 Follow the [exact repair instructions](a-witcher-can-hide-another.md), including backups and rollback.
 
 **Remastered compatibility is unconfirmed.** Nexus warns that the mod may only work with older game versions.
-On October 24, an experimental English conversion from version `163` to `164` preserved all 755 strings.
-An independent reader also verified the converted text, but no in-game test followed.
-The original English file is currently installed; the converted file is retained locally.
+On October 24, the English conversion from version `163` to `164` preserved all 755 strings.
+An independent reader also verified the converted text.
+The converted English file is installed, and the player's follow-up screenshot confirms that the notice title and body display correctly.
+This confirms the noticeboard repair, not full quest compatibility.
 The mod remains enabled with its earlier script repairs. See the [diagnosis, conversion, and validation limits](a-witcher-can-hide-another.md#3-convert-the-english-text-for-remastered).
 
 ### Path Tracing and Ray Tracing Optimization

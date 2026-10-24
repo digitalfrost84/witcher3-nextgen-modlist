@@ -12,8 +12,9 @@ Treat this as a repair for the specific errors below, not a claim of complete co
 On October 24, 2026, a noticeboard screenshot showed unreadable text.
 The installed English string file still used format version `163`.
 It was converted to Remastered format `164`, with all decoded text preserved.
-The original version `163` file is currently installed; the experimental converted file is retained locally.
-The mod remains enabled; the notice and full quest still need an in-game check.
+The converted version `164` file is installed, and the original file is retained as a backup.
+The player's follow-up screenshot confirms that the notice title and body display correctly.
+The mod remains enabled; the full quest still needs an in-game check.
 See [English text conversion](#3-convert-the-english-text-for-remastered).
 
 The downloaded archive `A Witcher Can Hide Another-9453-1-1-1-1761481305.7z` is labeled `1.1.1`.
@@ -80,8 +81,9 @@ This installation runs Remastered, with DirectX 12 executable version `5.0.0.104
 Next-Gen support does not establish compatibility with Remastered's script interfaces or string format.
 
 The screenshot showed random characters and missing glyphs in the notice title and body.
-The selected notice could not be identified conclusively from the screenshot.
-This mod is the leading suspect: it starts at a Novigrad noticeboard and supplied an older English string file.
+After the conversion was installed, the player supplied a screenshot of the same notice with readable text.
+Its title is `An Opportunity To Serve Redanian Army!`, and its body matches string `2119453080` below.
+This confirms that the affected notice belongs to this mod and that the English conversion fixes its display.
 The installed A Proper Send-off and Brothers In Arms English files already used version `164`.
 
 Decoding this mod's English file recovered these notice entries:
@@ -93,11 +95,11 @@ Decoding this mod's English file recovered these notice entries:
 | `2119453080` | Requests service for the Redanian army and directs the reader to an officer near the Temple of Eternal Fire during the day. |
 
 The nearby journal entries describe missing Redanian soldiers and the objective to check a noticeboard in Novigrad.
-This identifies the mod's notice, but does not prove that it was the selected notice in the screenshot.
+The readable title and body match the decoded entries and identify the notice in the screenshot.
 
 ### Conversion procedure
 
-This is an experimental text repair, not a verified Remastered port.
+This text repair is confirmed for the English noticeboard display. It is not a verified port of the full quest to Remastered.
 
 Use [w3strings Remastered](https://www.nexusmods.com/witcher3/mods/13094), Windows version `1.1.0` (Nexus file `77186`).
 The tool writes Remastered's version `164` UTF-8 format by default when no source version metadata is present.
@@ -133,18 +135,17 @@ An independent [version 164 reader](https://github.com/yuxingxiao/Witcher3_Dual_
 | File | SHA-256 |
 | --- | --- |
 | Original English `en.w3strings`, version `163` | `A6193190D9DB6D476028FE7610DD26BABEFE335B7B0B18697F64D425404CEA17` |
-| Converted English `en.w3strings`, version `164` (retained locally, not currently installed) | `EA2A26278E851327CFB82D3297B40F94B546B0FF0DB525F415366B5D435DF5AA` |
+| Installed English `en.w3strings`, version `164` | `EA2A26278E851327CFB82D3297B40F94B546B0FF0DB525F415366B5D435DF5AA` |
 | Conversion tool `w3stringsr.exe`, version `1.1.0` | `5C8735F8161A3670530EF341682E37880C1590BAB832D3A3A4766BA3754291DE` |
 
 The local backup is `mod-fix-backups/awcha-strings-20261024/original/en.w3strings`, relative to the game directory.
 The converted file is `mod-fix-backups/awcha-strings-20261024/converted/en.w3strings`.
-The conversion was briefly installed, then reversed before any in-game test.
-The restored installed file matches the original hash above.
-With the game closed, restore that file over the installed English file to reverse the text conversion.
+The installed file matches the converted hash above.
+With the game closed, restore the original backup over the installed English file to reverse the text conversion.
 The backup, tool, decoded quest text, and converted binary are not distributed in this repository.
 
-File validation passed, but the converted text has not been checked in game.
-After installing the experimental conversion, check the noticeboard on a separate save.
+File validation passed. The player's follow-up screenshot also confirms the English noticeboard text in game.
+The journal, dialogue subtitles, and complete quest have not been verified.
 This text repair does not establish full quest compatibility or resolve unrelated gameplay faults.
 The available evidence does not establish whether this conversion alone makes the quest usable on Remastered.
 
@@ -154,7 +155,7 @@ Launch the game and let it compile scripts. Confirm that the `InitializeAreaMusi
 
 Return to the affected noticeboard with English text selected and check the title and body.
 Also check the quest journal and dialogue subtitles.
-If the same notice remains unreadable, its source is still unresolved; do not mark the screenshot diagnosis as confirmed.
+The recorded noticeboard check passed; journal, subtitle, and full quest checks remain outstanding.
 
 The script repair changed only the two expressions in `annotations.ws` and added the method and comment above to `explorationStateManager.ws`. All other original script text was preserved.
 
