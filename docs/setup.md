@@ -55,6 +55,7 @@ For an archive with loose `mod...` and `dlc...` folders, place them inside `mods
 | Better Torches Next-Gen | `mods/modBetterTorchesNextGen` |
 | No Indignant NPCs | `mods/modNoIndignantNPCs`, menu `NoIndignantNPCs.xml` |
 | No Loading Screen Narrations | `mods/modMuteLoadingNarrations` |
+| W3LoadFix | `bin/x64_dx12/dsound.dll`, `w3loadfix.dll`, `w3loadfix.ini`; menu `w3loadfix.xml` |
 
 The menu XML directory is `bin/config/r4game/user_config_matrix/pc`.
 Keep the supplied XML files for this Remastered setup.
@@ -513,6 +514,18 @@ Extract the archive into the game directory: it installs 3 files (36,067 bytes),
 - It does not touch the startup logos or the in-game cutscenes.
 - Not yet tested in game: check that a loaded save skips straight to the world with no narrated recap and no hang on a black screen.
 
+### W3LoadFix
+
+[W3LoadFix](https://www.nexusmods.com/witcher3/mods/13881) speeds up the loading screens after death, quick load, and fast travel. It patches the running game in memory and changes no game file. The author lists eight switches, one per part, and the log names each as ON, OFF, or UNAVAILABLE: a parallel batch request for the terrain and occlusion tiles, an index for the interior-area scan (`AttachLayers`), libdeflate with decompression spread over helper threads, the engine's loading mode for the whole loading screen, an index for the tag manager, fewer controller checks (Linux and Steam Deck only), and a `FoliageFix` (not described in the readme). Three sliders in the menu can shorten the loading-screen fades (game default 3 / 3 / 1.5 s).
+This setup uses release **1.0.8** (archive stamped October 19, 2026), installed on October 24. Copy `bin` from the archive: it installs 4 files (606,193 bytes), and all four match the archive by SHA-256. The readme and `W3LoadFix_licenses` folder are not installed.
+
+- **Loader:** `dsound.dll` (the game loads it at startup; it loads `w3loadfix.dll` and forwards sound calls to the Windows copy). Only one `dsound.dll` can exist, so an ASI loader that uses that name conflicts; none is installed here. PT Optimization's `xinput9_1_0.dll` is a separate file and both load; the log lists `dxgi.dll` (ReShade) and `xinput9_1_0.dll` as the other proxy DLLs.
+- **Game version:** the author built it for the Steam game build 5.01 (`0x6AC555A3`) and says other builds are untested. This install is GOG, and the log reports store GOG, game build `0x6AC555A3`, and "all 32 functions checked at the known addresses". After a game patch it finds its code by signature and switches a part off if the code changed, so check `w3loadfix.log` after patching.
+- **Settings:** Options > Mods > W3LoadFix adds 13 menu entries to the already crowded [option limit](#the-living-continent---the-hunt). All parts are on (the shipped `w3loadfix.ini` is unchanged) except `ExperimentalStreaming`, which is off by default. `ZlibHelpers=0` gives 7 helper threads here, and 3 threads for the decompression tasks.
+- **First run (October 24, 21:07):** startup took 5.9 s, the first save load (Skellige) 10.3 s, and a world change (Novigrad) 7.2 s, as the log's engine loading stages. The author measured 22.4 s down to 4.7 s on his PC, so this is no comparison without an off-run on this PC.
+- **Disable or remove:** create an empty `bin/x64_dx12/w3loadfix_disabled` to switch it off, or delete the four files. The fade sliders keep their last value after removal.
+- If a crash or visual glitch appears while loading, the author asks to turn off `TagFix`, `ParallelDecompression`, and `FastZlib` first, then the rest.
+
 ## In-game installations
 
 1. Open **Mods** from the main menu.
@@ -561,7 +574,7 @@ The manual `mods.settings` entries, renumbered on October 15, 2026 (lower number
 | 99 | `modHC4K02FemalesVanillaBushy` | Below the Nudes Collection; no files in common with Gwent Redux. |
 
 All entries are enabled.
-The other fifteen manual `mods` folders, including the strings-only `modPTOptimization` and The Hunt's `modW3LSHunt`, have no matching entries in that file; the PT DLL and the Living Continent ReShade add-on are outside this mechanism.
+The other fifteen manual `mods` folders, including the strings-only `modPTOptimization` and The Hunt's `modW3LSHunt`, have no matching entries in that file; the PT DLL, W3LoadFix, and the Living Continent ReShade add-on are outside this mechanism.
 Absence of an explicit entry does not establish that a mod is disabled.
 
 The [Corvo Bianco author](https://www.nexusmods.com/witcher3/mods/12982) requests priority over Brothers In Arms.
@@ -580,7 +593,7 @@ Verify the collection's interactions in game before treating the order as valida
 
 ## Versions and inventory evidence
 
-The [manual inventory](../inventory/manual.json) records twenty-six manual installations; Complete Animations Redux and Restored High Quality Weather Icons are kept under `removedMods` for reference.
+The [manual inventory](../inventory/manual.json) records twenty-seven manual installations; Complete Animations Redux and Restored High Quality Weather Icons are kept under `removedMods` for reference.
 The [in-game inventory](../inventory/ingame.json) records six installed payloads and their enabled configuration entries.
 All six in-game packages have files on disk; their file sizes match the local package metadata.
 
@@ -654,7 +667,7 @@ On October 24, 2026, three updated installations and one new one received a full
 
 Deaths Reworked's 2.73 `en.w3strings` was moved to the Recycle Bin first. The readme and sound-credits files of both Living Continent archives are not installed and are not counted.
 
-No Loading Screen Narrations (release 2, 3 files, 36,067 bytes) was installed later that day and compared the same way; all three files match and nothing extra is installed.
+No Loading Screen Narrations (release 2, 3 files, 36,067 bytes) and W3LoadFix 1.0.8 (4 files, 606,193 bytes) were installed later that day and compared the same way; all files match and nothing extra is installed.
 
 Internal metadata can retain older labels.
 For example, the matched Brothers In Arms 4.0.4 archive reports `4.0.2` internally, and Sharedutils 4.1 reports `3.1.1`.
@@ -726,6 +739,7 @@ The pages of ModjiggleRR, the Nudes Collection, The Elder Bush, and Humans of th
 - Check Better Torches: mount Roach, cast a sign, block, and climb a ladder with a torch out, and whistle for Roach with a torch in hand; check that Light Rewrite's torch light still follows the torch.
 - Check No Indignant NPCs 3.2: open its settings menu, walk and sprint through a crowd in Novigrad, and light a brazier with Igni near townsfolk.
 - Check No Loading Screen Narrations: load a save and a fast-travel destination, and confirm that no narrated recap plays and the load does not hang.
+- Check W3LoadFix: confirm that saves, deaths, and fast travel load with no crash, missing foliage, or stuck loading screen; compare load times with `w3loadfix_disabled` present; and check that its menu page opens.
 - Check that Hoods 3.7, Corvo Bianco 5.01, and The Spider and The Wolf 1.2.3 load after the update and with the renumbered mod.io priorities.
 - Find the cause of the Novigrad worker-thread crashes with the [next tests](novigrad-worker-thread-crashes.md#next-tests): about 30 minutes in Novigrad at dusk or night per test.
 - Check that The Elder Bush and Females of the Continent textures load on Remastered, and Cerys's neck with the Nudes Collection's head texture.
