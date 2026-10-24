@@ -38,7 +38,8 @@ For an archive with loose `mod...` and `dlc...` folders, place them inside `mods
 | Fixed and Slimmer Griffin Armor | `mods/modSlimmer_Griffin_Armor` |
 | Griffin Armour (On The Path) | `mods/modGriffinArmorOnThePath` |
 | SGA T5 for On The Path | `mods/modSGA_T5_for_OTP` |
-| The Living Continent | `mods/modW3LivingSky`, `dlc/dlcw3lshunt`, `dlc/dlcw3lsrewards`; `bin/x64_dx12/W3LivingSky.addon64` and seven `w3_living_sky*` files; menu `mod00LivingContinent.xml`; needs ReShade |
+| The Living Continent | `mods/modW3LivingSky`; `bin/x64_dx12/W3LivingSky.addon64` and four `w3_living_sky*` files (`.hlsl`, `_font.bin`, `_leaves.bin`, `_moon.bin`); menu `mod00LivingContinent.xml`; needs ReShade |
+| The Living Continent - The Hunt | `mods/modW3LSHunt`, `dlc/dlcw3lshunt`, `dlc/dlcw3lsrewards`; `bin/x64_dx12/w3_living_sky_codex.bin`, `w3_living_sky_codex.hlsl`, `w3_living_sky_codex_img.bin`, `w3_living_sky_codex_font_OFL.txt`; menu `mod01LivingContinentHunt.xml` |
 | ReShade (for The Living Continent) | `bin/x64_dx12/dxgi.dll`, `ReShade.ini`, `reshade-shaders` |
 | Deaths Reworked | `mods/modDeathsReworkedWoundsAndBrutality` |
 | Blood And Steel | `mods/modBloodAndSteel`, `dlc/dlcBloodAndSteel`, menu `modBloodAndSteel.xml` |
@@ -122,27 +123,39 @@ Not yet checked in game: the slim breastplate and OTP textures on each Griffin t
 
 ### The Living Continent and ReShade
 
-- **[The Living Continent - Seasons - Sky - Weather](https://www.nexusmods.com/witcher3/mods/13650):** release 1.6, installed on October 20, 2026 over 1.5 (October 15) and 1.4 (October 11). It adds four seasons, snow, icicles, a real night sky, daytime halos, and seasonal villager behaviour. It is for Remastered on DirectX 12 only (game version 5.0 or newer); DX11 is not supported.
+- **[The Living Continent - Seasons - Sky - Weather](https://www.nexusmods.com/witcher3/mods/13650):** release 1.7 (uploaded October 22), installed on October 23, 2026 over 1.6 (October 20), 1.5 (October 15), and 1.4 (October 11). It adds four seasons, snow, icicles, a real night sky, daytime halos, a detailed 4K moon, and seasonal villager behaviour. Since 1.7 the hunting is a separate mod, [The Living Continent - The Hunt](#the-living-continent---the-hunt). It is for Remastered on DirectX 12 only (game version 5.0 or newer); DX11 is not supported.
 - **ReShade is required, not optional.** The main component, `W3LivingSky.addon64`, is a ReShade add-on DLL that only ReShade can load. Install [ReShade](https://reshade.me) 6.8 or newer using the **"with full add-on support"** installer (the regular build cannot load add-ons), for `bin/x64_dx12/witcher3.exe` under DirectX 12. No effects or presets are needed.
 - Installed: ReShade 6.8.0.2155 from `ReShade_Setup_6.8.0_Addon.exe`, as `bin/x64_dx12/dxgi.dll`. It loaded in the same session as PT Optimization's `xinput9_1_0.dll` without errors.
-- Copy the archive's `bin`, `dlc`, and `Mods` folders into the game folder; `dlc` is new in 1.6. The W3 Mod Manager copies only `Mods`, so with it the eight `bin/x64_dx12` files, `mod00LivingContinent.xml`, and the two DLC folders must be copied by hand. Every installed file matches the 1.6 archive (67 of 67; the readme and sound credits are not installed), with no leftover files.
-- Check: `bin/x64_dx12/ReShade.log` must contain `Registered add-on "The Living Continent"`, and `w3_living_sky_errors.txt` should read `ok`. Both were confirmed with 1.4 on October 11, 2026, and the in-game calendar and winter snow appeared in Velen. At the launches on October 15 and October 20, `ReShade.log` showed `Registered add-on "The Living Continent" v1.5.0.0`, and the error file read `ok`.
-- The 1.6 add-on still carries the version number 1.5.0.0, so the log line does not show which release is installed. Its `W3LivingSky.addon64` differs from the 1.5 file, and the installed copy matches the 1.6 archive.
+- Copy the archive's `bin` and `Mods` folders into the game folder; 1.7 has no `dlc` folder. The W3 Mod Manager copies only `Mods`, so with it the five `bin/x64_dx12` files and `mod00LivingContinent.xml` must be copied by hand. Every installed file matches the 1.7 archive (56 of 56; the readme is not installed).
+- Check: `bin/x64_dx12/ReShade.log` must contain `Registered add-on "The Living Continent"`, and `w3_living_sky_errors.txt` should read `ok`. Both were confirmed with 1.4 on October 11, 2026, and the in-game calendar and winter snow appeared in Velen. The 1.5 and 1.6 add-ons both registered as `v1.5.0.0`; the 1.7 add-on registers as `v1.7.0.0`.
+- **Updating from 1.6 to 1.7:** extract 1.7 over 1.6, replacing everything; it replaces 1.6's 14 hunting scripts in `modW3LivingSky` with empty files. Then install [The Hunt](#the-living-continent---the-hunt), whose DLC folders and codex files replace 1.6's. To drop the hunting instead, delete `dlc/dlcw3lshunt`, `dlc/dlcw3lsrewards`, and the four `w3_living_sky_codex*` files in `bin/x64_dx12`.
+- **Do not leave 1.7 alone over 1.6.** That is what happened here on October 23: the 1.7 add-on included 1.6's leftover `w3_living_sky_codex.hlsl`, and the compendium shader failed to compile. `w3_living_sky_errors.txt` listed five undeclared identifiers such as `CX_W_K_P_BACK` at the launch on October 24 at 08:58; the seasons, sky, and weather still ran. Installing The Hunt 1.0 replaced the stale files; at the 13:43 launch the error file read `ok`, and the compendium pictures loaded.
 - Settings are under Options > Mods > The Living Continent. The game can open only about 230 options across all mod pages together.
 - Uninstall: turn off Winter Clothes for the Villagers and play a little first, then delete the files listed on the mod page.
 - The ReShade installer also added some effects (Deband, DisplayDepth, UIMask). They stay off unless enabled in the ReShade overlay and are not needed.
 - Release 1.5 adds realistic cloud lighting, nebulae, frozen marshes, drifting snow, Darker Nights in HDR, and seasons that follow the story.
-- Release 1.6, *The Hunt*, adds a hunting bow, wounds and blood trails, skinning, twenty new animals, legendary animals, and the Huntsman's Compendium in the game menu. Its new content is in `dlc/dlcw3lshunt` and `dlc/dlcw3lsrewards`. Update by extracting `bin`, `dlc`, and `Mods` over the old files; every 1.5 file is still part of 1.6, so no leftovers remain. Settings carry over.
-- Its 29 scripts are all loose, annotated scripts under `content/scripts/local`. They extend classes that Map Remastered, Brothers In Arms, Light Rewrite, and A Witcher Can Hide Another also extend, but none of them adds a field or method with the same name. It reads Map Remastered's `W3MerchantComponent` without replacing it.
+- Release 1.6, *The Hunt*, added a hunting bow, wounds and blood trails, skinning, twenty new animals, legendary animals, and the Huntsman's Compendium in the game menu, in `dlc/dlcw3lshunt` and `dlc/dlcw3lsrewards`.
+- Release 1.7 moves that hunting into its own mod and adds a detailed 4K moon (`w3_living_sky_moon.bin`), one switch for the whole mod, translatable texts, and a Snow on People option. It also lists fixes for flickering footprints and for the lightning flashes in thunderstorms.
+- Its scripts are all loose, annotated scripts under `content/scripts/local`; 1.7 ships 14 of them empty. They extend classes that Map Remastered, Brothers In Arms, Light Rewrite, and A Witcher Can Hide Another also extend, but none of them adds a field or method with the same name. It reads Map Remastered's `W3MerchantComponent` without replacing it.
 - Overlap: its bundle replaces 14 NPC entity files that Brothers In Arms also replaces, among them `nml_villager_woman.w2ent`, `skellige_villager.w2ent`, and several Toussaint and Novigrad community NPCs. Brothers In Arms has an explicit priority (96) and The Living Continent has no entry, so the Brothers In Arms copies are used, and those NPC types may not get the winter clothes. This overlap was found with 1.5 and not rechecked for 1.6.
-- **Lightning in Storms is turned off (October 23, 2026).** With 1.6, the whole screen flickered between bright and dark during a thunderstorm at night, in an inn with a fireplace burning, and it stopped with seasons off. Turning off Lightning in Storms (`StormLightning`, Sky and Nights page) alone fixed it. The flash is part of the seasonal colour pass (`e_season_grade` in `w3_living_sky.hlsl`), which is why turning off seasons also stops it. Nexus has the same report, [Flashing light during thunderstorm](https://www.nexusmods.com/witcher3/mods/13650?tab=bugs), still open for 1.6; the 1.7 notes do not say it was fixed.
-- Not yet checked: the night sky together with Light Rewrite, and the 1.6 hunting content.
+- **Lightning in Storms is turned off (October 23, 2026).** With 1.6, the whole screen flickered between bright and dark during a thunderstorm at night, in an inn with a fireplace burning, and it stopped with seasons off. Turning off Lightning in Storms (`StormLightning`, Sky and Nights page) alone fixed it. The flash is part of the seasonal colour pass (`e_season_grade` in `w3_living_sky.hlsl`), which is why turning off seasons also stops it. Nexus has the same report, [Flashing light during thunderstorm](https://www.nexusmods.com/witcher3/mods/13650?tab=bugs), still open for 1.6. The 1.7 readme lists a fix ("one soft glow per strike now", none indoors or over the interface); the option stays off until that is checked in a thunderstorm.
+- Not yet checked: the night sky together with Light Rewrite, and the 1.7 moon.
+
+### The Living Continent - The Hunt
+
+- **[The Living Continent - The Hunt](https://www.nexusmods.com/witcher3/mods/14718):** release 1.0 (uploaded October 22, 2026), installed on October 24. It is the hunting part of The Living Continent 1.6 as a mod of its own: the hunting bow, wounds and blood trails, skinning, 21 animals, 10 legendary animals, and the Huntsman's Compendium. It needs no ReShade. With The Living Continent 1.7, the animals follow its seasons, and its add-on draws the compendium's illustrated page from the codex files.
+- Copy `bin`, `dlc`, and `Mods`. It installs `mods/modW3LSHunt`, `dlc/dlcw3lshunt`, `dlc/dlcw3lsrewards`, the four `w3_living_sky_codex*` files in `bin/x64_dx12`, and the menu `mod01LivingContinentHunt.xml`. All 52 installed files match the archive; the readme and sound credits are not installed. No 1.6 files remain in its folders.
+- Its 18 scripts are loose and annotated. `content/scripts/local/w3ls_shared.ws` is identical to the copy in `modW3LivingSky` at the same path, so only one is compiled; the author ships it that way. Its other classes and functions do not clash with The Living Continent's.
+- **The bow:** with the option Hunting Bow on, the mod puts a Hunter's Bow, 30 hunting arrows, and 15 small game arrows in Geralt's pack **once per save**; it records that with the fact `w3ls_bow_given` and never gives it again. Smiths and quartermasters sell bows and arrows. The bow goes in the crossbow slot: choose it in the quick menu's crossbow slot, hold the crossbow key to draw. Kills with one or two arrows give perfect pelts; a long fight gives a poor one.
+- Progress from 1.6 carries over, according to the author: the compendium pages, the legends, and the bow, arrows, and pelts in the inventory.
+- **Option limit:** its options page adds 46 entries. All mod menu files together now have 314 `Var` entries, more than the author's stated limit of about 230 options across all mod pages. If a mod page does not open at all, that limit is the cause; the mods keep running on their defaults. Not yet checked which pages still open.
+- No `mods.settings` entry. Not yet checked in game beyond the compendium pictures loading.
 
 ### Deaths Reworked
 
-- **[Deaths Reworked - Wounds and Brutality](https://www.nexusmods.com/witcher3/mods/11964):** release 2.73 (uploaded October 16, 2026), Next Gen main file, installed on October 20 over 2.70. The installed descriptor still says version 1.0, internal name `dynamicragdoll`.
-- Folder `mods/modDeathsReworkedWoundsAndBrutality`; all 6 archive files match, with no leftover files.
-- Releases 2.72 and 2.73 add more death-animation variety, new Aard kills, and a new crawling wounded variant; 2.73 restores the legless crawling animations.
+- **[Deaths Reworked - Wounds and Brutality](https://www.nexusmods.com/witcher3/mods/11964):** release 2.75 (uploaded October 22, 2026), Next Gen main file, installed on October 24 over 2.73 (October 20) and 2.70. The installed descriptor still says version 1.0, internal name `dynamicragdoll`.
+- Folder `mods/modDeathsReworkedWoundsAndBrutality`; all 5 archive files match. 2.75 no longer ships `content/en.w3strings`; the 2.73 copy left behind by extracting over it was moved to the Recycle Bin on October 24, so delete the old folder before updating.
+- Releases 2.72 and 2.73 add more death-animation variety, new Aard kills, and a new crawling wounded variant; 2.73 restores the legless crawling animations. 2.75 adds two optional files, Script Friendly 1.1 and High Finisher Chance; neither is installed.
 - The author's notes: remove older versions first. The Next Gen main file needs the mod's wound script; script-heavy setups can use an older optional file without it. Run Script Merger with other script mods. The author expects conflicts with other death-animation, ragdoll, finisher, wound, or damage-processor mods.
 - It changes death animations and blood. Check it together with VAXIS's Blood Physics and Blood And Steel. Not yet tested in game.
 - Overlap: it and VAXIS's Blood Physics replace the same four ragdoll files, `dwarf_base_ragdoll`, `man_base_ragdoll`, `wildhunt_base_ragdoll`, and `woman_base_ragdoll` (`.w2ragdoll`). Neither has a `mods.settings` entry, so the game's default order for unlisted folders decides; which copy wins has not been determined. To decide it, give the preferred mod an entry; the author asks to load Deaths Reworked after other physics packs. A bundle check on October 20 found the same four shared files in 2.73.
@@ -159,7 +172,7 @@ Not yet checked in game: the slim breastplate and OTP textures on each Griffin t
 
 - **Complete Animations Redux:** removed on October 7, 2026 and no longer part of this list. Its leftover inventory props break saves; see [why it was removed](complete-animations-redux.md).
 - **Dynamic Appearances Project:** use the [BiA-compatible Remastered main file](https://www.nexusmods.com/witcher3/mods/9219?tab=files). Release 3.0.2 (uploaded October 19) replaced 3.0b on October 20, 2026; it keeps the 3.0b folder names, and all 12 archive files match. The author says this variant needs no extra BiA patch. Install one main variant only. It must have priority over Brothers In Arms; see [Brothers In Arms priority](#brothers-in-arms-priority). Its presence here does not prove complete 5.0 compatibility.
-- **Light Rewrite:** copy the complete archive. Its [release notes](https://github.com/webspam/LightRewrite/releases) describe the Remastered lighting changes; the installed release is 0.25.1, installed on October 20, 2026 (74 files, all matching). The Shared Imports requirement in older 4.04 instructions does not apply to the Remastered instructions.
+- **Light Rewrite:** copy the complete archive. Its [release notes](https://github.com/webspam/LightRewrite/releases) describe the Remastered lighting changes; the installed release is 0.26.2 (uploaded October 23), installed on October 24, 2026 (74 files, all matching). The Shared Imports requirement in older 4.04 instructions does not apply to the Remastered instructions.
 
 #### Upgrading Dynamic Appearances Project to 3.0b
 
@@ -529,7 +542,7 @@ The manual `mods.settings` entries, renumbered on October 15, 2026 (lower number
 | 99 | `modHC4K02FemalesVanillaBushy` | Below the Nudes Collection; no files in common with Gwent Redux. |
 
 All entries are enabled.
-The other thirteen manual `mods` folders, including the strings-only `modPTOptimization`, have no matching entries in that file; the PT DLL and the Living Continent ReShade add-on are outside this mechanism.
+The other fourteen manual `mods` folders, including the strings-only `modPTOptimization` and The Hunt's `modW3LSHunt`, have no matching entries in that file; the PT DLL and the Living Continent ReShade add-on are outside this mechanism.
 Absence of an explicit entry does not establish that a mod is disabled.
 
 The [Corvo Bianco author](https://www.nexusmods.com/witcher3/mods/12982) requests priority over Brothers In Arms.
@@ -548,7 +561,7 @@ Verify the collection's interactions in game before treating the order as valida
 
 ## Versions and inventory evidence
 
-The [manual inventory](../inventory/manual.json) records twenty-four manual installations; Complete Animations Redux and Restored High Quality Weather Icons are kept under `removedMods` for reference.
+The [manual inventory](../inventory/manual.json) records twenty-five manual installations; Complete Animations Redux and Restored High Quality Weather Icons are kept under `removedMods` for reference.
 The [in-game inventory](../inventory/ingame.json) records six installed payloads and their enabled configuration entries.
 All six in-game packages have files on disk; their file sizes match the local package metadata.
 
@@ -611,6 +624,17 @@ Map Remastered and No Indignant NPCs had been extracted over their previous rele
 All three were moved to the Recycle Bin; after that, no installed folder holds files that its archive lacks.
 The Living Continent's readme and sound credits are not installed and are not counted.
 
+On October 24, 2026, three updated installations and one new one received a full SHA-256 comparison of every installed archive file; all matched, with no leftover files:
+
+| Mod | Release | Files | Bytes |
+| --- | --- | --- | --- |
+| Light Rewrite | 0.26.2 | 74 | 480,012 |
+| Deaths Reworked | 2.75 | 5 | 80,442,824 |
+| The Living Continent | 1.7 | 56 | 43,528,727 |
+| The Living Continent - The Hunt | 1.0 | 52 | 608,464,122 |
+
+Deaths Reworked's 2.73 `en.w3strings` was moved to the Recycle Bin first. The readme and sound-credits files of both Living Continent archives are not installed and are not counted.
+
 Internal metadata can retain older labels.
 For example, the matched Brothers In Arms 4.0.4 archive reports `4.0.2` internally, and Sharedutils 4.1 reports `3.1.1`.
 Those are metadata differences, not proof of separate installed versions.
@@ -645,8 +669,8 @@ PT Optimization detected the new build and applied its rendering changes, accord
 
 ## Available updates
 
-Checked on October 20, 2026 against the Nexus files pages and the mod.io pages.
-Eight manual mods were updated the same day; see [the October 20 comparison](#versions-and-inventory-evidence).
+Checked on October 24, 2026 against the Nexus files pages and the mod.io pages.
+Light Rewrite 0.26.2, Deaths Reworked 2.75, and The Living Continent 1.7 were installed that day, together with the new The Living Continent - The Hunt 1.0; see [the comparisons](#versions-and-inventory-evidence).
 
 | Mod | Installed | Latest | Released | Notes |
 | --- | --- | --- | --- | --- |
@@ -660,7 +684,7 @@ All six were enabled again in the **Mods** menu, and the game renumbered the pri
 Hoods 3.7 moved its language string files from `dlc/dlchoods` to `mods/modhoods`.
 
 All other installations are on the latest release.
-On October 20 these were the latest Nexus files: Brothers In Arms 4.1.1, Sharedutils 4.1, Dynamic Appearances Project 3.0.2, Light Rewrite 0.25.1, A Proper Send-off 1.21, A Witcher Can Hide Another 1.1.1, PT Optimization 2.2, the three Griffin armor files (Slimmer Griffin Armor and SGA T5 1.5, OTP Final), The Living Continent 1.6, Deaths Reworked 2.73, Blood And Steel Remastered v3.02, Gwent Redux release 20, Animated Gwent Cards release 4, New Hairstyles and Beards 4.0, Map Remastered 2.4.2, Better Torches 5.1.0, and No Indignant NPCs 3.2.
+On October 24 these were the latest Nexus files: Brothers In Arms 4.1.1, Sharedutils 4.1, Dynamic Appearances Project 3.0.2, Light Rewrite 0.26.2, A Proper Send-off 1.21, A Witcher Can Hide Another 1.1.1, PT Optimization 2.2, the three Griffin armor files (Slimmer Griffin Armor and SGA T5 1.5, OTP Final), The Living Continent 1.7, The Living Continent - The Hunt 1.0, Deaths Reworked 2.75, Blood And Steel Remastered v3.02, Gwent Redux release 20, Animated Gwent Cards release 4, New Hairstyles and Beards 4.0, Map Remastered 2.4.2, Better Torches 5.1.0, and No Indignant NPCs 3.2.
 All six in-game mods match mod.io: Hoods 3.7, Corvo Bianco Enhanced Collection 5.01, The Last Wish Final Scene Restoration 0.1, Ciri Witcher Ending Restoration 0.2, Fast Travel Pack 2.1.0, and The Spider and The Wolf 1.2.3.
 The pages of ModjiggleRR, the Nudes Collection, The Elder Bush, and Humans of the Continent could not be checked without adult content enabled.
 
@@ -671,7 +695,9 @@ The pages of ModjiggleRR, the Nudes Collection, The Elder Bush, and Humans of th
 - Confirm that the slim mesh and OTP textures load on each Griffin tier, including the T5 chainmail and shoulder pads.
 - Test combat with Deaths Reworked and Blood And Steel together, alongside Brothers In Arms and VAXIS's Blood Physics.
 - Check The Living Continent at night with Light Rewrite, and whether villagers that Brothers In Arms overrides get its winter clothes.
-- Check The Living Continent 1.6 hunting: the bow, skinning, the new animals, and the Huntsman's Compendium in the game menu.
+- Check The Hunt: the bow (a save that already had the bow once does not get a new one), skinning, the new animals, and the Huntsman's Compendium in the game menu.
+- Check that every mod page under Options → Mods still opens, now that the mod menus have more entries than the stated limit of about 230.
+- Check whether The Living Continent 1.7 fixed the lightning flashes before turning Lightning in Storms back on.
 - Check which ragdoll files win between Deaths Reworked and VAXIS's Blood Physics.
 - Check that the animated Gwent cards appear and that mouse input works in a match and the deck builder, now that Animated Gwent Cards has `Priority=97`.
 - Check Map Remastered 2.4.2's world map, minimap icons, and region emblems, including Brothers In Arms and Sharedutils map pins and the stash icons.

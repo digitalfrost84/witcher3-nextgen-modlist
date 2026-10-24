@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "inventoriedOn": "2026-10-04",
-  "updatedOn": "2026-10-20",
+  "updatedOn": "2026-10-24",
   "scope": "Manually installed mod payloads in the game directory, corroborated by downloaded archive contents.",
   "pathBase": "Game installation directory; all installed paths below are relative to this directory.",
   "game": {
@@ -13,7 +13,7 @@
     "patchedOn": "2026-10-08"
   },
   "notes": [
-    "Twenty-two mod folders (including the strings-only modPTOptimization) and nine DLC folders (seven before The Living Continent 1.6) are installed, plus native DX12 files for PT Optimization and The Living Continent: twenty-two manual mods in total. ReShade 6.8.0 (add-on build) is installed as a requirement of The Living Continent.",
+    "Twenty-five mod folders (including the strings-only modPTOptimization) and nine DLC folders are installed, plus native DX12 files for PT Optimization, The Living Continent and The Living Continent - The Hunt: twenty-five manual mods in total (as of 2026-10-24). ReShade 6.8.0 (add-on build) is installed as a requirement of The Living Continent.",
     "The October 6 update adds VAXIS's ULTRA Plus Blood Physics standard 1.2 with a full 29-file SHA-256 comparison; the earlier inventory was not rechecked in full.",
     "The October 7 update removes Complete Animations Redux; its record moves to removedMods.",
     "The October 7 update replaces Dynamic Appearances Project 2.1.1 with 3.0b Remastered, verified against all 12 archive files.",
@@ -33,6 +33,7 @@
     "The October 17 update adds Better Torches Next-Gen 5.1.0 (Remastered main file) and No Indignant NPCs 2.4 (Remastered main file), each verified against every file of its Nexus archive manifest (6 and 1 files). Neither has a mods.settings entry or shares files with another installed mod. With them, twenty-four mod folders are installed: twenty-four manual mods in total.",
     "A later October 17 update and an October 18 update record three worker-thread crashes in Novigrad. PT Optimization's 'CPU: fast bone reads' option was turned off but ruled out by the third crash; the cause is open. No files changed.",
     "The October 20 update records eight updated mods, each verified by a full SHA-256 comparison of every installed archive file with no leftover files: Brothers In Arms 4.1.1 (77 files), Dynamic Appearances Project 3.0.2 (12), Light Rewrite 0.25.1 (74), PT Optimization 2.2 (21), The Living Continent 1.6 (67), Deaths Reworked 2.73 (6), Map Remastered 2.4.2 (7), and No Indignant NPCs 3.2 (19). Map Remastered and No Indignant NPCs had been extracted over their old releases; the three leftover scripts were moved to the Recycle Bin. The Living Continent 1.6 adds dlc/dlcw3lshunt and dlc/dlcw3lsrewards.",
+    "The October 24 update records Light Rewrite 0.26.2 (74 files), Deaths Reworked 2.75 (5), The Living Continent 1.7 (56), and the new The Living Continent - The Hunt 1.0 (52), each verified by a full SHA-256 comparison with no leftover files. Deaths Reworked's 2.73 en.w3strings was moved to the Recycle Bin. The Hunt takes over the hunt DLC folders and the codex files from The Living Continent.",
     "A Proper Send-off was compared across all 14 archive files. A Witcher Can Hide Another was checked against its two preserved original scripts and installed descriptor.",
     "Stale mods.settings entries are not treated as proof of installation.",
     "This inventory verifies installed files and archive provenance evidence, not enablement or functional compatibility."
@@ -267,20 +268,20 @@
       "configFiles": [],
       "embeddedInfo": [],
       "archiveEvidence": {
-        "archiveName": "Light Rewrite 12144 0.25.1 2026-10-20T04-25Z 5sT4Vv5xt.zip",
-        "releaseLabel": "0.25.1",
+        "archiveName": "Light Rewrite 12144 0.26.2 2026-10-23T03-19Z 864tMl89U.zip",
+        "releaseLabel": "0.26.2",
         "comparisonScope": "all archive files",
         "matchedFiles": 74,
-        "matchedBytes": 476563,
+        "matchedBytes": 480012,
         "allComparedFilesMatch": true,
         "noExtraInstalledFiles": true,
         "method": "SHA-256",
-        "comparedOn": "2026-10-20"
+        "comparedOn": "2026-10-24"
       },
       "previousRelease": {
-        "releaseLabel": "0.23.0",
-        "installedOn": "2026-10-15",
-        "replacedOn": "2026-10-20"
+        "releaseLabel": "0.25.1",
+        "installedOn": "2026-10-20",
+        "replacedOn": "2026-10-24"
       },
       "gameplayVerified": false,
       "notes": [
@@ -509,9 +510,7 @@
       "nexusModId": 13650,
       "nexusUrl": "https://www.nexusmods.com/witcher3/mods/13650",
       "payloadFolders": [
-        "mods/modW3LivingSky",
-        "dlc/dlcw3lshunt",
-        "dlc/dlcw3lsrewards"
+        "mods/modW3LivingSky"
       ],
       "menuFiles": [
         "bin/config/r4game/user_config_matrix/pc/mod00LivingContinent.xml"
@@ -519,30 +518,27 @@
       "nativeFiles": [
         "bin/x64_dx12/W3LivingSky.addon64",
         "bin/x64_dx12/w3_living_sky.hlsl",
-        "bin/x64_dx12/w3_living_sky_codex.bin",
-        "bin/x64_dx12/w3_living_sky_codex.hlsl",
-        "bin/x64_dx12/w3_living_sky_codex_font_OFL.txt",
-        "bin/x64_dx12/w3_living_sky_codex_img.bin",
         "bin/x64_dx12/w3_living_sky_font.bin",
-        "bin/x64_dx12/w3_living_sky_leaves.bin"
+        "bin/x64_dx12/w3_living_sky_leaves.bin",
+        "bin/x64_dx12/w3_living_sky_moon.bin"
       ],
       "configFiles": [],
       "embeddedInfo": [],
       "archiveEvidence": {
-        "archiveName": "The Living Continent 1.6 13650 1.6 2026-10-20T04-09Z YBRHU0Y1b (1).zip",
-        "releaseLabel": "1.6",
-        "comparisonScope": "all installed archive files; the readme and sound-credits files are not installed",
-        "matchedFiles": 67,
-        "matchedBytes": 625573141,
+        "archiveName": "The Living Continent 1.7 13650 1.7 2026-10-22T01-47Z hw6Xp1hIf.zip",
+        "releaseLabel": "1.7",
+        "comparisonScope": "all installed archive files; the readme is not installed",
+        "matchedFiles": 56,
+        "matchedBytes": 43528727,
         "allComparedFilesMatch": true,
         "noExtraInstalledFiles": true,
         "method": "SHA-256",
-        "comparedOn": "2026-10-20"
+        "comparedOn": "2026-10-24"
       },
       "previousRelease": {
-        "releaseLabel": "1.5",
-        "installedOn": "2026-10-15",
-        "replacedOn": "2026-10-20"
+        "releaseLabel": "1.6",
+        "installedOn": "2026-10-20",
+        "replacedOn": "2026-10-24"
       },
       "gameplayVerified": true,
       "notes": [
@@ -553,7 +549,10 @@
         "Its bundle shares 14 NPC entity files with Brothers In Arms (Priority=96), such as nml_villager_woman.w2ent and skellige_villager.w2ent. It has no mods.settings entry, so the Brothers In Arms copies win, and those NPC types may not get its winter clothes.",
         "1.6 (The Hunt) adds a hunting bow, wounds and blood trails, skinning, twenty animals, legendary animals and the Huntsman's Compendium, in two new DLC folders. Every 1.5 file is still part of 1.6, so nothing old is left over.",
         "The 1.6 W3LivingSky.addon64 differs from the 1.5 file but its version resource still says 1.5.0.0, so ReShade.log registered 'The Living Continent v1.5.0.0' at the launch on 2026-10-20 at 22:08 with the 1.6 files installed; w3_living_sky_errors.txt read ok. 1.6 has not been checked in game yet.",
-        "Its 29 scripts are all under content/scripts/local and use annotations. They wrap or add to classes that Map Remastered, Brothers In Arms, Light Rewrite and A Witcher Can Hide Another also extend, but no added field or method name is duplicated. The 14 Brothers In Arms NPC overlaps were not rechecked for 1.6."
+        "Its 29 scripts are all under content/scripts/local and use annotations. They wrap or add to classes that Map Remastered, Brothers In Arms, Light Rewrite and A Witcher Can Hide Another also extend, but no added field or method name is duplicated. The 14 Brothers In Arms NPC overlaps were not rechecked for 1.6.",
+        "1.7 keeps the seasons, sky and weather and moves the hunting into The Living Continent - The Hunt (Nexus 14718). Its 14 hunting scripts in modW3LivingSky are shipped as empty files, so the hunt is compiled once. The 1.6 hunt DLC folders and the four w3_living_sky_codex files now belong to The Hunt.",
+        "Installed alone over 1.6 on 2026-10-23, 1.7 left the 1.6 w3_living_sky_codex files in bin/x64_dx12. Its add-on included the stale w3_living_sky_codex.hlsl, and the compendium shader failed with five undeclared CX_W_K_P_* identifiers in w3_living_sky_errors.txt (launch on 2026-10-24 at 08:58). Installing The Hunt 1.0 replaced those files; at the 13:43 launch the error file read ok and the compendium pictures loaded.",
+        "ReShade.log registers the 1.7 add-on as v1.7.0.0. 1.7 also says it fixed the lightning flashes in thunderstorms; Lightning in Storms stays off until that is checked."
       ],
       "requirements": [
         {
@@ -573,6 +572,50 @@
           "note": "Loaded in the same session as PT Optimization's xinput9_1_0.dll without errors."
         }
       ]
+    },
+    {
+      "name": "The Living Continent - The Hunt",
+      "variant": "main file",
+      "channel": "manual",
+      "verifiedOn": "2026-10-24",
+      "nexusModId": 14718,
+      "nexusUrl": "https://www.nexusmods.com/witcher3/mods/14718",
+      "payloadFolders": [
+        "mods/modW3LSHunt",
+        "dlc/dlcw3lshunt",
+        "dlc/dlcw3lsrewards"
+      ],
+      "menuFiles": [
+        "bin/config/r4game/user_config_matrix/pc/mod01LivingContinentHunt.xml"
+      ],
+      "nativeFiles": [
+        "bin/x64_dx12/w3_living_sky_codex.bin",
+        "bin/x64_dx12/w3_living_sky_codex.hlsl",
+        "bin/x64_dx12/w3_living_sky_codex_font_OFL.txt",
+        "bin/x64_dx12/w3_living_sky_codex_img.bin"
+      ],
+      "configFiles": [],
+      "embeddedInfo": [],
+      "archiveEvidence": {
+        "archiveName": "The Living Continent - The Hunt 1.0 14718 1.0 2026-10-22T01-40Z KA0dHIKuA.zip",
+        "releaseLabel": "1.0",
+        "comparisonScope": "all installed archive files; the readme and sound-credits files are not installed",
+        "matchedFiles": 52,
+        "matchedBytes": 608464122,
+        "allComparedFilesMatch": true,
+        "noExtraInstalledFiles": true,
+        "method": "SHA-256",
+        "comparedOn": "2026-10-24"
+      },
+      "notes": [
+        "The hunting part of The Living Continent 1.6 as a mod of its own: the hunting bow, wounds and blood trails, skinning, 21 animals, 10 legendary animals, and the Huntsman's Compendium. It needs no ReShade; with The Living Continent 1.7 the animals follow its seasons, and the compendium's illustrated page is drawn by that add-on from the codex files.",
+        "Its DLC folders and codex files replace those of The Living Continent 1.6; no 1.6 files remain in them.",
+        "18 loose, annotated scripts. content/scripts/local/w3ls_shared.ws is byte-identical to the copy in modW3LivingSky at the same path, so only one is compiled. Its other top-level names do not clash with The Living Continent.",
+        "Gives a Hunter's Bow, 30 hunting arrows and 15 small game arrows once per save (fact w3ls_bow_given, option Hunting Bow); smiths and quartermasters sell bows and arrows.",
+        "The two mods' option pages add 107 entries; all mod menu files together have 314 Var entries, above the author's stated limit of about 230 options. Not yet checked whether every page opens.",
+        "No mods.settings entry."
+      ],
+      "gameplayVerified": false
     },
     {
       "name": "Deaths Reworked - Wounds and Brutality",
@@ -595,28 +638,29 @@
         }
       ],
       "archiveEvidence": {
-        "archiveName": "ModDeathsReworkedWoundsAndBrutality 11964 2.73 2026-10-16T18-22Z 864tMl814.7z",
-        "releaseLabel": "2.73",
+        "archiveName": "ModDeathsReworkedWoundsAndBrutality 11964 2.75 2026-10-22T16-50Z bnSx72bky.7z",
+        "releaseLabel": "2.75",
         "comparisonScope": "all archive files",
-        "matchedFiles": 6,
-        "matchedBytes": 80418487,
+        "matchedFiles": 5,
+        "matchedBytes": 80442824,
         "allComparedFilesMatch": true,
         "noExtraInstalledFiles": true,
         "method": "SHA-256",
-        "comparedOn": "2026-10-20"
+        "comparedOn": "2026-10-24"
       },
       "gameplayVerified": false,
       "notes": [
-        "Next Gen main file. The embedded descriptor version (1.0) differs from the release label (2.73).",
+        "Next Gen main file. The embedded descriptor version (1.0) differs from the release label (2.75).",
         "The author expects conflicts with other death-animation, ragdoll, finisher, wound, or damage-processor mods.",
         "Shares four .w2ragdoll files (dwarf, man, wild hunt, and woman base ragdolls) with VAXIS's ULTRA Plus Blood Physics. Neither has a mods.settings entry; which copy wins has not been determined.",
-        "A bundle check on 2026-10-20 found the same four .w2ragdoll files shared with VAXIS's Blood Physics in 2.73."
+        "A bundle check on 2026-10-20 found the same four .w2ragdoll files shared with VAXIS's Blood Physics in 2.73.",
+        "2.75 adds two optional files, a Script Friendly 1.1 and a High Finisher Chance variant; neither is installed."
       ],
       "previousRelease": {
-        "releaseLabel": "2.70",
-        "installedOn": "2026-10-11",
-        "replacedOn": "2026-10-20",
-        "note": "2.71 and 2.72 were skipped."
+        "releaseLabel": "2.73",
+        "installedOn": "2026-10-20",
+        "replacedOn": "2026-10-24",
+        "note": "2.75 no longer ships content/en.w3strings; the 2.73 copy left behind by extracting over it was moved to the Recycle Bin on 2026-10-24. 2.74 was skipped."
       }
     },
     {
